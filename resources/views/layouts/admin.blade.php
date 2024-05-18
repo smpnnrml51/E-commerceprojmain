@@ -1059,6 +1059,8 @@
                         </div>
                     </div>
                 </div><!--end container-->
+                @yield('content')
+                
 {{--
                 <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
                     <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4">
