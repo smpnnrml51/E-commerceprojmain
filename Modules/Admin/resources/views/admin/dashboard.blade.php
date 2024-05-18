@@ -1,10 +1,3 @@
-{{-- @extends('admin::layouts.master')
-
-@section('content')
-    <h1>Hello World</h1>
-
-    <p>Module: {!! config('admin.name') !!}</p>
-@endsection --}}
 @extends('layouts.admin')
 @section('content')
 <div class="xl:w-full  min-h-[calc(100vh-138px)] relative pb-14">
