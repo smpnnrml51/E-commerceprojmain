@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{asset('libs/icofont/icofont.min.css')}}">
         <link href="{{asset('libs/flatpickr/flatpickr.min.css')}}" type="text/css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('css/tailwind.min.css')}}">
-
+        @yield('style')
     </head>
 
     <body data-layout-mode="light"  data-sidebar-size="default" data-theme-layout="vertical" class="bg-[#EEF0FC] dark:bg-gray-900">
@@ -1530,6 +1530,7 @@
             </div>
         </div>
 
+
         <!-- JAVASCRIPTS -->
         <!-- <div class="menu-overlay"></div> -->
         <script src="{{asset('libs/lucide/umd/lucide.min.js')}}"></script>
@@ -1540,5 +1541,6 @@
         <script src="{{asset('js/pages/analytics-index.init.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
         <!-- JAVASCRIPTS -->
+        @yield('scripts')
     </body>
 </html>
