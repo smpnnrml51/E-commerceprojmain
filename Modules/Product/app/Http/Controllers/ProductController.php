@@ -35,11 +35,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $data['title'] = 'Create Product';
-        $data['category'] = $this->categoryRepository->pluck();
-        $data['status'] = Product::STATUS;
+        // $data['title'] = 'Create Product';
+        // $data['category'] = $this->categoryRepository->pluck();
+        // $data['status'] = Product::STATUS;
 
-        return view('product::category.create', $data);
+        // return view('product::product.create', $data);
+        return view('product::product.create');
     }
 
     /**
