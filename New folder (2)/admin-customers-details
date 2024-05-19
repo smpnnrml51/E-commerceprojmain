@@ -111,7 +111,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-products.html"
+                        href="/robotech/default/admin-products"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -122,7 +122,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-add-product.html"
+                        href="/robotech/default/admin-add-product"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -133,7 +133,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-add-product.html"
+                        href="/robotech/default/admin-customers"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -144,7 +144,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-customers-details.html"
+                        href="/robotech/default/admin-customers-details"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -155,7 +155,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-orders.html"
+                        href="/robotech/default/admin-orders"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -166,7 +166,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-order-details.html"
+                        href="/robotech/default/admin-order-details"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -177,7 +177,7 @@
                     <li class="nav-item relative block">
                       <a
                         class="nav-link hover:text-primary-500 rounded-md dark:hover:text-primary-500 relative flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200"
-                        href="/robotech/default/admin-refund.html"
+                        href="/robotech/default/admin-refund"
                       >
                         <i
                           class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"
@@ -1763,7 +1763,7 @@
 
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
       <div
-        class="page-wrapper relative ltr:ml-auto rtl:mr-auto rtl:ml-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300"
+        class="page-wrapper relative ltr:ms-auto rtl:me-auto rtl:ms-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300"
       >
         <div class="xl:w-full">
           <div class="flex flex-wrap">
@@ -1775,7 +1775,7 @@
                       <h1
                         class="font-medium text-3xl block dark:text-slate-100"
                       >
-                        Ecommerce
+                        Customers
                       </h1>
                       <ol class="list-reset flex text-sm">
                         <li>
@@ -1788,9 +1788,7 @@
                             >/</span
                           >
                         </li>
-                        <li class="text-gray-500 dark:text-slate-400">
-                          Dashboard
-                        </li>
+                        <li class="text-gray-500 dark:text-slate-400">Admin</li>
                         <li>
                           <span class="text-gray-500 dark:text-slate-400 mx-2"
                             >/</span
@@ -1799,7 +1797,7 @@
                         <li
                           class="text-primary-500 hover:text-primary-600 dark:text-primary-400"
                         >
-                          Ecommerce
+                          Details
                         </li>
                       </ol>
                     </div>
@@ -1828,922 +1826,1640 @@
             class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4"
           >
             <div
-              class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-3 xl:col-span-3"
+              class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-4 xl:col-span-3"
             >
-              <div
-                class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative mb-4"
-              >
-                <div class="flex-auto p-4">
-                  <div class="flex justify-between xl:gap-x-2 items-cente">
-                    <div class="self-center">
-                      <p
-                        class="text-gray-800 font-semibold dark:text-slate-400 text-lg uppercase"
-                      >
-                        Total orders
-                      </p>
-                      <h3
-                        class="my-4 font-semibold text-[30px] dark:text-slate-200"
-                      >
-                        14253
-                      </h3>
-                    </div>
-                    <div class="self-center">
-                      <i
-                        data-lucide="shopping-cart"
-                        class="h-16 w-16 stroke-primary-500/30"
-                      ></i>
-                    </div>
-                  </div>
-                  <p class="truncate text-slate-400">
-                    <span class="text-green-500"
-                      ><i class="mdi mdi-trending-up"></i>8.5%</span
+              <div class="">
+                <div class="text-center">
+                  <img
+                    src="assets/images/users/avatar-1.png"
+                    alt=""
+                    class="rounded-full mx-auto inline-block"
+                  />
+                  <div class="my-4">
+                    <h5
+                      class="text-xxl font-semibold text-slate-700 dark:text-gray-400"
                     >
-                    New Sessions Today
-                  </p>
-                </div>
-                <!--end card-body-->
-                <div class="flex-auto p-0 overflow-hidden">
-                  <div class="flex mb-0 h-full">
-                    <div class="w-full">
-                      <div class="apexchart-wrapper">
-                        <div id="apex_column1" class="chart-gutters"></div>
-                      </div>
-                    </div>
+                      Merri Diamond
+                    </h5>
+                    <span class="block font-medium text-slate-500"
+                      >New York, USA</span
+                    >
                   </div>
                 </div>
-                <!--end card-body-->
+                <div
+                  class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4"
+                >
+                  <div
+                    class="col-span-12 sm:col-span-12 md:col-span-5 text-end"
+                  >
+                    <span class="dark:text-slate-300">Email :</span>
+                  </div>
+                  <!--end col-->
+                  <div class="col-span-12 sm:col-span-12 md:col-span-7">
+                    <span class="dark:text-slate-400">example@gmail.com</span>
+                  </div>
+                  <!--end col-->
+                  <div
+                    class="col-span-12 sm:col-span-12 md:col-span-5 text-end"
+                  >
+                    <span class="dark:text-slate-300">Phone :</span>
+                  </div>
+                  <!--end col-->
+                  <div class="col-span-12 sm:col-span-12 md:col-span-7">
+                    <span class="dark:text-slate-400">+1 234 567 89</span>
+                  </div>
+                  <!--end col-->
+                  <div
+                    class="col-span-12 sm:col-span-12 md:col-span-5 text-end"
+                  >
+                    <span class="dark:text-slate-300">Date of birth :</span>
+                  </div>
+                  <!--end col-->
+                  <div class="col-span-12 sm:col-span-12 md:col-span-7">
+                    <span class="dark:text-slate-400">05 June 2001</span>
+                  </div>
+                  <!--end col-->
+                  <div
+                    class="col-span-12 sm:col-span-12 md:col-span-5 text-end"
+                  >
+                    <span class="dark:text-slate-300">Address :</span>
+                  </div>
+                  <!--end col-->
+                  <div class="col-span-12 sm:col-span-12 md:col-span-7">
+                    <span class="dark:text-slate-400"
+                      >1277 Rollins Road Grand Island, NE 68801</span
+                    >
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end grid-->
+                <div
+                  class="border-b border-dashed dark:border-slate-700/40 my-3 group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:border-slate-700/40"
+                ></div>
+                <h5 class="text-xl font-semibold mb-4 dark:text-slate-300">
+                  About
+                </h5>
+                <p class="dark:text-slate-400">
+                  Hi I'm Merri Diamond,has been the industry's standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type.
+                </p>
+                <div class="mt-4 text-center">
+                  <div
+                    class="border-2 border-slate-200/50 dark:border-slate-600/60 inline-flex rounded-full cursor-pointer"
+                  >
+                    <img
+                      src="assets/images/logos/facebook.png"
+                      alt=""
+                      class="rounded-full h-9 w-9"
+                    />
+                  </div>
+                  <div
+                    class="border-2 border-slate-200/50 dark:border-slate-600/60 inline-flex rounded-full cursor-pointer"
+                  >
+                    <img
+                      src="assets/images/logos/insta.png"
+                      alt=""
+                      class="rounded-full h-9 w-9"
+                    />
+                  </div>
+                  <div
+                    class="border-2 border-slate-200/50 dark:border-slate-600/60 inline-flex rounded-full cursor-pointer"
+                  >
+                    <img
+                      src="assets/images/logos/twitter.png"
+                      alt=""
+                      class="rounded-full h-9 w-9"
+                    />
+                  </div>
+                </div>
               </div>
-              <!--end inner-grid-->
             </div>
             <!--end col-->
             <div
-              class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3"
+              class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-8 xl:col-span-9"
             >
               <div
-                class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative mb-4"
+                class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-4"
               >
-                <div class="flex-auto p-4">
-                  <div class="flex justify-between xl:gap-x-2 items-cente">
-                    <div class="self-center">
-                      <p
-                        class="text-gray-800 font-semibold dark:text-slate-400 uppercase"
-                      >
-                        New customers
-                      </p>
-                      <h3
-                        class="my-4 font-semibold text-[30px] dark:text-slate-200"
-                      >
-                        532
-                      </h3>
-                    </div>
-                    <div class="self-center">
-                      <i
-                        data-lucide="users"
-                        class="h-16 w-16 stroke-green/30"
-                      ></i>
-                    </div>
-                  </div>
-                  <p class="truncate text-slate-400">
-                    <span class="text-red-500"
-                      ><i class="mdi mdi-trending-down"></i>0.6%</span
+                <div
+                  class="bg-primary-500/5 dark:bg-primary-500/10 border border-dashed border-primary-500 rounded-md w-full relative"
+                >
+                  <div class="flex-auto p-4 text-center">
+                    <span
+                      class="inline-flex justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-primary-500"
                     >
-                    Bounce Rate Weekly
-                  </p>
-                </div>
-                <!--end card-body-->
-                <div class="flex-auto p-0 overflow-hidden">
-                  <div class="flex mb-0 h-full">
-                    <div class="w-full">
-                      <div class="apexchart-wrapper">
-                        <div id="dash_spark_1" class="chart-gutters"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end inner-grid-->
-            </div>
-            <!--end col-->
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3"
-            >
-              <div
-                class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative mb-4"
-              >
-                <div class="flex-auto p-4">
-                  <div class="flex justify-between xl:gap-x-2 items-cente">
-                    <div class="self-center">
-                      <p
-                        class="text-gray-800 font-semibold dark:text-slate-400 uppercase"
-                      >
-                        Top coupons
-                      </p>
-                      <h3
-                        class="my-4 font-semibold text-[30px] dark:text-slate-200"
-                      >
-                        78%
-                      </h3>
-                    </div>
-                    <div class="self-center">
-                      <i
-                        data-lucide="gem"
-                        class="h-16 w-16 stroke-yellow-500/30"
-                      ></i>
-                    </div>
-                  </div>
-                  <p class="truncate text-slate-400">
-                    <span class="text-green-500"
-                      ><i class="mdi mdi-trending-up"></i>1.5%</span
-                    >
-                    Weekly Avg.Sessions
-                  </p>
-                </div>
-                <!--end card-body-->
-                <div class="flex-auto p-0 overflow-hidden">
-                  <div class="grid grid-cols-12">
-                    <div class="col-span-6">
-                      <div id="ana_device" class="apex-charts"></div>
-                    </div>
-                    <!--end col-->
-                    <div class="col-span-6">
-                      <ol class="list-none list-inside">
-                        <li
-                          class="-mt-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i
-                            class="icofont-caret-right text-primary-500 text-lg"
-                          ></i>
-                          Sent
-                        </li>
-                        <li
-                          class="-mt-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i
-                            class="icofont-caret-right text-green-500 text-lg"
-                          ></i>
-                          Opened
-                        </li>
-                        <li
-                          class="-mt-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i
-                            class="icofont-caret-right text-red-500 text-lg"
-                          ></i>
-                          Not Opened
-                        </li>
-                      </ol>
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end grid-->
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end inner-grid-->
-            </div>
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3"
-            >
-              <div
-                class="bg-[#1b1b22] shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative mb-4"
-              >
-                <div class="flex-auto p-4">
-                  <div class="flex justify-between xl:gap-x-2 items-cente">
-                    <div class="self-center">
-                      <p
-                        class="text-gray-300 font-semibold dark:text-slate-400 uppercase"
-                      >
-                        Total Revenue
-                      </p>
-                      <h3 class="my-4 font-semibold text-[30px] text-slate-200">
-                        $85000
-                      </h3>
-                    </div>
-                    <div class="self-center">
                       <i
                         data-lucide="dollar-sign"
-                        class="h-16 w-16 stroke-[#2ecee1]/30"
+                        class="stroke-primary-500 text-3xl"
                       ></i>
-                    </div>
-                  </div>
-                  <p class="truncate text-slate-400">
-                    <span class="text-green-500"
-                      ><i class="mdi mdi-trending-up"></i>10.5%</span
-                    >
-                    Completions Weekly
-                  </p>
-                </div>
-                <!--end card-body-->
-                <div class="flex-auto p-4 pt-0 -mt-1">
-                  <div
-                    class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4"
-                  >
-                    <div
-                      class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-3"
-                    >
-                      <img
-                        src="assets/images/widgets/wallet.png"
-                        alt=""
-                        class="w-full h-auto"
-                      />
-                    </div>
-                    <div
-                      class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-8 text-end self-center"
-                    >
-                      <button
-                        class="px-4 py-1 font-medium text-white transition duration-200 ease-in-out delay-200 skew-y-6 bg-brand-600 border-b-4 border-brand-700 rounded shadow-lg shadow-brand-600/50 hover:skew-y-0 hover:border-brand-700"
-                      >
-                        Withdrawal
-                      </button>
-                      <!-- <button class="px-2 py-1 bg-brand-500 border border-transparent collapse:bg-green-100 text-white text-sm rounded hover:bg-brand-600 hover:text-white">Withdrawal</button> -->
-                    </div>
-                  </div>
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end inner-grid-->
-            </div>
-            <!--end col-->
-          </div>
-          <!--end grid-->
-
-          <div
-            class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4"
-          >
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4"
-            >
-              <div class="w-full relative mb-4">
-                <div class="flex-auto p-4">
-                  <div class="grid grid-cols-12 gap-4">
-                    <div class="col-span-12 sm:col-span-4">
-                      <img
-                        src="assets/images/widgets/user.png"
-                        alt=""
-                        class="h-auto w-full"
-                      />
-                    </div>
-                    <!--end col-->
-                    <div class="col-span-12 sm:col-span-8 self-center">
-                      <h4
-                        class="font-medium flex-1 self-center mb-2 md:mb-0 dark:text-slate-400 text-xl"
-                      >
-                        A Guide to Analyze and Optimize Your Online Business
-                      </h4>
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end grid-->
-
-                  <div
-                    class="border-b border-dashed border-slate-300 dark:border-slate-700/40 my-3"
-                  ></div>
-                  <div class="grid grid-cols-12 gap-4 mb-8">
-                    <div class="col-span-12 sm:col-span-6">
-                      <div id="email_report" class="apex-charts -mb-4"></div>
-                    </div>
-                    <!--end col-->
-                    <div class="col-span-12 sm:col-span-6 self-center">
-                      <ol class="list-none list-inside mb-3">
-                        <li
-                          class="mb-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i class="icofont-ui-play me-2 text-brand-500"></i>
-                          Tablet
-                        </li>
-                        <li
-                          class="mb-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i class="icofont-ui-play me-2 text-yellow-400"></i>
-                          Desktop
-                        </li>
-                        <li
-                          class="mb-1 text-slate-700 dark:text-slate-400 text-sm"
-                        >
-                          <i class="icofont-ui-play me-2 text-[#13939c]"></i>
-                          Moble
-                        </li>
-                      </ol>
-                      <button
-                        type="button"
-                        class="inline-block shadow-sm dark:shadow-slate-700/10 focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-slate-300 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500 text-sm font-medium py-1 px-3 rounded"
-                      >
-                        View Details <i class="mdi mdi-arrow-right"></i>
-                      </button>
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end grid-->
-                  <h6
-                    class="bg-brand-400/5 shadow-sm dark:shadow-slate-700/10 border border-dashed dark:text-brand-300 border-brand dark:bg-slate-700/40 py-3 px-2 rounded-md text-center text-brand-500 font-medium mt-3"
-                  >
-                    <i class="ti ti-calendar self-center text-lg mr-1"></i>
-                    01 January 2023 to 31 December 2024
-                  </h6>
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end card-->
-            </div>
-            <!--end col-->
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-8 xl:col-span-8"
-            >
-              <div class="w-full relative mb-4">
-                <div
-                  class="border-b border-dashed border-slate-200 dark:border-slate-700 py-3 px-4 dark:text-slate-300/70"
-                >
-                  <div class="flex-none md:flex">
-                    <h4
-                      class="font-medium flex-1 self-center mb-2 md:mb-0 text-xxl"
-                    >
-                      Sales Report
+                    </span>
+                    <h4 class="my-1 font-semibold text-3xl dark:text-slate-200">
+                      $8564
                     </h4>
-                    <div class="dropdown inline-block">
-                      <button
-                        data-fc-autoclose="both"
-                        data-fc-type="dropdown"
-                        class="dropdown-toggle px-3 py-1 text-xs font-medium text-gray-500 focus:outline-none bg-white rounded border border-gray-200 hover:bg-gray-50 hover:text-slate-800 focus:z-10 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                        type="button"
+                    <h6
+                      class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase"
+                    >
+                      Total Cost
+                    </h6>
+                    <p
+                      class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal"
+                    >
+                      <span class="text-green-500">
+                        <i
+                          class="mdi mdi-checkbox-marked-circle-outline me-1"
+                        ></i>
+                      </span>
+                      Last Payment <span class="text-green-500">$300.00</span>
+                    </p>
+                  </div>
+                  <!--end card-body-->
+                </div>
+                <!--end card-->
+                <div
+                  class="bg-orange-500/5 dark:bg-pink-500/10 border border-dashed border-orange-500 rounded-md w-full relative"
+                >
+                  <div class="flex-auto p-4 text-center">
+                    <span
+                      class="inline-flex justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-orange-500"
+                    >
+                      <i
+                        data-lucide="shopping-cart"
+                        class="stroke-orange-500 text-3xl"
+                      ></i>
+                    </span>
+                    <h4 class="my-1 font-semibold text-3xl dark:text-slate-200">
+                      312
+                    </h4>
+                    <h6
+                      class="text-gray-800 dark:text-gray-400 text-lg mb-0 font-medium uppercase"
+                    >
+                      Total Order
+                    </h6>
+                    <p
+                      class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal"
+                    >
+                      <span
+                        class="bg-green-600/5 text-green-500 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                        >3</span
                       >
-                        This Month
-                        <i class="fas fa-chevron-down text-xs ml-2"></i>
-                      </button>
-                      <!-- Dropdown menu -->
-                      <div
-                        class="right-auto md:right-0 hidden z-10 w-28 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
-                      >
-                        <ul
-                          class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                          aria-labelledby="dropdownDefault"
+                      Weekly Average
+                    </p>
+                  </div>
+                  <!--end card-body-->
+                </div>
+                <!--end card-->
+                <div
+                  class="bg-purple-500/5 dark:bg-cyan-500/5 border border-dashed border-purple-500 rounded-md w-full relative"
+                >
+                  <div class="flex-auto p-4 text-center">
+                    <span
+                      class="inline-flex justify-center items-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border border-dashed border-purple-600"
+                    >
+                      <i
+                        data-lucide="circle-dollar-sign"
+                        class="stroke-purple-500 text-3xl"
+                      ></i>
+                    </span>
+                    <h4 class="my-1 font-semibold text-3xl dark:text-slate-200">
+                      $450.00
+                    </h4>
+                    <h6
+                      class="text-gray-800 dark:text-gray-400 mb-0 text-lg font-medium uppercase"
+                    >
+                      Pending Payment
+                    </h6>
+                    <p
+                      class="truncate text-gray-700 dark:text-slate-500 text-sm font-normal"
+                    >
+                      Last Date : 26 Nov 2023
+                      <span class="text-red-500">15 Days</span>
+                    </p>
+                  </div>
+                  <!--end card-body-->
+                </div>
+                <!--end card-->
+              </div>
+              <div class="w-full relative mb-4">
+                <div class="flex-auto p-0 md:p-4">
+                  <div
+                    class="mb-4 border-b border-gray-200 dark:border-slate-700"
+                    data-fc-type="tab"
+                  >
+                    <ul
+                      class="flex flex-wrap -mb-px text-sm font-medium text-center"
+                      aria-label="Tabs"
+                    >
+                      <li class="me-2" role="presentation">
+                        <button
+                          class="inline-block p-4 rounded-t-lg border-b-2 active"
+                          id="orders-tab"
+                          data-fc-target="#orders"
+                          type="button"
+                          role="tab"
+                          aria-controls="orders"
+                          aria-selected="false"
                         >
-                          <li>
-                            <a
-                              href="#"
-                              class="block py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >Today</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              class="block py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >Last Week</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              class="block py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >Last Month</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              class="block py-2 px-4 hover:bg-gray-50 dark:hover:bg-gray-600 dark:hover:text-white"
-                              >This Year</a
-                            >
-                          </li>
-                        </ul>
+                          Orders <span class="text-slate-400">(451)</span>
+                        </button>
+                      </li>
+                      <li class="me-2" role="presentation">
+                        <button
+                          class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                          id="wishlist-tab"
+                          data-fc-target="#wishlist"
+                          type="button"
+                          role="tab"
+                          aria-controls="wishlist"
+                          aria-selected="false"
+                        >
+                          Wishlist <span class="text-slate-400">(155)</span>
+                        </button>
+                      </li>
+                      <li class="me-2" role="presentation">
+                        <button
+                          class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                          id="ratings-tab"
+                          data-fc-target="#ratings"
+                          type="button"
+                          role="tab"
+                          aria-controls="ratings"
+                          aria-selected="false"
+                        >
+                          Ratings <span class="text-slate-400">(25)</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div id="myTabContent">
+                    <div
+                      class="active p-4 bg-gray-50 rounded-lg dark:bg-gray-700/20"
+                      id="orders"
+                      role="tabpanel"
+                      aria-labelledby="orders-tab"
+                    >
+                      <div class="grid grid-cols-1 p-0 md:p-4">
+                        <div class="sm:-mx-6 lg:-mx-8">
+                          <div
+                            class="relative overflow-x-auto block w-full sm:px-6 lg:px-8"
+                          >
+                            <table class="w-full">
+                              <thead class="bg-gray-50 dark:bg-gray-600/20">
+                                <tr>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Order ID
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Payment
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Date
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Invoice
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Status
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- 1 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#332152</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $300
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    28 Nov 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Shiped</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!-- 2 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#365214</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $450
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    01 Oct 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Shiped</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!-- 3 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#635987</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $600
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Feb 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-yellow-600/5 text-yellow-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Panding</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!-- 4 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#258963</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $850
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    08 Dec 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Shiped</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!--5-->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#321456</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $530
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    30 Mar 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-red-600/5 text-red-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Cancel</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!--6-->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >#989896</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    $1120
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Sep 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="text-primary-500 underline"
+                                      >Invoice</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Shiped</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!--end div-->
+                        </div>
+                        <!--end div-->
+                      </div>
+                      <!--end grid-->
+                      <div class="flex justify-between mt-4">
+                        <div class="self-center">
+                          <p class="dark:text-slate-400">
+                            Showing 1 - 20 of 1,524
+                          </p>
+                        </div>
+                        <div class="self-center">
+                          <ul class="inline-flex items-center -space-x-px">
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 ms-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-left"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                aria-current="page"
+                                class="z-10 py-2 px-3 leading-tight text-brand-600 bg-brand-50 border border-brand-300 hover:bg-brand-100 hover:text-brand-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                                >2</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >3</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-right"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
+                      id="wishlist"
+                      role="tabpanel"
+                      aria-labelledby="wishlist-tab"
+                    >
+                      <div class="grid grid-cols-1 p-0 md:p-4">
+                        <div class="sm:-mx-6 lg:-mx-8">
+                          <div
+                            class="relative overflow-x-auto block w-full sm:px-6 lg:px-8"
+                          >
+                            <table class="w-full">
+                              <thead class="bg-gray-50 dark:bg-gray-600/20">
+                                <tr>
+                                  <th scope="col" class="p-3">
+                                    <label class="custom-label">
+                                      <div
+                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5 inline-block leading-5 text-center -mb-[6px]"
+                                      >
+                                        <input type="checkbox" class="hidden" />
+                                        <i
+                                          class="icofont-verification-check hidden text-xs text-brand-500 dark:text-slate-200"
+                                        ></i>
+                                      </div>
+                                    </label>
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Product & Title
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Categories
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Stock status
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Attributes
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Price
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Date
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- 1 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td class="w-4 p-4">
+                                    <label class="custom-label">
+                                      <div
+                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5 inline-block leading-5 text-center -mb-[6px]"
+                                      >
+                                        <input type="checkbox" class="hidden" />
+                                        <i
+                                          class="icofont-verification-check hidden text-xs text-brand-500 dark:text-slate-200"
+                                        ></i>
+                                      </div>
+                                    </label>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-4.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          Mannat 530 Bluetooth Wireless
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >Size-M (Model 2023)</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Footwear</a
+                                    >,
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Lifestayle</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >In stock</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <div>
+                                      color :
+                                      <span class="ms-2">
+                                        <i
+                                          class="icofont-brand-mts text-red-500"
+                                        ></i>
+                                        <i
+                                          class="icofont-brand-mts text-gray-500"
+                                        ></i>
+                                        <i
+                                          class="icofont-brand-mts text-black"
+                                        ></i>
+                                      </span>
+                                    </div>
+                                    <div>
+                                      Size :
+                                      <span class="mx-1">M</span>
+                                      <span class="mx-1">L</span>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    $79
+                                    <del class="text-slate-500 font-normal"
+                                      >$99</del
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    12 Jan 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!--2-->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td class="w-4 p-4">
+                                    <label class="custom-label">
+                                      <div
+                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5 inline-block leading-5 text-center -mb-[6px]"
+                                      >
+                                        <input type="checkbox" class="hidden" />
+                                        <i
+                                          class="icofont-verification-check hidden text-xs text-brand-500 dark:text-slate-200"
+                                        ></i>
+                                      </div>
+                                    </label>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-5.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          Mannat Watch 3 Active
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >Latest Model 2023</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Fashion</a
+                                    >,
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Lifestayle</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >In stock</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <div>
+                                      color :
+                                      <span class="ms-2">
+                                        <i
+                                          class="icofont-brand-mts text-orange-500"
+                                        ></i>
+                                        <i
+                                          class="icofont-brand-mts text-purple-500"
+                                        ></i>
+                                      </span>
+                                    </div>
+                                    <div>
+                                      Size :
+                                      <span class="ms-2">S</span>
+                                      <span class="mx-1">M</span>
+                                      <span class="mx-1">L</span>
+                                      <span class="mx-1">XL</span>
+                                      <span class="mx-1">XXL</span>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    $219
+                                    <del class="text-slate-500 font-normal"
+                                      >$299</del
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    25 Nov 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!--3-->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td class="w-4 p-4">
+                                    <label class="custom-label">
+                                      <div
+                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5 inline-block leading-5 text-center -mb-[6px]"
+                                      >
+                                        <input type="checkbox" class="hidden" />
+                                        <i
+                                          class="icofont-verification-check hidden text-xs text-brand-500 dark:text-slate-200"
+                                        ></i>
+                                      </div>
+                                    </label>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-6.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          Mannat Watch 3 Active
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >Latest Model 2023</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Fashion</a
+                                    >,
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Lifestayle</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >In stock</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <div>
+                                      color :
+                                      <span class="ms-2">
+                                        <i
+                                          class="icofont-brand-mts text-orange-500"
+                                        ></i>
+                                        <i
+                                          class="icofont-brand-mts text-purple-500"
+                                        ></i>
+                                      </span>
+                                    </div>
+                                    <div>
+                                      Size :
+                                      <span class="ms-2">S</span>
+                                      <span class="mx-1">M</span>
+                                      <span class="mx-1">L</span>
+                                      <span class="mx-1">XL</span>
+                                      <span class="mx-1">XXL</span>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    $219
+                                    <del class="text-slate-500 font-normal"
+                                      >$299</del
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    25 Nov 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!--4-->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td class="w-4 p-4">
+                                    <label class="custom-label">
+                                      <div
+                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5 inline-block leading-5 text-center -mb-[6px]"
+                                      >
+                                        <input type="checkbox" class="hidden" />
+                                        <i
+                                          class="icofont-verification-check hidden text-xs text-brand-500 dark:text-slate-200"
+                                        ></i>
+                                      </div>
+                                    </label>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/01.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          White Table Camera
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >256px, 301px (Model 2023)</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Electronics</a
+                                    >,
+                                    <a href="#" class="text-brand-500 underline"
+                                      >Security</a
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-red-600/5 text-red-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >Soldout</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <div>
+                                      color :
+                                      <span class="ms-2">
+                                        <i
+                                          class="icofont-brand-mts text-gray-100"
+                                        ></i>
+                                      </span>
+                                    </div>
+                                    <div>
+                                      Size :
+                                      <span class="ms-2">S</span>
+                                      <span class="mx-1">M</span>
+                                      <span class="mx-1">L</span>
+                                      <span class="mx-1">XL</span>
+                                      <span class="mx-1">XXL</span>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    $99
+                                    <del class="text-slate-500 font-normal"
+                                      >$150</del
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Jul 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!--end div-->
+                        </div>
+                        <!--end div-->
+                      </div>
+                      <!--end grid-->
+                      <div class="flex justify-between">
+                        <div class="self-center">
+                          <p class="dark:text-slate-400">
+                            Showing 1 - 20 of 1,524
+                          </p>
+                        </div>
+                        <div class="self-center">
+                          <ul class="inline-flex items-center -space-x-px">
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 ms-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-left"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                aria-current="page"
+                                class="z-10 py-2 px-3 leading-tight text-brand-600 bg-brand-50 border border-brand-300 hover:bg-brand-100 hover:text-brand-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                                >2</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >3</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-right"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
+                      id="ratings"
+                      role="tabpanel"
+                      aria-labelledby="ratings-tab"
+                    >
+                      <div class="grid grid-cols-1 p-0 md:p-4">
+                        <div class="sm:-mx-6 lg:-mx-8">
+                          <div
+                            class="relative overflow-x-auto block w-full sm:px-6 lg:px-8"
+                          >
+                            <table class="w-full">
+                              <thead class="bg-gray-50 dark:bg-gray-600/20">
+                                <tr>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Items
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Review
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Status
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Date
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase"
+                                  >
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- 1 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-5.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          Mannat Watch 3 Active
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >Latest Model 2023</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <ul class="flex">
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                    </ul>
+                                  </td>
+
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >SUCCESS</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Feb 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!-- 2 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-1.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          New Colorfull Shoes
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >Size-04-15 (Model 2023)</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <ul class="flex">
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                    </ul>
+                                  </td>
+
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >SUCCESS</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Feb 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                                <!-- 3 -->
+                                <tr
+                                  class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
+                                >
+                                  <td
+                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white"
+                                  >
+                                    <div class="flex items-center">
+                                      <img
+                                        src="assets/images/products/pro-3.png"
+                                        alt=""
+                                        class="me-2 h-8 inline-block"
+                                      />
+                                      <div class="self-center">
+                                        <h5
+                                          class="text-sm font-semibold text-slate-700 dark:text-gray-400"
+                                        >
+                                          Mannat HD, Smart LED Fire TV
+                                        </h5>
+                                        <span
+                                          class="block font-medium text-slate-500"
+                                          >32 inc (Model 2023)</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <ul class="flex">
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                      <li>
+                                        <i
+                                          class="icofont-star text-yellow-400"
+                                        ></i>
+                                      </li>
+                                    </ul>
+                                  </td>
+
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <span
+                                      class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5"
+                                      >SUCCESS</span
+                                    >
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    20 Feb 2023
+                                  </td>
+                                  <td
+                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                                  >
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
+                                      ></i
+                                    ></a>
+                                    <a href="#"
+                                      ><i
+                                        class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
+                                      ></i
+                                    ></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <!--end div-->
+                        </div>
+                        <!--end div-->
+                      </div>
+                      <!--end grid-->
+                      <div class="flex justify-between">
+                        <div class="self-center">
+                          <p class="dark:text-slate-400">
+                            Showing 1 - 20 of 1,524
+                          </p>
+                        </div>
+                        <div class="self-center">
+                          <ul class="inline-flex items-center -space-x-px">
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 ms-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-left"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                aria-current="page"
+                                class="z-10 py-2 px-3 leading-tight text-brand-600 bg-brand-50 border border-brand-300 hover:bg-brand-100 hover:text-brand-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                                >2</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                >3</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                              >
+                                <i class="icofont-simple-right"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="flex-auto p-4">
-                  <div id="crm-dash" class="apex-charts mt-5"></div>
-                </div>
                 <!--end card-body-->
               </div>
-              <!--end inner-grid-->
+              <!--end card-->
             </div>
             <!--end col-->
           </div>
           <!--end grid-->
-          <div
-            class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4"
-          >
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6"
-            >
-              <div
-                class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative"
-              >
-                <div
-                  class="border-b border-dashed border-slate-200 dark:border-slate-700 py-4 px-4 dark:text-slate-300/70"
-                >
-                  <h4
-                    class="font-medium flex-1 self-center mb-2 md:mb-0 text-xxl"
-                  >
-                    Earnings Reports
-                  </h4>
-                  <p class="text-sm text-slate-400">
-                    Earnings Reports Last Week
-                    <span
-                      class="focus:outline-none text-[11px] bg-brand-500/10 text-brand-500 dark:text-brand-300 rounded font-medium py-[2px] px-2"
-                      >$18532</span
-                    >
-                  </p>
-                </div>
-                <!--end header-title-->
-                <div class="grid grid-cols-1 p-4">
-                  <div class="sm:-mx-6 lg:-mx-8">
-                    <div
-                      class="relative overflow-x-auto block w-full sm:px-6 lg:px-8"
-                    >
-                      <table class="w-full">
-                        <thead class="bg-brand-400/10 dark:bg-slate-700/20">
-                          <tr>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Date
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Item Count
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Tex
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Earnings
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!-- 1 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              01 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              50
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-red-500">$70</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$15,000</span>
-                            </td>
-                          </tr>
-                          <!-- 2 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              02 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              25
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-slate-100">-</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$15,000</span>
-                            </td>
-                          </tr>
-                          <!-- 3 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              03 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              65
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-red-500">$115</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$35,000</span>
-                            </td>
-                          </tr>
-                          <!-- 4 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              04 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              20
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-slate-500">-</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$8,500</span>
-                            </td>
-                          </tr>
-                          <!-- 5 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              05 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              20
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-slate-500">-</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$8,500</span>
-                            </td>
-                          </tr>
-                          <!-- 6 -->
-                          <tr class="bg-white dark:bg-gray-900">
-                            <td
-                              class="p-3 text-base text-gray-600 whitespace-nowrap dark:text-gray-400"
-                            >
-                              06 January
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              40
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="text-red-500">$60</span>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-700 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span class="font-semibold">$12,000</span>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end card-->
-            </div>
-            <!--end col-->
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6"
-            >
-              <div
-                class="bg-white shadow-sm dark:shadow-slate-700/10 dark:bg-gray-900 rounded-md w-full relative"
-              >
-                <div
-                  class="border-b border-dashed border-slate-200 dark:border-slate-700 py-4 px-4 dark:text-slate-300/70"
-                >
-                  <h4
-                    class="font-medium flex-1 self-center mb-2 md:mb-0 text-xxl"
-                  >
-                    Most Populer Products
-                  </h4>
-                  <p class="text-sm text-slate-400">
-                    New Products Last Week
-                    <span
-                      class="focus:outline-none text-[11px] bg-brand-500/10 text-brand-500 dark:text-brand-300 rounded font-medium py-[2px] px-2"
-                      >5</span
-                    >
-                  </p>
-                </div>
-                <!--end header-title-->
-                <div class="grid grid-cols-1 p-4">
-                  <div class="sm:-mx-6 lg:-mx-8">
-                    <div
-                      class="relative overflow-x-auto block w-full sm:px-6 lg:px-8"
-                    >
-                      <table class="w-full">
-                        <thead class="bg-brand-400/10 dark:bg-slate-700/20">
-                          <tr>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Product
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Price
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Sell
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Status
-                            </th>
-                            <th
-                              scope="col"
-                              class="p-3 text-base font-medium tracking-wider text-start text-gray-700 uppercase dark:text-gray-400"
-                            >
-                              Action
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!-- 1 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base font-medium whitespace-nowrap dark:text-white"
-                            >
-                              <img
-                                src="assets/images/products/01.png"
-                                alt=""
-                                class="me-2 h-10 inline-block"
-                              />Robotech Camera EDM 5D(White)
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              $50 <del class="text-gray-400">$90</del>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              450<small class="text-gray-400">(500)</small>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span
-                                class="focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-1 px-2"
-                                >Stock</span
-                              >
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
-                                ></i
-                              ></a>
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
-                                ></i
-                              ></a>
-                            </td>
-                          </tr>
-                          <!-- 2 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base font-medium whitespace-nowrap dark:text-white"
-                            >
-                              <img
-                                src="assets/images/products/03.png"
-                                alt=""
-                                class="me-2 h-10 inline-block"
-                              />Robotech VR 5D (Black)
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              $39 <del class="text-gray-400">$99</del>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              700<small class="text-gray-400">(700)</small>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span
-                                class="focus:outline-none text-[12px] bg-red-500/10 text-red-700 dark:text-red-400 rounded font-medium py-1 px-2"
-                                >Sold</span
-                              >
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
-                                ></i
-                              ></a>
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
-                                ></i
-                              ></a>
-                            </td>
-                          </tr>
-                          <!-- 3 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base font-medium whitespace-nowrap dark:text-white"
-                            >
-                              <img
-                                src="assets/images/products/02.png"
-                                alt=""
-                                class="me-2 h-10 inline-block"
-                              />Robotech Shoes Max-Zon
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              $49 <del class="text-gray-400">$88</del>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              850<small class="text-gray-400">(900)</small>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span
-                                class="focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-1 px-2"
-                                >Stock</span
-                              >
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
-                                ></i
-                              ></a>
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
-                                ></i
-                              ></a>
-                            </td>
-                          </tr>
-                          <!-- 4 -->
-                          <tr
-                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40"
-                          >
-                            <td
-                              class="p-3 text-base font-medium whitespace-nowrap dark:text-white"
-                            >
-                              <img
-                                src="assets/images/products/04.png"
-                                alt=""
-                                class="me-2 h-10 inline-block"
-                              />Robotech Mask N99 [ISI]
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              $5 <del class="text-gray-400">$9</del>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              1850<small class="text-gray-400">(2000)</small>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span
-                                class="focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-1 px-2"
-                                >Stock</span
-                              >
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
-                                ></i
-                              ></a>
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
-                                ></i
-                              ></a>
-                            </td>
-                          </tr>
-                          <!-- 5 -->
-                          <tr class="bg-white dark:bg-gray-900">
-                            <td
-                              class="p-3 text-base font-medium whitespace-nowrap dark:text-white"
-                            >
-                              <img
-                                src="assets/images/products/01.png"
-                                alt=""
-                                class="me-2 h-10 inline-block"
-                              />Robotech Camera EDM 5D(White)
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              $50 <del class="text-gray-400">$90</del>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              450<small class="text-gray-400">(500)</small>
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <span
-                                class="focus:outline-none text-[12px] bg-red-500/10 text-red-700 dark:text-red-400 rounded font-medium py-1 px-2"
-                                >Sold</span
-                              >
-                            </td>
-                            <td
-                              class="p-3 text-base text-gray-500 whitespace-nowrap dark:text-gray-400"
-                            >
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"
-                                ></i
-                              ></a>
-                              <a href="#"
-                                ><i
-                                  class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"
-                                ></i
-                              ></a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-                <!--end card-body-->
-              </div>
-              <!--end card-->
-            </div>
-            <!--end col-->
-          </div>
-          <!--end inner-grid-->
           <!-- footer -->
           <div
             class="absolute bottom-0 -left-4 -right-4 block print:hidden border-t p-4 h-[52px] dark:border-slate-700/40"
@@ -2771,7 +3487,9 @@
         </div>
         <!--end container-->
       </div>
+      <!--end page-wrapper-->
     </div>
+    <!--end /div-->
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
@@ -2780,8 +3498,6 @@
     <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
     <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
 
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/js/pages/analytics-index.init.js"></script>
     <script src="assets/js/app.js"></script>
     <!-- JAVASCRIPTS -->
   </body>
