@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use StatusTrait;
+    protected $primaryKey = 'products_id';
 
     protected $table = 'tbl_products';
     protected $guarded = [];

@@ -39,7 +39,7 @@ class ProductController extends Controller
         $data['category'] = $this->categoryRepository->pluck();
         $data['status'] = Product::STATUS;
 
-        return view('product::category.create', $data);
+        return view('product::product.create', $data);
     }
 
     /**
@@ -61,7 +61,7 @@ class ProductController extends Controller
         $data['status'] = Product::STATUS;
         $data['product'] = $this->productRepository->getProductById($id);
 
-        return view('product::category.show', $data);
+        return view('product::product.show', $data);
     }
 
     /**
@@ -75,7 +75,7 @@ class ProductController extends Controller
         $data['category'] = $this->categoryRepository->pluck();
         $data['product'] = $this->productRepository->getProductById($id);
 
-        return view('product::category.edit', $data);
+        return view('product::product.edit', $data);
     }
 
     /**

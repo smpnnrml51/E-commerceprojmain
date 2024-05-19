@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'v11.0.8',
-        'version' => '11.0.8.0',
-        'reference' => null,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '1227fa1da3378441448f055f58b876f93f44779f',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -380,9 +380,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v11.0.8',
-            'version' => '11.0.8.0',
-            'reference' => null,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '1227fa1da3378441448f055f58b876f93f44779f',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -562,6 +562,15 @@
             'reference' => '58c4c58cf23df7f498daeb97092e34f5259feb6a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/termwind',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nwidart/laravel-modules' => array(
+            'pretty_version' => 'v11.0.10',
+            'version' => '11.0.10.0',
+            'reference' => '4522002fc94cf4a1555337394f7268dd14651806',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nwidart/laravel-modules',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -748,8 +757,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1310,6 +1319,15 @@
             'reference' => '11cb2199493b2f8a3b53e7f19068fc6aac760991',
             'type' => 'library',
             'install_path' => __DIR__ . '/../webmozart/assert',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wikimedia/composer-merge-plugin' => array(
+            'pretty_version' => 'v2.1.0',
+            'version' => '2.1.0.0',
+            'reference' => 'a03d426c8e9fb2c9c569d9deeb31a083292788bc',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../wikimedia/composer-merge-plugin',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
