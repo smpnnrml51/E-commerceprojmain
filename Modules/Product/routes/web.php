@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Product\Http\Controllers\ProductController;
+use Modules\Product\Http\Controllers\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,7 @@ use Modules\Product\Http\Controllers\ProductController;
 
 Route::group([], function () {
     Route::resource('product', ProductController::class)->names('product');
+});
+Route::group([], function () {
+    Route::resource('category', CategoryController::class)->names('category');
 });

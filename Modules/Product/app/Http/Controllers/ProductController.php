@@ -5,16 +5,29 @@ namespace Modules\Product\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Modules\Product\Models\Product;
+use Modules\Product\Repositories\CategoryRepository;
+use Modules\Product\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
+    private $productRepository;
+    private $categoryRepository;
     /**
      * Display a listing of the resource.
      */
+    public function __construct(
+        ProductRepository $productRepository,
+        CategoryRepository $categoryRepository) {
+            $this->productRepository = $productRepository;
+            $this->categoryRepository = $categoryRepository;
+    }
+
     public function index()
     {
-        return view('product::index');
+        $data['title'] = 'Products List';
+        $data['products'] = $this->productRepository->findAll();
+        return view('product::product.index', $data);
     }
 
     /**
@@ -22,7 +35,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product::create');
+        // $data['title'] = 'Create Product';
+        // $data['category'] = $this->categoryRepository->pluck();
+        // $data['status'] = Product::STATUS;
+
+        // return view('product::product.create', $data);
+        return view('product::product.create');
     }
 
     /**
@@ -30,7 +48,9 @@ class ProductController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //
+        $inputData = $request->all();
+        $this->productRepository->create($inputData);
+        return redirect()->route('product.index');
     }
 
     /**
@@ -38,7 +58,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('product::show');
+        $data['title'] = 'Show Product';
+        $data['status'] = Product::STATUS;
+        $data['product'] = $this->productRepository->getProductById($id);
+
+        return view('product::category.show', $data);
     }
 
     /**
@@ -46,7 +70,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('product::edit');
+        $data['title'] = 'Edit Product';
+        $data['status'] = Product::STATUS;
+
+        $data['category'] = $this->categoryRepository->pluck();
+        $data['product'] = $this->productRepository->getProductById($id);
+
+        return view('product::category.edit', $data);
     }
 
     /**
@@ -54,7 +84,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        //
+        $inputData = $request->except(['_method', '_token']);
+        $this->productRepository->update($id, $inputData);
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -62,6 +95,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ProductModel = $this->productRepository->getProductById($id);
+        $ProductModel->delete();
+        return response()->json(['status' => true, 'message' => 'Product Delete Succesfully']);
     }
 }
