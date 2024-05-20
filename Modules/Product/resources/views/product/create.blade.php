@@ -2,25 +2,22 @@
 @section('content')
 @section('style')
     <!-- Css -->
-    <link rel="stylesheet" href="assets/libs/filepond/filepond.min.css" />
+    <link rel="stylesheet" href="{{asset('libs/filepond/filepond.min.css')}}" />
     <link
       rel="stylesheet"
-      href="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css"
-    />
+      href="{{asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css')}}"/>
     <link
       rel="stylesheet"
-      href="assets/libs/vanillajs-datepicker/css/datepicker.min.css"
-    />
-    <link rel="stylesheet" href="assets/libs/mobius1-selectr/selectr.min.css" />
+      href="{{asset('libs/vanillajs-datepicker/css/datepicker.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/libs/mobius1-selectr/selectr.min.css')}}" />
     <!-- Main Css -->
-    <link rel="stylesheet" href="assets/libs/icofont/icofont.min.css" />
+    <link rel="stylesheet" href="{{asset('assets/libs/icofont/icofont.min.css')}}" />
     <link
-      href="assets/libs/flatpickr/flatpickr.min.css"
+      href="{{asset('assets/libs/flatpickr/flatpickr.min.css')}}"
       type="text/css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/tailwind.min.css" />
-
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="{{asset('assets/css/tailwind.min.css')}}" />
+@endsection
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
       <div
         class="page-wrapper relative ltr:ms-auto rtl:me-auto rtl:ms-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300"
@@ -55,22 +52,22 @@
                           >
                         </li>
                         <li
-                          class="text-primary-500 hover:text-primary-600 dark:text-primary-400"
+                        class="text-primary-500 hover:text-primary-600 dark:text-primary-400"
                         >
-                          Add Product
-                        </li>
-                      </ol>
+                        Add Product
+                      </li>
+                    </ol>
                     </div>
                     <div class="flex items-center">
                       <div
-                        class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
+                      class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
                       >
                         <input
                           type="text"
                           class="dash_date border-0 focus:border-0 focus:outline-none"
                           readonly
                           required=""
-                        />
+                          />
                       </div>
                     </div>
                   </div>
@@ -79,15 +76,16 @@
             </div>
           </div>
         </div>
+        @csrf
         <!--end container-->
-
         <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
           <div
-            class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between"
+          class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between"
           >
-            <div
-              class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3"
-            >
+          <form action ="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+          <div
+          class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3"
+          >
               <div class="w-full relative p-4">
                 <label
                   for=""
@@ -114,7 +112,7 @@
               <!--end card-->
             </div>
             <!--end col-->
-            <div
+            <form
               class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6"
             >
               <div class="w-full relative mb-4">
@@ -131,6 +129,7 @@
                       class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
                       placeholder="Title"
                       required
+                      name="name"
                     />
                   </div>
                   <div class="mb-2">
@@ -154,6 +153,7 @@
                     <label
                       for="description"
                       class="font-medium text-sm text-slate-600 dark:text-slate-400"
+                      name="desc"
                       >Description</label
                     >
                     <textarea
@@ -189,7 +189,7 @@
                           id="price"
                           class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
                           placeholder="Price"
-                          required
+                          name="price"
                         />
                       </div>
                     </div>
@@ -238,6 +238,7 @@
                     </button>
                     <button
                       class="px-2 py-2 lg:px-4 bg-transparent text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium"
+                      
                     >
                       Save Product
                     </button>
@@ -245,6 +246,7 @@
                 </div>
                 <!--end card-body-->
               </div>
+            </form>
               <!--end card-->
             </div>
             <!--end col-->
@@ -352,20 +354,20 @@
       </div>
       <!--end page-wrapper-->
     </div>
+@endsection
     <!--end /div-->
-
+@section('script')
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="assets/libs/lucide/umd/lucide.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/flatpickr/flatpickr.min.js"></script>
-    <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script>
-
-    <script src="assets/libs/filepond/filepond.min.js"></script>
-    <script src="assets/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-    <script src="assets/libs/vanillajs-datepicker/js/datepicker-full.min.js"></script>
-    <script src="assets/libs/mobius1-selectr/selectr.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="{{asset('libs/lucide/umd/lucide.min.js')}}"></script>
+    <script src="{{asset('libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('libs/flatpickr/flatpickr.min.js')}}"></script>
+    <script src="{{asset('libs/@frostui/tailwindcss/frostui.js')}}"></script>
+    <script src="{{asset('libs/filepond/filepond.min.js')}}"></script>
+    <script src="{{asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js')}}"></script>
+    <script src="{{asset('libs/vanillajs-datepicker/js/datepicker-full.min.js')}}"></script>
+    <script src="{{asset('libs/mobius1-selectr/selectr.min.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
     <!-- JAVASCRIPTS -->
     <script>
       FilePond.registerPlugin(FilePondPluginImagePreview);
@@ -386,5 +388,4 @@
         tagSeperators: [",", "|"],
       });
     </script>
-  </body>
-</html>
+@endsection
