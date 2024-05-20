@@ -35,12 +35,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        // $data['title'] = 'Create Product';
-        // $data['category'] = $this->categoryRepository->pluck();
-        // $data['status'] = Product::STATUS;
+        $data['title'] = 'Create Product';
+        $data['category'] = $this->categoryRepository->pluck();
+        $data['status'] = Product::STATUS;
 
-        // return view('product::product.create', $data);
-        return view('product::product.create');
+        return view('product::product.create', $data);
     }
 
     /**
@@ -62,7 +61,7 @@ class ProductController extends Controller
         $data['status'] = Product::STATUS;
         $data['product'] = $this->productRepository->getProductById($id);
 
-        return view('product::category.show', $data);
+        return view('product::product.show', $data);
     }
 
     /**
@@ -76,7 +75,7 @@ class ProductController extends Controller
         $data['category'] = $this->categoryRepository->pluck();
         $data['product'] = $this->productRepository->getProductById($id);
 
-        return view('product::category.edit', $data);
+        return view('product::product.edit', $data);
     }
 
     /**
