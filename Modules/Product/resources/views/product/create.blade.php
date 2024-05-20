@@ -4,7 +4,8 @@
               <!--end card-->
             </div>
             <!--end col-->
-            <form action="">
+            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+              @csrf
             <div
               class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6"
             >
@@ -59,7 +60,7 @@
                   <div class="mb-2">
                     <div class="grid grid-cols-2 gap-3">
                       <div class="col-span-1">
-                        <label
+                        {{-- <label
                           for="Product-date"
                           class="font-medium text-sm text-slate-600 dark:text-slate-400"
                           >Product Date</label
@@ -69,7 +70,7 @@
                           id="Product-date"
                           class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
                           name="foo"
-                        />
+                        /> --}}
                       </div>
                       <div class="col-span-1">
                         <label

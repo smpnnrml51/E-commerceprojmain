@@ -25,6 +25,15 @@ class ProductRepository implements ProductInterface
 
     public function create($ProductDetails)
     {
+        // Ensure 'qty' always has a value
+    if (!isset($ProductDetails['qty'])) {
+        $ProductDetails['qty'] = 0;
+    }
+
+    // Ensure 'stock' always has a value
+    if (!isset($ProductDetails['stock'])) {
+        $ProductDetails['stock'] = 0;
+    }
         return Product::create($ProductDetails);
     }
 
