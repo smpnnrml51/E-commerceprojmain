@@ -42,8 +42,9 @@ class ProductRepository implements ProductInterface
             Storage::disk('public')->put($filePath, file_get_contents($file));
     
             // Store the file path in the product details
-            $ProductDetails['file_path'] = $filePath;
+            $ProductDetails['filepond'] = $filePath;
         }
+    
         return Product::create($ProductDetails);
     }
 
