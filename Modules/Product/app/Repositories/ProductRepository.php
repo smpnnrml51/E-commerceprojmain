@@ -55,6 +55,6 @@ class ProductRepository implements ProductInterface
 
     public function pluck()
     {
-        return Product::pluck('name', 'id');
+        return Product::pluck('name', 'products_id');
     }
 }
