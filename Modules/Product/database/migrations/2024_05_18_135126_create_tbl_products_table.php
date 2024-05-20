@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -13,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tbl_products', function (Blueprint $table) {
             $table->id('products_id');
+            $table->string('filepond');
             $table->string('name');
             $table->longText('desc')->nullable();
             $table->decimal('price', 10, 2);
