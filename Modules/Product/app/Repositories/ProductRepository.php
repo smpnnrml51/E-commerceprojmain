@@ -25,7 +25,6 @@ class ProductRepository implements ProductInterface
 
     public function create($ProductDetails)
     {
-
         // Ensure 'qty' always has a value
         if (!isset($ProductDetails['qty'])) {
             $ProductDetails['qty'] = 0;
@@ -35,14 +34,18 @@ class ProductRepository implements ProductInterface
         if (!isset($ProductDetails['stock'])) {
             $ProductDetails['stock'] = 0;
         }
-        if (isset($ProductDetails['file'])) {
-            $file = $ProductDetails['file'];
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $filePath = 'uploads/' . $filename;
-            Storage::disk('public')->put($filePath, file_get_contents($file));
-    
+        if (isset($ProductDetails['filepond'])) {
+            $filePaths = [];
+            
+            foreach($ProductDetails['filepond'] as $file){
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $filePath = 'uploads/' . $filename;
+                Storage::disk('public')->put($filePath, file_get_contents($file)); 
+                $filePaths[] = $filePath;
+            }    
             // Store the file path in the product details
-            $ProductDetails['filepond'] = $filePath;
+            
+            $ProductDetails['filepond'] = implode('|',$filePaths);
         }
     
         return Product::create($ProductDetails);
