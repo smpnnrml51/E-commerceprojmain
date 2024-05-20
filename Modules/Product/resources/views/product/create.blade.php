@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 @section('styles')
-<link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}"/>
-<!-- Css -->
-<link rel="stylesheet" href="{{asset('libs/filepond/filepond.min.css')}}" />
-<link rel="stylesheet" href="{{asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css')}}" />
-<link rel="stylesheet" href="{{asset('libs/vanillajs-datepicker/css/datepicker.min.css')}}" />
-<link rel="stylesheet" href="{{asset('libs/mobius1-selectr/selectr.min.css')}}" />
-<!-- Main Css -->
-<link rel="stylesheet" href="{{asset('libs/icofont/icofont.min.css')}}" />
-<link href="{{asset('libs/flatpickr/flatpickr.min.css')}}" type="text/css" rel="stylesheet" />
-<link rel="stylesheet" href="{{asset('css/tailwind.min.css')}}" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+    <!-- Css -->
+    <link rel="stylesheet" href="{{ asset('libs/filepond/filepond.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('libs/vanillajs-datepicker/css/datepicker.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('libs/mobius1-selectr/selectr.min.css') }}" />
+    <!-- Main Css -->
+    <link rel="stylesheet" href="{{ asset('libs/icofont/icofont.min.css') }}" />
+    <link href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/tailwind.min.css') }}" />
 @section('content')
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div
@@ -47,7 +47,7 @@
                                             class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
                                             <input type="text"
                                                 class="dash_date border-0 focus:border-0 focus:outline-none" readonly
-                                                required="" />
+                                                 />
                                         </div>
                                     </div>
                                 </div>
@@ -57,140 +57,145 @@
                 </div>
             </div>
             <!--end container-->
-
             <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
+                <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                 <div
                     class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
-                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
-                        <div class="w-full relative p-4">
-                            <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
-                                Image</label>
-                            <div class="w-full h-56 mx-auto mb-4">
-                                <input type="file" class="filepond h-56" name="filepond"
-                                    accept="image/png, image/jpeg, image/gif" />
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="col-span-1">
-                                    <input type="file" class="filepond" />
+                        <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
+                            <div class="w-full relative p-4">
+                                <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
+                                    Image</label>
+                                <div class="w-full h-56 mx-auto mb-4">
+                                    <input type="file" class="filepond h-56" name="filepond[]"
+                                        accept="image/png, image/jpeg, image/gif" />
                                 </div>
-                                <div class="col-span-1">
-                                    <input type="file" class="filepond" />
-                                </div>
-                            </div>
-                        </div>
-                        <!--end card-->
-                    </div>
-                    <!--end col-->
-                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
-                        <div class="w-full relative mb-4">
-                            <div class="flex-auto p-0 md:p-4">
-                                <div class="mb-2">
-                                    <label for="title"
-                                        class="font-medium text-sm text-slate-600 dark:text-slate-400">Title</label>
-                                    <input type="title" id="title"
-                                        class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                        placeholder="Title" required />
-                                </div>
-                                <div class="mb-2">
-                                    <label for="category"
-                                        class="font-medium text-sm text-slate-600 dark:text-slate-400">Category</label>
-                                    <select id="category"
-                                        class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                        <option class="dark:text-slate-700">
-                                            All Category
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Electronics
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Furniture
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Footwear
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Clothes
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="mb-2">
-                                    <label for="description"
-                                        class="font-medium text-sm text-slate-600 dark:text-slate-400">Description</label>
-                                    <textarea id="description" rows="3"
-                                        class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
-                                        placeholder="Description ..."></textarea>
-                                </div>
-                                <div class="mb-2">
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div class="col-span-1">
-                                            <label for="Product-date"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Product
-                                                Date</label>
-                                            <input type="text" id="Product-date"
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
-                                                name="foo" />
-                                        </div>
-                                        <div class="col-span-1">
-                                            <label for="price"
-                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Price</label>
-                                            <input type="title" id="price"
-                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                                placeholder="Price" required />
-                                        </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="col-span-1">
+                                        <input type="file" class="filepond" name="filepond[]"/>
+                                    </div>
+                                    <div class="col-span-1">
+                                        <input type="file" class="filepond" name="filepond[]"/>
                                     </div>
                                 </div>
-                                <div class="mb-2">
-                                    <label for="gender"
-                                        class="font-medium text-sm text-slate-600 dark:text-slate-400">For this
-                                        product</label>
-                                    <select id="gender"
-                                        class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700">
-                                        <option class="dark:text-slate-700">
-                                            -- Gender --
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Male
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Female
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Children
-                                        </option>
-                                        <option class="dark:text-slate-700">
-                                            Other
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="mb-2">
-                                    <label for="sizing"
-                                        class="font-medium text-sm text-slate-600 dark:text-slate-400">Size</label>
-                                    <select id="sizing"
-                                        class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700">
-                                        <option>Size</option>
-                                        <option>SM</option>
-                                        <option>MD</option>
-                                        <option>LG</option>
-                                        <option>XL</option>
-                                        <option>XXL</option>
-                                    </select>
-                                </div>
-
-                                <div class="">
-                                    <button
-                                        class="px-2 py-2 lg:px-4 bg-brand text-white text-sm rounded hover:bg-brand-600 border border-brand-500">
-                                        Add Product
-                                    </button>
-                                    <button
-                                        class="px-2 py-2 lg:px-4 bg-transparent text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">
-                                        Save Product
-                                    </button>
-                                </div>
                             </div>
-                            <!--end card-body-->
+                            <!--end card-->
                         </div>
-                        <!--end card-->
-                    </div>
+                        <!--end col-->
+                        <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                            <div class="w-full relative mb-4">
+                                <div class="flex-auto p-0 md:p-4">
+                                    <div class="mb-2">
+                                        <label for="title"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Title</label>
+                                        <input type="title" id="title"
+                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
+                                            placeholder="Title" required 
+                                            name="name"/>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="category"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Category</label>
+                                        <select id="category"
+                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
+                                            <option class="dark:text-slate-700">
+                                                All Category
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Electronics
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Furniture
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Footwear
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Clothes
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="description"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Description</label>
+                                        <textarea id="description" rows="3"
+                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
+                                            placeholder="Description ..." 
+                                            name="desc"></textarea>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="col-span-1">
+                                                <label for="Product-date"
+                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Product
+                                                    Date</label>
+                                                <input type="text" id="Product-date"
+                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
+                                                     />
+                                            </div>
+                                            <div class="col-span-1">
+                                                <label for="price"
+                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Price</label>
+                                                <input type="title" id="price"
+                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
+                                                    placeholder="Price" required 
+                                                    name="price"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="gender"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">For this
+                                            product</label>
+                                        <select id="gender"
+                                            class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700">
+                                            <option class="dark:text-slate-700">
+                                                -- Gender --
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Male
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Female
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Children
+                                            </option>
+                                            <option class="dark:text-slate-700">
+                                                Other
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="sizing"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Size</label>
+                                        <select id="sizing"
+                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700">
+                                            <option>Size</option>
+                                            <option>SM</option>
+                                            <option>MD</option>
+                                            <option>LG</option>
+                                            <option>XL</option>
+                                            <option>XXL</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="">
+                                        <button
+                                            class="px-2 py-2 lg:px-4 bg-brand text-white text-sm rounded hover:bg-brand-600 border border-brand-500">
+                                            Add Product
+                                        </button>
+                                        <button
+                                            class="px-2 py-2 lg:px-4 bg-transparent text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">
+                                            Save Product
+                                        </button>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                    </form>
                     <!--end col-->
                     <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                         <div class="w-full relative mb-4">
@@ -282,15 +287,15 @@
 
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
-    <script src="{{asset('libs/lucide/umd/lucide.min.js')}}"></script>
-    <script src="{{asset('libs/simplebar/simplebar.min.js')}}"></script>
-    <script src="{{asset('libs/flatpickr/flatpickr.min.js')}}"></script>
-    <script src="{{asset('libs/@frostui/tailwindcss/frostui.js')}}"></script>
-    <script src="{{asset('libs/filepond/filepond.min.js')}}"></script>
-    <script src="{{asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js')}}"></script>
-    <script src="{{asset('libs/vanillajs-datepicker/js/datepicker-full.min.js')}}"></script>
-    <script src="{{asset('libs/mobius1-selectr/selectr.min.js')}}"></script>
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{ asset('libs/lucide/umd/lucide.min.js') }}"></script>
+    <script src="{{ asset('libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('libs/flatpickr/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('libs/@frostui/tailwindcss/frostui.js') }}"></script>
+    <script src="{{ asset('libs/filepond/filepond.min.js') }}"></script>
+    <script src="{{ asset('libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js') }}"></script>
+    <script src="{{ asset('libs/vanillajs-datepicker/js/datepicker-full.min.js') }}"></script>
+    <script src="{{ asset('libs/mobius1-selectr/selectr.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- JAVASCRIPTS -->
     <script>
         FilePond.registerPlugin(FilePondPluginImagePreview);
