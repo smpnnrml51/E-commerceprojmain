@@ -54,7 +54,7 @@ class CategoryController extends Controller
     {
         $data['title'] = 'Show Category';
         $data['status'] = Category::STATUS;
-        $data['category'] = $this->categoryRepository->getCategoryById($id);
+        $data['categories'] = $this->categoryRepository->getCategoryById($id);
 
         return view('product::category.show', $data);
     }
