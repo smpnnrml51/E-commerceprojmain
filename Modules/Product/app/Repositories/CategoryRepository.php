@@ -35,7 +35,7 @@ class CategoryRepository implements CategoryInterface
 
     public function pluck()
     {
-        return Category::pluck('name', 'id');
+        return Category::pluck('title', 'categories_id');
     }
 
 }
