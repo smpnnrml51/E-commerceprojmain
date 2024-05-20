@@ -124,15 +124,15 @@
                                             name="desc"></textarea>
                                     </div>
                                     <div class="mb-2">
-                                        <div class="grid grid-cols-2 gap-3">
-                                            <div class="col-span-1">
+                                        {{-- <div class="grid grid-cols-2 gap-3"> --}}
+                                            {{-- <div class="col-span-1">
                                                 <label for="Product-date"
                                                     class="font-medium text-sm text-slate-600 dark:text-slate-400">Product
                                                     Date</label>
                                                 <input type="text" id="Product-date"
                                                     class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
                                                      />
-                                            </div>
+                                            </div> --}}
                                             <div class="col-span-1">
                                                 <label for="price"
                                                     class="font-medium text-sm text-slate-600 dark:text-slate-400">Price</label>
@@ -141,9 +141,17 @@
                                                     placeholder="Price" required 
                                                     name="price"/>
                                             </div>
-                                        </div>
+                                        {{-- </div> --}}
                                     </div>
                                     <div class="mb-2">
+                                        <label for="title"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Quantity</label>
+                                        <input type="title" id="title"
+                                            class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
+                                            placeholder="Quantity" required 
+                                            name="qty"/>
+                                    </div>
+                                    {{-- <div class="mb-2">
                                         <label for="gender"
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">For this
                                             product</label>
@@ -178,7 +186,7 @@
                                             <option>XL</option>
                                             <option>XXL</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="">
                                         <button
@@ -233,7 +241,7 @@
                                         02/05/2023
                                     </h4>
                                 </div>
-                                <div class="mb-5">
+                                {{-- <div class="mb-5">
                                     <p class="text-slate-600 text-base dark:text-slate-400">
                                         For this product
                                     </p>
@@ -248,7 +256,7 @@
                                     <h4 class="text-base font-semibold text-slate-900 dark:text-slate-300">
                                         SM, MD, LG, XL
                                     </h4>
-                                </div>
+                                </div> --}}
                             </div>
                             <!--end card-body-->
                         </div>
