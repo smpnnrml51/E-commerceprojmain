@@ -34,6 +34,29 @@
                     </div>
                 </div>
             </div><!--end container-->
+            <div class="flex flex-wrap gap-4 mb-3">
+                <div class="ms-auto">
+                    <form>
+                        <div class="relative">
+                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                <i data-lucide="search" class="z-[1] w-5 h-5 stroke-slate-400"></i>
+                            </div>
+                            <input type="search" id="productSearch"
+                                class="form-input w-52 rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500  dark:hover:border-slate-700 pl-10 p-2.5"
+                                placeholder="search">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <a href="{{ route('category.create') }}">
+                        <button
+                            class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white  text-md font-medium py-2 px-4 rounded">
+                            Add Category
+                        </button>
+                    </a>
+                </div>
+            </div>
+
             <div id="myTabContent">
                 <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-900" id="all" role="tabpanel"
                     aria-labelledby="all-tab">
@@ -89,10 +112,19 @@
                                                     {{ $category->title }}
                                                 </td>
                                                 <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                    <a href="{{url('category/'.$category->categories_id.'/edit')}}"><i
+                                                    <a href="{{ url('category/' . $category->categories_id . '/edit') }}"><i
                                                             class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                    <a href="#"><i
-                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
+                                                    {{-- <a href="#"><i
+                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a> --}}
+                                                    <form action="{{ url('category/' . $category->categories_id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit">
+                                                            <i
+                                                                class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
