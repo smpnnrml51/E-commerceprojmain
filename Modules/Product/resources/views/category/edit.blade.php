@@ -59,7 +59,7 @@
             <!--end container-->
 
             <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
-                <form action="{{ route('category.update',$category->categories_id]) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('category.update',$category->categories_id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div
