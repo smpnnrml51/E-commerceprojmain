@@ -59,8 +59,9 @@
             <!--end container-->
 
             <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
-                <form action="{{ route('category.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('category.update',$category->categories_id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div
                         class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                         <!--end col-->

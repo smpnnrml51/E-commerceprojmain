@@ -11,6 +11,7 @@ class Category extends Model
     use StatusTrait;
 
     protected $table = 'tbl_categories';
+    protected $primaryKey = 'categories_id';
     protected $guarded = [];
     protected $appends = ['status_name'];
 

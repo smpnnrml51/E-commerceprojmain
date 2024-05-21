@@ -30,7 +30,7 @@ class CategoryRepository implements CategoryInterface
 
     public function update($CategoryId, array $newDetails)
     {
-        return Category::whereId($CategoryId)->update($newDetails);
+        return Category::where('categories_id', $CategoryId)->update($newDetails);
     }
 
     public function pluck()
