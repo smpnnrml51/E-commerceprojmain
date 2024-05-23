@@ -127,530 +127,72 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach ($products as $product)
                                                             <!-- 1 -->
                                                             <tr
                                                                 class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                 <td class="w-4 p-4">
                                                                     <label class="custom-label">
                                                                         <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
+                                                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
+                                                                        <input type="checkbox" class="hidden">
+                                                                        <i
+                                                                        class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
+                                                                    </div>
+                                                                </label>
+                                                            </td>
                                                                 <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
+                                                                class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                                                <div class="flex items-center">
                                                                         <img src="assets/images/products/02.png"
                                                                             alt="" class="me-2 h-8 inline-block">
                                                                         <div class="self-center">
                                                                             <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                New Colorfull Shoes </h5>
-                                                                            <span
+                                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                                {{$product->name}}</h5>
+                                                                            {{-- <span
                                                                                 class="block  font-medium text-slate-500">Size-04-15
-                                                                                (Model 2023)</span>
+                                                                                (Model 2023)</span> --}}
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                                 <td
                                                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                     <a href="#"
-                                                                        class="text-brand-500 underline">Footwear</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Lifestayle</a>
+                                                                        class="text-brand-500 underline">{{$product->category_id}}</a>,
+                                                                    {{-- <a href="#"
+                                                                    class="text-brand-500 underline">Lifestayle</a> --}}
                                                                 </td>
                                                                 <td
                                                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
+                                                                    <div class="self-center">
+                                                                        <h5
+                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                            {{$product->stock}}</h5>
+                                                                    </div>
                                                                 </td>
                                                                 <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $99 <del class="text-slate-500 font-normal">$130</del>
+                                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
+                                                                    ${{$product->price}}
+                                                                    {{-- <del class="text-slate-500 font-normal">{{$product->price}}</del> --}}
                                                                 </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
+                                                                <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                    <a href="{{ url('product/' . $product->products_id . '/edit') }}"><i
                                                                             class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!-- 2 -->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
+                                                                    {{-- <a href="#"><i
+                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a> --}}
+                                                                    <form action="{{ url('product/' . $product->products_id) }}"
+                                                                        method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button type="submit">
                                                                             <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/03.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Imported VR Box </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">35px
-                                                                                5D (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Entertainment</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Electronics</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $129 <del class="text-slate-500 font-normal">$200</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
+                                                                                class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i>
+                                                                        </button>
+                                                                    </form>
                                                                 </td>
                                                             </tr>
-                                                            <!-- 3 -->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-3.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Mannat HD, Smart LED Fire TV </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">32
-                                                                                inc (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Electronics</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Entertainment</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-red-600/5 text-red-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">Soldout</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $399 <del class="text-slate-500 font-normal">$499</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!-- 4 -->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-4.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Mannat 530 Bluetooth Wireless </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Size-M
-                                                                                (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Footwear</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Lifestayle</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $79 <del class="text-slate-500 font-normal">$99</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--5-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-5.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Mannat Watch 3 Active </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Latest
-                                                                                Model 2023</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Fashion</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Lifestayle</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $219 <del class="text-slate-500 font-normal">$299</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--6-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-6.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Mannat Watch 3 Active </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Latest
-                                                                                Model 2023</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Fashion</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Lifestayle</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $219 <del class="text-slate-500 font-normal">$299</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--7-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/01.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                White Table Camera</h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">256px,
-                                                                                301px (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Electronics</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Security</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-red-600/5 text-red-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">Soldout</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $99 <del class="text-slate-500 font-normal">$150</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--8-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-7.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Mannat Air 2023 Laptop</h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Size-
-                                                                                13.3 Inch (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Electronics</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $499 <del class="text-slate-500 font-normal">$599</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--9-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/pro-1.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                New Colorfull Shoes </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Size-04-15
-                                                                                (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Footwear</a>,
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Lifestayle</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $99 <del class="text-slate-500 font-normal">$130</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <!--10-->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                            class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                            <input type="checkbox" class="hidden">
-                                                                            <i
-                                                                                class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                        </div>
-                                                                    </label>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                    <div class="flex items-center">
-                                                                        <img src="assets/images/products/04.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                N95 Mask </h5>
-                                                                            <span
-                                                                                class="block  font-medium text-slate-500">Size-04-15
-                                                                                (Model 2023)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">Safety</a>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <span
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">In
-                                                                        stock</span>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    $8 <del class="text-slate-500 font-normal">$15</del>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    <a href="#"><i
-                                                                            class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                </td>
-                                                            </tr>
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div><!--end div-->
