@@ -321,7 +321,4 @@
             tagSeperators: [",", "|"],
         });
     </script>
-    </body>
-
-    </html>
 @endsection

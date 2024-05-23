@@ -58,28 +58,30 @@
             </div>
             <!--end container-->
             <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
-                <form action="{{ route('product.update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('product.update',$product->products_id) }}" method="PUT" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                 <div
                     class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                         <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                             <div class="w-full relative p-4">
+                                {{-- @foreach (explode('|',$product->filepond) as $image) --}}
+                                    
                                 <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
                                     Image</label>
-                                <div class="w-full h-56 mx-auto mb-4">
-                                    <input type="file" class="filepond h-56" name="filepond[]"
-                                        accept="image/png, image/jpeg, image/gif" value=""/>
-                                </div>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <div class="col-span-1">
-                                        <input type="file" class="filepond" name="filepond[]" value=""/>
+                                    <div class="w-full h-56 mx-auto mb-4">
+                                        <input type="file" class="filepond h-56" name="filepond[]"
+                                        accept="image/png, image/jpeg, image/gif" value="{{$product->filepond}}"/>
                                     </div>
-                                    <div class="col-span-1">
-                                        <input type="file" class="filepond" name="filepond[]" value=""/>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div class="col-span-1">
+                                            <input type="file" class="filepond" name="filepond[]" value=""/>
+                                        </div>
+                                        <div class="col-span-1">
+                                            <input type="file" class="filepond" name="filepond[]" value=""/>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             <!--end card-->
                         </div>
                         <!--end col-->
@@ -93,7 +95,7 @@
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
                                             placeholder="Title" required 
                                             name="name"
-                                            value=""/>
+                                            value="{{$product->name}}"/>
                                     </div>
                                     <div class="mb-2">
                                         <label for="category"
@@ -123,7 +125,7 @@
                                         <textarea id="description" rows="3"
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
                                             placeholder="Description ..." 
-                                            name="desc"></textarea>
+                                            name="desc">{{$product->desc}}</textarea>
                                     </div>
                                     <div class="mb-2">
                                         {{-- <div class="grid grid-cols-2 gap-3"> --}}
@@ -142,7 +144,7 @@
                                                     class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
                                                     placeholder="Price" required 
                                                     name="price"
-                                                    value=""/>
+                                                    value="{{$product->price}}"/>
                                             </div>
                                         {{-- </div> --}}
                                     </div>
@@ -315,9 +317,11 @@
         const inputElement =
             document.querySelectorAll('input[type="file"]');
 
-        // Create a FilePond instance
+
         inputElement.forEach((element) => {
-            const pond = FilePond.create(element);
+            const pond = FilePond.create(element,{
+                storeAsFile : true
+            });
         });
 
         var elem = document.querySelector('input[name="foo"]');
@@ -329,7 +333,4 @@
             tagSeperators: [",", "|"],
         });
     </script>
-    </body>
-
-    </html>
 @endsection
