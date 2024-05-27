@@ -65,22 +65,22 @@
                     class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                         <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                             <div class="w-full relative p-4">
-                                {{-- @foreach (explode('|',$product->filepond) as $image) --}}
-                                    
+                                @foreach (explode('|',$product->filepond) as $image)
                                 <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
                                     Image</label>
                                     <div class="w-full h-56 mx-auto mb-4">
                                         <input type="file" class="filepond h-56" name="filepond[]"
-                                        accept="image/png, image/jpeg, image/gif" value="{{$product->filepond}}"/>
+                                        accept="image/png, image/jpeg, image/gif" data-filepond-initial-file="{{ asset('storage/' . $image) }}" />
                                     </div>
-                                    <div class="grid grid-cols-2 gap-2">
+                                @endforeach
+                                    {{-- <div class="grid grid-cols-2 gap-2">
                                         <div class="col-span-1">
                                             <input type="file" class="filepond" name="filepond[]" value=""/>
                                         </div>
                                         <div class="col-span-1">
                                             <input type="file" class="filepond" name="filepond[]" value=""/>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             <!--end card-->
                         </div>
@@ -98,25 +98,17 @@
                                             value="{{$product->name}}"/>
                                     </div>
                                     <div class="mb-2">
-                                        <label for="category"
+                                        <label for="category" name="category_id" 
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400" >Category</label>
                                         <select id="category"
                                             class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
-                                            <option class="dark:text-slate-700">
-                                                All Category
+                                            @foreach ($categories as $id => $title)
+                                                                                        
+                                            <option class="dark:text-slate-700" value="{{$id}}">
+                                                {{$title}}
                                             </option>
-                                            <option class="dark:text-slate-700">
-                                                Electronics
-                                            </option>
-                                            <option class="dark:text-slate-700">
-                                                Furniture
-                                            </option>
-                                            <option class="dark:text-slate-700">
-                                                Footwear
-                                            </option>
-                                            <option class="dark:text-slate-700">
-                                                Clothes
-                                            </option>
+                                            
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="mb-2">
@@ -155,7 +147,7 @@
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
                                             placeholder="Quantity" required 
                                             name="qty"
-                                            value=""/>
+                                            value="{{$product->qty}}"/>
                                     </div>
                                     {{-- <div class="mb-2">
                                         <label for="gender"
@@ -320,10 +312,21 @@
 
         inputElement.forEach((element) => {
             const pond = FilePond.create(element,{
-                storeAsFile : true
-            });
-        });
+                storeAsFile : true,
+                allowMultiple: true,
+                allowImagePreview: true,
+                imagePreviewHeight: 200,
+                imagePreviewWidth: 200,
 
+            });
+            const initialFile = element.getAttribute('data-filepond-initial-file');
+            if (initialFile) {
+                pond.addFile(initialFile);
+            }
+
+        });
+        
+        
         var elem = document.querySelector('input[name="foo"]');
         new Datepicker(elem, {
             // ...options

@@ -93,15 +93,20 @@
                                     <div class="mb-2">
                                         <label for="category"
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">Category</label>
-                                        <select id="category"
+                                        <select id="category" name="category_id" 
                                             class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
                                             <option class="dark:text-slate-700">
                                                 All Category
                                             </option>
-                                            <option class="dark:text-slate-700">
-                                                Electronics
+                                            @foreach ($categories as $id => $title)
+                                                                                        
+                                            <option class="dark:text-slate-700" value="{{$id}}">
+                                                {{$title}}
                                             </option>
-                                            <option class="dark:text-slate-700">
+                                            
+                                            @endforeach
+
+                                            {{-- <option class="dark:text-slate-700">
                                                 Furniture
                                             </option>
                                             <option class="dark:text-slate-700">
@@ -109,7 +114,7 @@
                                             </option>
                                             <option class="dark:text-slate-700">
                                                 Clothes
-                                            </option>
+                                            </option> --}}
                                         </select>
                                     </div>
                                     <div class="mb-2">
