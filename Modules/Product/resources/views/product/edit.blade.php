@@ -65,17 +65,20 @@
                         class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                         <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                             <div class="w-full relative p-4">
-                                <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload Image</label>
+                                <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
+                                    Image</label>
                                 <div class="w-full h-56 mx-auto mb-4">
                                     <input type="file" class="filepond h-56" name="filepond[]"
-                                    accept="image/png, image/jpeg, image/gif" data-filepond-initial-file="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" />
+                                        accept="image/png, image/jpeg, image/gif"
+                                        data-filepond-initial-file="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" />
                                 </div>
                                 <div class="grid grid-cols-2 gap-2">
                                     @foreach (array_slice(explode('|', $product->filepond), 1) as $image)
-                                    <div class="col-span-1">
-                                        <input type="file" class="filepond" name="filepond[]"
-                                        accept="image/png, image/jpeg, image/gif" data-filepond-initial-file="{{ asset('storage/' . $image) }}" />
-                                    </div>
+                                        <div class="col-span-1">
+                                            <input type="file" class="filepond" name="filepond[]"
+                                                accept="image/png, image/jpeg, image/gif"
+                                                data-filepond-initial-file="{{ asset('storage/' . $image) }}" />
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -135,7 +138,8 @@
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">Quantity</label>
                                         <input type="title" id="title"
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                            placeholder="Quantity" required name="qty" value="{{ $product->qty }}" />
+                                            placeholder="Quantity" required name="qty"
+                                            value="{{ $product->qty }}" />
                                     </div>
                                     {{-- <div class="mb-2">
                                         <label for="gender"
