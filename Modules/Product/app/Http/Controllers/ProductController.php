@@ -84,7 +84,6 @@ class ProductController extends Controller
     {
         $inputData = $request->except(['_method', '_token']);
         $this->productRepository->update($id, $inputData);
-
         return redirect()->route('product.index');
     }
 

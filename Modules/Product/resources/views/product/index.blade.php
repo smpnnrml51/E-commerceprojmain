@@ -159,7 +159,7 @@
                                                                     <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         <a href="#"
-                                                                            class="text-brand-500 underline">{{ $product->category_id }}</a>,
+                                                                            class="text-brand-500 underline">{{ $product->category->title }}</a>,
                                                                         {{-- <a href="#"
                                                                     class="text-brand-500 underline">Lifestayle</a> --}}
                                                                     </td>
@@ -247,13 +247,4 @@
             </div><!--end div-->
         </div><!--end grid-->
     </div>
-    </div>
-    </div><!--end card-body-->
-    </div><!--end card-->
-    </div><!--end col-->
-    </div> <!--end grid-->
-    <!-- footer -->
-    </div><!--end container-->
-    </div><!--end page-wrapper-->
-    </div><!--end /div-->
 @endsection
