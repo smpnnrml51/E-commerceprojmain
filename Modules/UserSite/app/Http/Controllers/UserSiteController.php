@@ -14,7 +14,7 @@ class UserSiteController extends Controller
      */
     public function index()
     {
-        return view('usersite::index');
+        return view('usersite::home.index');
     }
 
     /**
