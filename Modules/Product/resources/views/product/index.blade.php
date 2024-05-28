@@ -50,7 +50,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="flex flex-wrap gap-4 mb-3">
                                     <div class="mb-2 w-44">
                                         <select id="Category"
@@ -76,15 +76,14 @@
                                         </form>
                                     </div>
                                     <div>
-                                        <button
-                                            class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white text-md font-medium py-2 px-4 rounded">
-                                            Add product
-                                        </button>
+                                        <a href="{{ route('product.create') }}">
+                                            <button
+                                                class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white text-md font-medium py-2 px-4 rounded">
+                                                Add product
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-                                
-
-
                                 <div id="myTabContent">
                                     <div class="active  p-4 bg-gray-50 rounded-lg dark:bg-gray-900" id="all"
                                         role="tabpanel" aria-labelledby="all-tab">
@@ -128,70 +127,74 @@
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($products as $product)
-                                                            <!-- 1 -->
-                                                            <tr
-                                                                class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                                <td class="w-4 p-4">
-                                                                    <label class="custom-label">
-                                                                        <div
-                                                                        class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
-                                                                        <input type="checkbox" class="hidden">
-                                                                        <i
-                                                                        class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
-                                                                    </div>
-                                                                </label>
-                                                            </td>
-                                                                <td
-                                                                class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                <div class="flex items-center">
-                                                                        <img src="assets/images/products/02.png"
-                                                                            alt="" class="me-2 h-8 inline-block">
-                                                                        <div class="self-center">
-                                                                            <h5
-                                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                {{$product->name}}</h5>
-                                                                            {{-- <span
+                                                                <!-- 1 -->
+                                                                <tr
+                                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                                                    <td class="w-4 p-4">
+                                                                        <label class="custom-label">
+                                                                            <div
+                                                                                class="bg-white dark:bg-slate-600/40 border border-slate-200 dark:border-slate-600 rounded w-5 h-5  inline-block  text-center -mb-[5px]">
+                                                                                <input type="checkbox" class="hidden">
+                                                                                <i
+                                                                                    class="icofont-verification-check hidden text-ms text-brand-500 dark:text-slate-200 leading-5"></i>
+                                                                            </div>
+                                                                        </label>
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
+                                                                        <div class="flex items-center">
+                                                                            <img src="assets/images/products/02.png"
+                                                                                alt=""
+                                                                                class="me-2 h-8 inline-block">
+                                                                            <div class="self-center">
+                                                                                <h5
+                                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                                    {{ $product->name }}</h5>
+                                                                                {{-- <span
                                                                                 class="block  font-medium text-slate-500">Size-04-15
                                                                                 (Model 2023)</span> --}}
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="#"
-                                                                        class="text-brand-500 underline">{{$product->category_id}}</a>,
-                                                                    {{-- <a href="#"
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                        <a href="#"
+                                                                            class="text-brand-500 underline">{{ $product->category_id }}</a>,
+                                                                        {{-- <a href="#"
                                                                     class="text-brand-500 underline">Lifestayle</a> --}}
-                                                                </td>
-                                                                <td
-                                                                    class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <div class="self-center">
-                                                                        <h5
-                                                                        class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                            {{$product->stock}}</h5>
-                                                                    </div>
-                                                                </td>
-                                                                <td
-                                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                    ${{$product->price}}
-                                                                    {{-- <del class="text-slate-500 font-normal">{{$product->price}}</del> --}}
-                                                                </td>
-                                                                <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    <a href="{{ url('product/' . $product->products_id . '/edit') }}"><i
-                                                                            class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
-                                                                    {{-- <a href="#"><i
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                        <div class="self-center">
+                                                                            <h5
+                                                                                class="text-sm font-semibold text-slate-700 dark:text-gray-400">
+                                                                                {{ $product->stock }}</h5>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
+                                                                        ${{ $product->price }}
+                                                                        {{-- <del class="text-slate-500 font-normal">{{$product->price}}</del> --}}
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                        <a
+                                                                            href="{{ url('product/' . $product->products_id . '/edit') }}"><i
+                                                                                class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
+                                                                        {{-- <a href="#"><i
                                                                             class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a> --}}
-                                                                    <form action="{{ url('product/' . $product->products_id) }}"
-                                                                        method="POST">
-                                                                        @csrf
-                                                                        @method('DELETE')
-                                                                        <button type="submit">
-                                                                            <i
-                                                                                class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                </td>
-                                                            </tr>
+                                                                        <form
+                                                                            action="{{ url('product/' . $product->products_id) }}"
+                                                                            method="POST">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            <button type="submit">
+                                                                                <i
+                                                                                    class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i>
+                                                                            </button>
+                                                                        </form>
+                                                                    </td>
+                                                                </tr>
                                                             @endforeach
                                                         </tbody>
                                                     </table>
@@ -232,25 +235,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                                        </tbody>
-                                                    </table>
-                                                </div><!--end div-->
-                                            </div><!--end div-->
-                                        </div><!--end grid-->
-                                    </div>
-                                                        </tbody>
-                                                    </table>
-                                                </div><!--end div-->
-                                            </div><!--end div-->
-                                        </div><!--end grid-->
-                                    </div>
-                                </div>
-                            </div><!--end card-body-->
-                        </div><!--end card-->
-                    </div><!--end col-->
-                </div> <!--end grid-->
-                <!-- footer -->
-            </div><!--end container-->
-        </div><!--end page-wrapper-->
+                                    </tbody>
+                                    </table>
+                                </div><!--end div-->
+                            </div><!--end div-->
+                        </div><!--end grid-->
+                    </div>
+                    </tbody>
+                    </table>
+                </div><!--end div-->
+            </div><!--end div-->
+        </div><!--end grid-->
+    </div>
+    </div>
+    </div><!--end card-body-->
+    </div><!--end card-->
+    </div><!--end col-->
+    </div> <!--end grid-->
+    <!-- footer -->
+    </div><!--end container-->
+    </div><!--end page-wrapper-->
     </div><!--end /div-->
 @endsection
