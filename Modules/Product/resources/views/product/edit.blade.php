@@ -46,8 +46,7 @@
                                         <div
                                             class="today-date leading-5 mt-2 lg:mt-0 form-input w-auto rounded-md border inline-block border-primary-500/60 dark:border-primary-500/60 text-primary-500 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
                                             <input type="text"
-                                                class="dash_date border-0 focus:border-0 focus:outline-none" readonly
-                                                 />
+                                                class="dash_date border-0 focus:border-0 focus:outline-none" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -58,31 +57,28 @@
             </div>
             <!--end container-->
             <div class="xl:w-full min-h-[calc(100vh-138px)] relative pb-14">
-                <form action="{{ route('product.update',$product->products_id) }}" method="PUT" enctype="multipart/form-data">
+                <form action="{{ route('product.update', $product->products_id) }}" method="PUT"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                <div
-                    class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
+                    <div
+                        class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 justify-between">
                         <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                             <div class="w-full relative p-4">
-                                @foreach (explode('|',$product->filepond) as $image)
-                                <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload
-                                    Image</label>
-                                    <div class="w-full h-56 mx-auto mb-4">
-                                        <input type="file" class="filepond h-56" name="filepond[]"
+                                <label for="" class="font-medium text-sm text-slate-600 dark:text-slate-400">Upload Image</label>
+                                <div class="w-full h-56 mx-auto mb-4">
+                                    <input type="file" class="filepond h-56" name="filepond[]"
+                                    accept="image/png, image/jpeg, image/gif" data-filepond-initial-file="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" />
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    @foreach (array_slice(explode('|', $product->filepond), 1) as $image)
+                                    <div class="col-span-1">
+                                        <input type="file" class="filepond" name="filepond[]"
                                         accept="image/png, image/jpeg, image/gif" data-filepond-initial-file="{{ asset('storage/' . $image) }}" />
                                     </div>
-                                @endforeach
-                                    {{-- <div class="grid grid-cols-2 gap-2">
-                                        <div class="col-span-1">
-                                            <input type="file" class="filepond" name="filepond[]" value=""/>
-                                        </div>
-                                        <div class="col-span-1">
-                                            <input type="file" class="filepond" name="filepond[]" value=""/>
-                                        </div>
-                                    </div> --}}
+                                    @endforeach
                                 </div>
-                            <!--end card-->
+                            </div>
                         </div>
                         <!--end col-->
                         <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
@@ -93,21 +89,17 @@
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">Title</label>
                                         <input type="title" id="title"
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                            placeholder="Title" required 
-                                            name="name"
-                                            value="{{$product->name}}"/>
+                                            placeholder="Title" required name="name" value="{{ $product->name }}" />
                                     </div>
                                     <div class="mb-2">
-                                        <label for="category" name="category_id" 
-                                            class="font-medium text-sm text-slate-600 dark:text-slate-400" >Category</label>
+                                        <label for="category" name="category_id"
+                                            class="font-medium text-sm text-slate-600 dark:text-slate-400">Category</label>
                                         <select id="category"
                                             class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700">
                                             @foreach ($categories as $id => $title)
-                                                                                        
-                                            <option class="dark:text-slate-700" value="{{$id}}">
-                                                {{$title}}
-                                            </option>
-                                            
+                                                <option class="dark:text-slate-700" value="{{ $id }}">
+                                                    {{ $title }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -116,12 +108,11 @@
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">Description</label>
                                         <textarea id="description" rows="3"
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-1 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
-                                            placeholder="Description ..." 
-                                            name="desc">{{$product->desc}}</textarea>
+                                            placeholder="Description ..." name="desc">{{ $product->desc }}</textarea>
                                     </div>
                                     <div class="mb-2">
                                         {{-- <div class="grid grid-cols-2 gap-3"> --}}
-                                            {{-- <div class="col-span-1">
+                                        {{-- <div class="col-span-1">
                                                 <label for="Product-date"
                                                     class="font-medium text-sm text-slate-600 dark:text-slate-400">Product
                                                     Date</label>
@@ -129,15 +120,14 @@
                                                     class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-primary-500 dark:focus:border-primary-500 dark:hover:border-slate-700"
                                                      />
                                             </div> --}}
-                                            <div class="col-span-1">
-                                                <label for="price"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Price</label>
-                                                <input type="title" id="price"
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                                    placeholder="Price" required 
-                                                    name="price"
-                                                    value="{{$product->price}}"/>
-                                            </div>
+                                        <div class="col-span-1">
+                                            <label for="price"
+                                                class="font-medium text-sm text-slate-600 dark:text-slate-400">Price</label>
+                                            <input type="title" id="price"
+                                                class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
+                                                placeholder="Price" required name="price"
+                                                value="{{ $product->price }}" />
+                                        </div>
                                         {{-- </div> --}}
                                     </div>
                                     <div class="mb-2">
@@ -145,9 +135,7 @@
                                             class="font-medium text-sm text-slate-600 dark:text-slate-400">Quantity</label>
                                         <input type="title" id="title"
                                             class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500 dark:hover:border-slate-700"
-                                            placeholder="Quantity" required 
-                                            name="qty"
-                                            value="{{$product->qty}}"/>
+                                            placeholder="Quantity" required name="qty" value="{{ $product->qty }}" />
                                     </div>
                                     {{-- <div class="mb-2">
                                         <label for="gender"
@@ -201,45 +189,45 @@
                             </div>
                             <!--end card-->
                         </div>
-                    </form>
-                    <!--end col-->
-                    <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
-                        <div class="w-full relative mb-4">
-                            <div class="flex-auto p-0 md:p-4">
-                                <div>
-                                    <p class="text-slate-700 text-base dark:text-slate-400">
-                                        Product Image
-                                    </p>
-                                    <img src="assets/images/products/pro-3.png" alt="" class="w-full h-auto" />
-                                </div>
-                                <div class="mb-5">
-                                    <p class="text-slate-700 text-base dark:text-slate-400">
-                                        Product Title
-                                    </p>
-                                    <h4 class="text-xl font-semibold text-slate-700 dark:text-slate-300">
-                                        Mannat HD, Smart LED Fire TV
-                                    </h4>
-                                </div>
-                                <div class="mb-5">
-                                    <p class="text-slate-600 text-base dark:text-slate-400">
-                                        Description
-                                    </p>
-                                    <h4 class="text-base font-medium text-slate-900 dark:text-slate-300">
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when
-                                        looking at its layout.
-                                    </h4>
-                                </div>
-                                <div class="mb-5">
-                                    <p class="text-slate-600 text-base dark:text-slate-400">
-                                        Pro. Date
-                                    </p>
-                                    <h4 class="text-base font-semibold text-slate-900 dark:text-slate-300">
-                                        02/05/2023
-                                    </h4>
-                                </div>
-                                {{-- <div class="mb-5">
+                </form>
+                <!--end col-->
+                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
+                    <div class="w-full relative mb-4">
+                        <div class="flex-auto p-0 md:p-4">
+                            <div>
+                                <p class="text-slate-700 text-base dark:text-slate-400">
+                                    Product Image
+                                </p>
+                                <img src="assets/images/products/pro-3.png" alt="" class="w-full h-auto" />
+                            </div>
+                            <div class="mb-5">
+                                <p class="text-slate-700 text-base dark:text-slate-400">
+                                    Product Title
+                                </p>
+                                <h4 class="text-xl font-semibold text-slate-700 dark:text-slate-300">
+                                    Mannat HD, Smart LED Fire TV
+                                </h4>
+                            </div>
+                            <div class="mb-5">
+                                <p class="text-slate-600 text-base dark:text-slate-400">
+                                    Description
+                                </p>
+                                <h4 class="text-base font-medium text-slate-900 dark:text-slate-300">
+                                    It is a long established fact that a
+                                    reader will be distracted by the
+                                    readable content of a page when
+                                    looking at its layout.
+                                </h4>
+                            </div>
+                            <div class="mb-5">
+                                <p class="text-slate-600 text-base dark:text-slate-400">
+                                    Pro. Date
+                                </p>
+                                <h4 class="text-base font-semibold text-slate-900 dark:text-slate-300">
+                                    02/05/2023
+                                </h4>
+                            </div>
+                            {{-- <div class="mb-5">
                                     <p class="text-slate-600 text-base dark:text-slate-400">
                                         For this product
                                     </p>
@@ -255,16 +243,16 @@
                                         SM, MD, LG, XL
                                     </h4>
                                 </div> --}}
-                            </div>
-                            <!--end card-body-->
                         </div>
-                        <!--end card-->
+                        <!--end card-body-->
                     </div>
-                    <!--end col-->
+                    <!--end card-->
                 </div>
-                <!--end grid-->
-                <!-- footer -->
-                {{-- <div
+                <!--end col-->
+            </div>
+            <!--end grid-->
+            <!-- footer -->
+            {{-- <div
                     class="absolute bottom-0 -left-4 -right-4 block print:hidden border-t p-4 h-[52px] dark:border-slate-700/40">
                     <div class="container">
                         <!-- Footer Start -->
@@ -284,10 +272,10 @@
                         <!-- end Footer -->
                     </div>
                 </div> --}}
-            </div>
-            <!--end container-->
         </div>
-        <!--end page-wrapper-->
+        <!--end container-->
+    </div>
+    <!--end page-wrapper-->
     </div>
     <!--end /div-->
 
@@ -311,8 +299,8 @@
 
 
         inputElement.forEach((element) => {
-            const pond = FilePond.create(element,{
-                storeAsFile : true,
+            const pond = FilePond.create(element, {
+                storeAsFile: true,
                 allowMultiple: true,
                 allowImagePreview: true,
                 imagePreviewHeight: 200,
@@ -325,8 +313,8 @@
             }
 
         });
-        
-        
+
+
         var elem = document.querySelector('input[name="foo"]');
         new Datepicker(elem, {
             // ...options
