@@ -1,20 +1,20 @@
 <?php
 
-namespace Modules\Customer\Http\Controllers;
+namespace Modules\Order\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class CustomerController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('customer::customer.list');
+        return view('order::index');
     }
 
     /**
@@ -22,7 +22,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customer::create');
+        return view('order::create');
     }
 
     /**
@@ -38,7 +38,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        return view('customer::show');
+        return view('order::show');
     }
 
     /**
@@ -46,7 +46,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        return view('customer::edit');
+        return view('order::edit');
     }
 
     /**
