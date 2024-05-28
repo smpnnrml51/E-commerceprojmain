@@ -143,9 +143,7 @@
                                                                     <td
                                                                         class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                                         <div class="flex items-center">
-                                                                            <img src="assets/images/products/02.png"
-                                                                                alt=""
-                                                                                class="me-2 h-8 inline-block">
+                                                                            <img class="me-2 h-8 inline-block" src="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" alt="Product Image">
                                                                             <div class="self-center">
                                                                                 <h5
                                                                                     class="text-sm font-semibold text-slate-700 dark:text-gray-400">

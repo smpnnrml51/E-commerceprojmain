@@ -125,6 +125,10 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
             'Modules\\Product\\Database\\Seeders\\' => 33,
             'Modules\\Product\\Database\\Factories\\' => 35,
             'Modules\\Product\\' => 16,
+            'Modules\\Order\\Tests\\' => 20,
+            'Modules\\Order\\Database\\Seeders\\' => 31,
+            'Modules\\Order\\Database\\Factories\\' => 33,
+            'Modules\\Order\\' => 14,
             'Modules\\Customer\\Tests\\' => 23,
             'Modules\\Customer\\Database\\Seeders\\' => 34,
             'Modules\\Customer\\Database\\Factories\\' => 36,
@@ -436,6 +440,22 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'Modules\\Product\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Modules/Product/app',
+        ),
+        'Modules\\Order\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules/Order/tests',
+        ),
+        'Modules\\Order\\Database\\Seeders\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules/Order/database/seeders',
+        ),
+        'Modules\\Order\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules/Order/database/factories',
+        ),
+        'Modules\\Order\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules/Order/app',
         ),
         'Modules\\Customer\\Tests\\' => 
         array (
@@ -3438,6 +3458,11 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'Modules\\Customer\\Providers\\CustomerServiceProvider' => __DIR__ . '/../..' . '/Modules/Customer/app/Providers/CustomerServiceProvider.php',
         'Modules\\Customer\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/Modules/Customer/app/Providers/EventServiceProvider.php',
         'Modules\\Customer\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Customer/app/Providers/RouteServiceProvider.php',
+        'Modules\\Order\\Database\\Seeders\\OrderDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Order/database/seeders/OrderDatabaseSeeder.php',
+        'Modules\\Order\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/Modules/Order/app/Http/Controllers/OrderController.php',
+        'Modules\\Order\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/Modules/Order/app/Providers/EventServiceProvider.php',
+        'Modules\\Order\\Providers\\OrderServiceProvider' => __DIR__ . '/../..' . '/Modules/Order/app/Providers/OrderServiceProvider.php',
+        'Modules\\Order\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/Modules/Order/app/Providers/RouteServiceProvider.php',
         'Modules\\Product\\Database\\Seeders\\ProductDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Product/database/seeders/ProductDatabaseSeeder.php',
         'Modules\\Product\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/Modules/Product/app/Http/Controllers/CategoryController.php',
         'Modules\\Product\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/Modules/Product/app/Http/Controllers/ProductController.php',
