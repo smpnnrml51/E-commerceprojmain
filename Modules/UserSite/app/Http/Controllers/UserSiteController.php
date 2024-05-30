@@ -6,15 +6,29 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Product\Repositories\CategoryRepository;
+use Modules\Product\Repositories\ProductRepository;
+
 
 class UserSiteController extends Controller
 {
+    private $productRepository;
+    private $categoryRepository;
     /**
      * Display a listing of the resource.
      */
+    public function __construct(
+        ProductRepository $productRepository,
+        CategoryRepository $categoryRepository) {
+        $this->productRepository = $productRepository;
+        $this->categoryRepository = $categoryRepository;
+        }
+
     public function index()
     {
-        return view('usersite::home.index');
+        $data['title'] = 'Products List';
+        $data['products'] = $this->productRepository->findAll();
+        return view('usersite::home.index', $data);
     }
 
     /**
@@ -22,6 +36,7 @@ class UserSiteController extends Controller
      */
     public function create()
     {
+        
         return view('usersite::create');
     }
 
