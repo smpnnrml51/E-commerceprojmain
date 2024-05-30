@@ -92,7 +92,7 @@
                                                 <button type="button"
                                                     class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
                                                         class="ti ti-shopping-cart"></i> Add to cart</button>
-                                                <a href="{{url('order')}}"><button type="button"
+                                                <a href="{{route('order.show',$product->products_id)}}"><button type="button"
                                                     class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
                                                         class="ti ti-shopping-cart"></i>buy</button></a>
                                             </div>

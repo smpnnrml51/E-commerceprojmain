@@ -1,5 +1,6 @@
 <?php
 
+use Modules\Order\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 use Modules\Order\Http\Controllers\OrderController;
 
@@ -16,4 +17,9 @@ use Modules\Order\Http\Controllers\OrderController;
 
 Route::group([], function () {
     Route::resource('order', OrderController::class)->names('order');
+});
+
+Route::controller(StripePaymentController::class)->group(function(){
+    Route::get('stripe', 'index');
+    Route::post('stripe', 'stripe')->name('stripe.post');
 });

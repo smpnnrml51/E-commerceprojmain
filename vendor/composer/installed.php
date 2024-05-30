@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'c177d4cee33bff6b46d73e1021e587201312f2e0',
+        'reference' => '020d1c7692c5c2937294d99435a4b635037ecbb6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -382,7 +382,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'c177d4cee33bff6b46d73e1021e587201312f2e0',
+            'reference' => '020d1c7692c5c2937294d99435a4b635037ecbb6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -994,6 +994,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'stripe/stripe-php' => array(
+            'pretty_version' => 'v14.9.0',
+            'version' => '14.9.0.0',
+            'reference' => '7165f64ec1b19cb0ce288d553909cd68d8e6a3b1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stripe/stripe-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/clock' => array(
             'pretty_version' => 'v7.0.7',

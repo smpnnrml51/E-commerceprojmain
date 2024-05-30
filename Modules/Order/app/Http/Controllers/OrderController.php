@@ -6,9 +6,25 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Product\Models\Category;
+use Modules\Product\Repositories\CategoryRepository;
+use Modules\Product\Repositories\ProductRepository;
+use Modules\Product\Models\Product;
 
 class OrderController extends Controller
 {
+    private $productRepository;
+    private $categoryRepository;
+    /**
+     * Display a listing of the resource.
+     */
+    public function __construct(
+        ProductRepository $productRepository,
+        CategoryRepository $categoryRepository
+    ) {
+        $this->productRepository = $productRepository;
+        $this->categoryRepository = $categoryRepository;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -38,7 +54,8 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        return view('order::show');
+        $data['product'] = $this->productRepository->getProductById($id);
+        return view('order::stripe',$data);
     }
 
     /**
