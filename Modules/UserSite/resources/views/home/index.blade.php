@@ -227,10 +227,10 @@
                                         class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
                                         <div class="flex-auto  text-center">
                                             <div class="flex-auto text-center bg-gray-100">
-                                                <span
+                                                {{-- <span
                                                     class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                                    off</span>
-                                                <a href="{{ url('usersite/' . $product->products_id) }}">
+                                                    off</span> --}}
+                                                <a href="{{route('usersite.show',$product->products_id)}}">
                                                     <img src="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}"
                                                         alt="Product Image"
                                                         class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
@@ -238,7 +238,7 @@
                                             </div>
                                             <div class="flex-auto  text-center p-4">
                                                 <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $product->category->title }}</span>
+                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">hello world</span>
                                                 <a href="ecommerce-product-detail.html"
                                                     class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">{{ $product->name }}
                                                 </a>
@@ -251,8 +251,8 @@
                                                     <span class="text-slate-800 font-semibold">4.8</span>
                                                 </div>
                                                 <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>{{ $product->price }} <del
-                                                        class="text-base text-slate-400">50</del></h4>
+                                                        class="text-sm text-slate-500">$</sup>{{ $product->price }} 
+                                                        {{-- <del  --}}
                                                 <button type="button"
                                                     class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
                                                     Now</button>

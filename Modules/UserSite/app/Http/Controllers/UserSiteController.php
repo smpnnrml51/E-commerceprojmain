@@ -56,10 +56,10 @@ class UserSiteController extends Controller
      */
     public function show($id)
     {
-        $data['title'] = 'Show Category';
-        $data['status'] = Category::STATUS;
-        $data['categories'] = $this->categoryRepository->getCategoryById($id);
-        $data['product'] = Product::find($id);
+        // $data['title'] = 'Show Category';
+        // $data['status'] = Category::STATUS;
+        // $data['categories'] = $this->categoryRepository->getCategoryById($id);
+        $data['product'] = $this->productRepository->getProductById($id);
         return view('usersite::home.detail', $data);
     }
 
