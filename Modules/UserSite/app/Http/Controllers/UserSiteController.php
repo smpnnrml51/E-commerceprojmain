@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Product\Models\Category;
 use Modules\Product\Repositories\CategoryRepository;
 use Modules\Product\Repositories\ProductRepository;
+use Modules\Product\Models\Product;
 
 
 class UserSiteController extends Controller
@@ -19,10 +21,11 @@ class UserSiteController extends Controller
      */
     public function __construct(
         ProductRepository $productRepository,
-        CategoryRepository $categoryRepository) {
+        CategoryRepository $categoryRepository
+    ) {
         $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
-        }
+    }
 
     public function index()
     {
@@ -36,7 +39,7 @@ class UserSiteController extends Controller
      */
     public function create()
     {
-        
+
         return view('usersite::create');
     }
 
@@ -53,7 +56,11 @@ class UserSiteController extends Controller
      */
     public function show($id)
     {
-        return view('usersite::show');
+        $data['title'] = 'Show Category';
+        $data['status'] = Category::STATUS;
+        $data['categories'] = $this->categoryRepository->getCategoryById($id);
+        $data['product'] = Product::find($id);
+        return view('usersite::home.detail', $data);
     }
 
     /**

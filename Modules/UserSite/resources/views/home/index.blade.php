@@ -230,8 +230,9 @@
                                                 <span
                                                     class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
                                                     off</span>
-                                                <a href="#">
-                                                    <img src="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" alt="Product Image"
+                                                <a href="{{ url('usersite/' . $product->products_id) }}">
+                                                    <img src="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}"
+                                                        alt="Product Image"
                                                         class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
                                                 </a>
                                             </div>
@@ -250,7 +251,7 @@
                                                     <span class="text-slate-800 font-semibold">4.8</span>
                                                 </div>
                                                 <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                        class="text-sm text-slate-500">$</sup>{{$product->price}} <del
+                                                        class="text-sm text-slate-500">$</sup>{{ $product->price }} <del
                                                         class="text-base text-slate-400">50</del></h4>
                                                 <button type="button"
                                                     class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
@@ -404,249 +405,251 @@
                                         </div>
                                     </div>
                                 </div> <!--end card--> --}}
-                            </div><!--end col-->
-                            <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                <div
-                                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                    <div class="flex-auto  text-center">
-                                        <div class="flex-auto text-center bg-gray-100">
-                                            <span
-                                                class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
-                                                off</span>
-                                            <a href="#">
-                                                <img src="assets/images/products/pro-4.png" alt=""
-                                                    class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                            </a>
-                                        </div>
-                                        <div class="flex-auto  text-center p-4">
-                                            <span
-                                                class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
-                                            <a href="ecommerce-product-detail.html"
-                                                class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Mannat
-                                                530 Bluetooth Wireless </a>
-                                            <div class="mb-4">
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <span class="text-slate-800 font-semibold">4.8</span>
-                                            </div>
-                                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                    class="text-sm text-slate-500">$</sup>49 <del
-                                                    class="text-base text-slate-400">$99</del></h4>
-                                            <button type="button"
-                                                class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div> <!--end card-->
-                            </div><!--end col-->
-                            <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                <div
-                                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                    <div class="flex-auto  text-center">
-                                        <div class="flex-auto text-center bg-gray-100">
-                                            <span
-                                                class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
-                                                soon</span>
-                                            <a href="#">
-                                                <img src="assets/images/products/pro-1.png" alt=""
-                                                    class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                            </a>
-                                        </div>
-                                        <div class="flex-auto  text-center p-4">
-                                            <span
-                                                class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
-                                            <a href="ecommerce-product-detail.html"
-                                                class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">New
-                                                Colorfull Shoes </a>
-                                            <div class="mb-4">
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <span class="text-slate-800 font-semibold">4.8</span>
-                                            </div>
-                                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                    class="text-sm text-slate-500">$</sup>99 <del
-                                                    class="text-base text-slate-400">$199</del></h4>
-                                            <button type="button"
-                                                class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div> <!--end card-->
-                            </div><!--end col-->
-                            <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                <div
-                                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                    <div class="flex-auto  text-center">
-                                        <div class="flex-auto text-center bg-gray-100">
-                                            <a href="#">
-                                                <img src="assets/images/products/pro-2.png" alt=""
-                                                    class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                            </a>
-                                        </div>
-                                        <div class="flex-auto  text-center p-4">
-                                            <span
-                                                class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Clothes</span>
-                                            <a href="ecommerce-product-detail.html"
-                                                class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Robo
-                                                Men Oversized hoo - Blue </a>
-                                            <div class="mb-4">
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <span class="text-slate-800 font-semibold">4.8</span>
-                                            </div>
-                                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                    class="text-sm text-slate-500">$</sup>29 <del
-                                                    class="text-base text-slate-400">$39</del></h4>
-                                            <button type="button"
-                                                class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div> <!--end card-->
-                            </div><!--end col-->
-                            <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
-                                <div
-                                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                    <div class="flex-auto  text-center">
-                                        <div class="flex-auto text-center bg-gray-100">
-                                            <span
-                                                class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>
-                                            <a href="#">
-                                                <img src="assets/images/products/pro-3.png" alt=""
-                                                    class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
-                                            </a>
-                                        </div>
-                                        <div class="flex-auto  text-center p-4">
-                                            <span
-                                                class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                                            <a href="ecommerce-product-detail.html"
-                                                class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Mannat
-                                                HD, Smart LED Fire TV </a>
-                                            <div class="mb-4">
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <i class="icofont-star text-yellow-400 inline-block"></i>
-                                                <span class="text-slate-800 font-semibold">4.8</span>
-                                            </div>
-                                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                                    class="text-sm text-slate-500">$</sup>199 <del
-                                                    class="text-base text-slate-400">$399</del></h4>
-                                            <button type="button"
-                                                class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div> <!--end card-->
-                            </div><!--end col-->
-                        </div><!--end inner-grid-->
-                    </div><!--end container-->
-                </div><!--end section-->
-
-                <div class="pb-5 pt-0 md:py-5">
-                    <div class="container">
-                        <div class=" md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4 hidden md:grid">
-                            <div class="sm:col-span-12  md:col-span-12 lg:col-span-12 xl:col-span-12 ">
-                                <div
-                                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                    <div class="flex-auto">
-                                        <div class="swiper defaultSwiper">
-                                            <div class="swiper-wrapper ">
-                                                <div class="swiper-slide overflow-hidden">
-                                                    <div
-                                                        class="text-center h-[235px] flex justify-center bg-[url('../images/products/cos.png')] bg-cover py-10">
-                                                        <div class="self-center">
-                                                            <h4 class="font-spartan text-[42px] font-semibold mb-4">
-                                                                Beautiful glamorous radiant</h4>
-                                                            <p class="mb-4 text-xxl text-slate-500">It is a long
-                                                                established fact that a reader will be distracted by the
-                                                                <br> readable content of a page layout.
-                                                            </p>
-                                                            <button type="button"
-                                                                class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium">View
-                                                                Collection</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide overflow-hidden">
-                                                    <div
-                                                        class="text-center h-[235px] flex justify-center bg-[url('../images/products/jew.png')] bg-cover py-10">
-                                                        <div class="self-center">
-                                                            <h4 class="font-spartan text-[42px] font-semibold mb-4">Just
-                                                                Launched new product
-                                                            </h4>
-                                                            <p class="mb-4 text-xxl text-slate-500">It is a long
-                                                                established fact that a reader will be distracted by the
-                                                                <br> readable content of a page layout.
-                                                            </p>
-                                                            <button type="button"
-                                                                class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium">View
-                                                                Collection</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!--end card-body-->
-                                </div><!--end card-->
-                            </div><!--end col-->
-                        </div><!--end inner-grid-->
-                        <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-0 md:pt-10">
+                        </div><!--end col-->
+                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                             <div
                                 class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
-                                <div class="flex-auto p-4">
-                                    <i class="icofont-truck-alt text-green-500 text-[30px]"></i>
-                                    <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Fast Delivery</h4>
-                                    <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
-                                        It is a long established fact that a reader will be distracted.
-                                        Contrary to popular belief.
-                                    </p>
-                                </div><!--end card-body-->
+                                <div class="flex-auto  text-center">
+                                    <div class="flex-auto text-center bg-gray-100">
+                                        <span
+                                            class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">50%
+                                            off</span>
+                                        <a href="#">
+                                            <img src="assets/images/products/pro-4.png" alt=""
+                                                class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                        </a>
+                                    </div>
+                                    <div class="flex-auto  text-center p-4">
+                                        <span
+                                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Entertainment</span>
+                                        <a href="ecommerce-product-detail.html"
+                                            class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Mannat
+                                            530 Bluetooth Wireless </a>
+                                        <div class="mb-4">
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <span class="text-slate-800 font-semibold">4.8</span>
+                                        </div>
+                                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                                class="text-sm text-slate-500">$</sup>49 <del
+                                                class="text-base text-slate-400">$99</del></h4>
+                                        <button type="button"
+                                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                            Now</button>
+                                    </div>
+                                </div>
                             </div> <!--end card-->
+                        </div><!--end col-->
+                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                             <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
-                                <div class="flex-auto p-4">
-                                    <i class="icofont-refresh text-red-500 text-[30px]"></i>
-                                    <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Returns In 30 Days</h4>
-                                    <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
-                                        It is a long established fact that a reader will be distracted.
-                                        Contrary to popular belief.
-                                    </p>
-                                </div><!--end card-body-->
+                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                                <div class="flex-auto  text-center">
+                                    <div class="flex-auto text-center bg-gray-100">
+                                        <span
+                                            class="absolute right-2 top-2 focus:outline-none text-[12px] bg-orange-500 text-white dark:text-orange-600 rounded font-medium py-0 px-2 mb-5 inline-block">Coming
+                                            soon</span>
+                                        <a href="#">
+                                            <img src="assets/images/products/pro-1.png" alt=""
+                                                class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                        </a>
+                                    </div>
+                                    <div class="flex-auto  text-center p-4">
+                                        <span
+                                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Footwear</span>
+                                        <a href="ecommerce-product-detail.html"
+                                            class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">New
+                                            Colorfull Shoes </a>
+                                        <div class="mb-4">
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <span class="text-slate-800 font-semibold">4.8</span>
+                                        </div>
+                                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                                class="text-sm text-slate-500">$</sup>99 <del
+                                                class="text-base text-slate-400">$199</del></h4>
+                                        <button type="button"
+                                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                            Now</button>
+                                    </div>
+                                </div>
                             </div> <!--end card-->
+                        </div><!--end col-->
+                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                             <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
-                                <div class="flex-auto p-4">
-                                    <i class="icofont-headphone-alt text-orange-400 text-[30px]"></i>
-                                    <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Online Support 24/7</h4>
-                                    <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
-                                        It is a long established fact that a reader will be distracted.
-                                        Contrary to popular belief.
-                                    </p>
-                                </div><!--end card-body-->
+                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                                <div class="flex-auto  text-center">
+                                    <div class="flex-auto text-center bg-gray-100">
+                                        <a href="#">
+                                            <img src="assets/images/products/pro-2.png" alt=""
+                                                class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                        </a>
+                                    </div>
+                                    <div class="flex-auto  text-center p-4">
+                                        <span
+                                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Clothes</span>
+                                        <a href="ecommerce-product-detail.html"
+                                            class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Robo
+                                            Men Oversized hoo - Blue </a>
+                                        <div class="mb-4">
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <span class="text-slate-800 font-semibold">4.8</span>
+                                        </div>
+                                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                                class="text-sm text-slate-500">$</sup>29 <del
+                                                class="text-base text-slate-400">$39</del></h4>
+                                        <button type="button"
+                                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                            Now</button>
+                                    </div>
+                                </div>
                             </div> <!--end card-->
+                        </div><!--end col-->
+                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                             <div
-                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
-                                <div class="flex-auto p-4">
-                                    <i class="icofont-wallet text-purple-500 text-[30px]"></i>
-                                    <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Secure Payment</h4>
-                                    <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
-                                        It is a long established fact that a reader will be distracted.
-                                        Contrary to popular belief.
-                                    </p>
-                                </div><!--end card-body-->
+                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                                <div class="flex-auto  text-center">
+                                    <div class="flex-auto text-center bg-gray-100">
+                                        <span
+                                            class="absolute right-2 top-2 focus:outline-none text-[12px] bg-red-600/10 text-red-500 dark:text-red-600 rounded font-medium py-0 px-2 mb-5 inline-block">Soldout</span>
+                                        <a href="#">
+                                            <img src="assets/images/products/pro-3.png" alt=""
+                                                class="h-44 inline-block my-4 transition ease-in-out delay-50  hover:-translate-y-1 hover:scale-110 duration-500">
+                                        </a>
+                                    </div>
+                                    <div class="flex-auto  text-center p-4">
+                                        <span
+                                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
+                                        <a href="ecommerce-product-detail.html"
+                                            class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">Mannat
+                                            HD, Smart LED Fire TV </a>
+                                        <div class="mb-4">
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <i class="icofont-star text-yellow-400 inline-block"></i>
+                                            <span class="text-slate-800 font-semibold">4.8</span>
+                                        </div>
+                                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                                class="text-sm text-slate-500">$</sup>199 <del
+                                                class="text-base text-slate-400">$399</del></h4>
+                                        <button type="button"
+                                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
+                                            Now</button>
+                                    </div>
+                                </div>
                             </div> <!--end card-->
-                        </div><!--end grid-->
-                    </div><!--end container-->
-                </div><!--end section-->
-            @endsection
+                        </div><!--end col-->
+                    </div><!--end inner-grid-->
+                </div><!--end container-->
+            </div><!--end section-->
+
+            <div class="pb-5 pt-0 md:py-5">
+                <div class="container">
+                    <div class=" md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 mb-4 hidden md:grid">
+                        <div class="sm:col-span-12  md:col-span-12 lg:col-span-12 xl:col-span-12 ">
+                            <div
+                                class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                                <div class="flex-auto">
+                                    <div class="swiper defaultSwiper">
+                                        <div class="swiper-wrapper ">
+                                            <div class="swiper-slide overflow-hidden">
+                                                <div
+                                                    class="text-center h-[235px] flex justify-center bg-[url('../images/products/cos.png')] bg-cover py-10">
+                                                    <div class="self-center">
+                                                        <h4 class="font-spartan text-[42px] font-semibold mb-4">
+                                                            Beautiful glamorous radiant</h4>
+                                                        <p class="mb-4 text-xxl text-slate-500">It is a long
+                                                            established fact that a reader will be distracted by the
+                                                            <br> readable content of a page layout.
+                                                        </p>
+                                                        <button type="button"
+                                                            class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium">View
+                                                            Collection</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide overflow-hidden">
+                                                <div
+                                                    class="text-center h-[235px] flex justify-center bg-[url('../images/products/jew.png')] bg-cover py-10">
+                                                    <div class="self-center">
+                                                        <h4 class="font-spartan text-[42px] font-semibold mb-4">Just
+                                                            Launched new product
+                                                        </h4>
+                                                        <p class="mb-4 text-xxl text-slate-500">It is a long
+                                                            established fact that a reader will be distracted by the
+                                                            <br> readable content of a page layout.
+                                                        </p>
+                                                        <button type="button"
+                                                            class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium">View
+                                                            Collection</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end card-body-->
+                            </div><!--end card-->
+                        </div><!--end col-->
+                    </div><!--end inner-grid-->
+                    <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-0 md:pt-10">
+                        <div
+                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
+                            <div class="flex-auto p-4">
+                                <i class="icofont-truck-alt text-green-500 text-[30px]"></i>
+                                <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Fast Delivery</h4>
+                                <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
+                                    It is a long established fact that a reader will be distracted.
+                                    Contrary to popular belief.
+                                </p>
+                            </div><!--end card-body-->
+                        </div> <!--end card-->
+                        <div
+                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
+                            <div class="flex-auto p-4">
+                                <i class="icofont-refresh text-red-500 text-[30px]"></i>
+                                <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Returns In 30 Days</h4>
+                                <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
+                                    It is a long established fact that a reader will be distracted.
+                                    Contrary to popular belief.
+                                </p>
+                            </div><!--end card-body-->
+                        </div> <!--end card-->
+                        <div
+                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
+                            <div class="flex-auto p-4">
+                                <i class="icofont-headphone-alt text-orange-400 text-[30px]"></i>
+                                <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Online Support 24/7</h4>
+                                <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
+                                    It is a long established fact that a reader will be distracted.
+                                    Contrary to popular belief.
+                                </p>
+                            </div><!--end card-body-->
+                        </div> <!--end card-->
+                        <div
+                            class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative ">
+                            <div class="flex-auto p-4">
+                                <i class="icofont-wallet text-purple-500 text-[30px]"></i>
+                                <h4 class="font-semibold text-lg dark:text-slate-200 my-1">Secure Payment</h4>
+                                <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
+                                    It is a long established fact that a reader will be distracted.
+                                    Contrary to popular belief.
+                                </p>
+                            </div><!--end card-body-->
+                        </div> <!--end card-->
+                    </div><!--end grid-->
+                </div><!--end container-->
+            </div><!--end section-->
+        </div><!--end main-->
+    </div><!--end wrapper-->
+@endsection
