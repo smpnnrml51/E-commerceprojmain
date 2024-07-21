@@ -100,7 +100,7 @@
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
-                        <a class='block w-full py-5 lg:py-3' href={{url('usersite')}}>
+                        <a class='block w-full py-5 lg:py-3' href={{ url('usersite') }}>
                             <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
                             <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
@@ -230,7 +230,7 @@
 
                                     <div>
                                         <a class='flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90'
-                                            href='/robotech/default/customers-checkout'>
+                                            href='href="{{url('checkout')}}"'>
                                             Place Order
                                         </a>
                                     </div>
@@ -444,13 +444,13 @@
                                     </li>
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href={{url('products')}}>
+                                            href={{ url('products') }}>
                                             Products
                                         </a>
                                     </li>
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href="{{url('wishlist')}}">
+                                            href="{{ url('wishlist') }}">
                                             Wishlist
                                         </a>
                                     </li>
@@ -462,7 +462,7 @@
                                     </li>
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href='/robotech/default/customers-checkout'>
+                                            href="{{ url('checkout') }}">
                                             Checkout
                                         </a>
                                     </li>

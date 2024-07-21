@@ -100,4 +100,8 @@ class UserSiteController extends Controller
     {
         return view('usersite::home.wishlist');
     }
+    public function checkout()
+    {
+        return view('usersite::home.checkout');
+    }
 }

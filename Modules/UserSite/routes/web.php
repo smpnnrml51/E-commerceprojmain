@@ -21,3 +21,4 @@ Route::group([], function () {
 
 Route::get('/products', [UserSiteController::class, 'products'])->name('home.products');
 Route::get('/wishlist', [UserSiteController::class, 'wishlist'])->name('home.wishlist');
+Route::get('/checkout', [UserSiteController::class, 'checkout'])->name('home.checkout');
