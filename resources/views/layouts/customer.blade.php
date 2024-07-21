@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="me-2">
+                            {{-- <div class="me-2">
                                 <div class="relative z-20 border border-slate-500/40 rounded-full px-2">
                                     <select
                                         class="relative z-20 w-full appearance-none text-slate-200  bg-transparent ps-2 pe-4 text-sm font-medium  outline-none transition">
@@ -90,7 +90,7 @@
                                     <span
                                         class="absolute right-2 top-1/2 z-10 mt-[-2px] h-2 w-2 -translate-y-1/2 rotate-45 border-r border-b border-slate-400"></span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
-                        <a class='block w-full py-5 lg:py-3' href='/robotech/default/'>
+                        <a class='block w-full py-5 lg:py-3' href={{url('usersite')}}>
                             <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
                             <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
@@ -112,14 +112,14 @@
 
                                 <input type="text" placeholder="I'm shopping for..."
                                     class="w-full bg-transparent py-3 ps-6 pe-[200px] text-base font-medium text-body-color outline-none">
-                                <div class="absolute right-12 z-20 border-s border-[#d9d9d9] px-2">
+                                {{-- <div class="absolute right-12 z-20 border-s border-[#d9d9d9] px-2">
                                     <select id="default"
                                         class="nice-select border-0 relative z-20 appearance-none bg-transparent ps-2 pe-6 font-medium text-black outline-none">
                                         <option>All categories</option>
                                         <option>Best matches</option>
                                         <option>Newest</option>
                                     </select>
-                                </div>
+                                </div> --}}
                                 <a href="javascript:void(0)"
                                     class="absolute top-0 right-0 flex h-full w-[52px] items-center justify-center rounded-tr-md rounded-br-md border-s ">
                                     <i data-lucide="search" class="w-6 h-6"></i>
@@ -135,9 +135,9 @@
                                 </button>
 
                                 <div class="-left-40 md:left-auto right-0 z-50 my-1 hidden min-w-[300px] sm:min-w-[400px] md:min-w-[400px] lg:min-w-[500px] max-w-full
-                        list-none divide-y  divide-gray-100 rounded-md border-slate-700
-                        md:border-white text-base shadow dark:divide-gray-600 bg-white
-                        dark:bg-slate-800"
+                                    list-none divide-y  divide-gray-100 rounded-md border-slate-700
+                                    md:border-white text-base shadow dark:divide-gray-600 bg-white
+                                    dark:bg-slate-800"
                                     onclick="event.stopPropagation()">
                                     <form
                                         class="relative flex w-full items-center rounded-md border dark:border-slate-700/40 bg-[#f4f7ff] ">
@@ -172,8 +172,8 @@
 
                                 <div
                                     class="left-auto -right-10 md:right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
+                                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
+                                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
                                     <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
                                         <div class="-mx-1 flex items-center justify-between pb-4">
                                             <div class="flex items-center px-1">
@@ -235,65 +235,66 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div <div class="me-2  dropdown relative">
-                            <button type="button"
-                                class="dropdown-toggle flex items-center rounded-full text-sm
-                        focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
-                                id="user-profile" aria-expanded="false" data-fc-autoclose="both"
-                                data-fc-type="dropdown">
-                                <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
-                                    alt="user photo" />
-                                <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
-                                    <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
-                                        Gibson</span>
-                                </span>
-                            </button>
+                            </div>
+                            <div class="me-2  dropdown relative">
+                                <button type="button"
+                                    class="dropdown-toggle flex items-center rounded-full text-sm
+                                        focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
+                                    id="user-profile" aria-expanded="false" data-fc-autoclose="both"
+                                    data-fc-type="dropdown">
+                                    <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
+                                        alt="user photo" />
+                                    <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
+                                        <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
+                                            Gibson</span>
+                                    </span>
+                                </button>
 
-                            <div class="left-auto right-0 z-50 my-1 hidden list-none
-                        divide-y divide-gray-100 rounded border-slate-700 md:border-white
-                        text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40"
-                                id="navUserdata">
+                                <div class="left-auto right-0 z-50 my-1 hidden list-none
+                                    divide-y divide-gray-100 rounded border-slate-700 md:border-white
+                                    text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-40"
+                                    id="navUserdata">
 
-                                <ul class="py-1" aria-labelledby="navUserdata">
-                                    <li>
-                                        <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white'
-                                            href='/robotech/default/customers-profile'>
-                                            <span data-lucide="user"
-                                                class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
-                                            Profile</a>
-                                    </li>
-                                    <li>
-                                        <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
-                              dark:text-gray-200 dark:hover:bg-gray-900/20
-                              dark:hover:text-white'
-                                            href='/robotech/default/customers-invoice'>
-                                            <span data-lucide="file-spreadsheet"
-                                                class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
-                                            Invoice</a>
-                                    </li>
-                                    <li>
-                                        <a class='flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
-                              dark:text-red-400 dark:hover:bg-gray-900/20
-                              dark:hover:text-red-500'
-                                            href='/robotech/default/auth-lock-screen'>
-                                            <span data-lucide="power"
-                                                class="w-4 h-4 inline-block text-red-400 dark:text-red-400 me-2"></span>
-                                            Sign out</a>
-                                    </li>
-                                </ul>
+                                    <ul class="py-1" aria-labelledby="navUserdata">
+                                        <li>
+                                            <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
+                                                dark:text-gray-200 dark:hover:bg-gray-900/20
+                                                dark:hover:text-white'
+                                                href='/robotech/default/customers-profile'>
+                                                <span data-lucide="user"
+                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                Profile</a>
+                                        </li>
+                                        <li>
+                                            <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
+                                                dark:text-gray-200 dark:hover:bg-gray-900/20
+                                                dark:hover:text-white'
+                                                href='/robotech/default/customers-invoice'>
+                                                <span data-lucide="file-spreadsheet"
+                                                    class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
+                                                Invoice</a>
+                                        </li>
+                                        <li>
+                                            <a class='flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
+                                                dark:text-red-400 dark:hover:bg-gray-900/20
+                                                dark:hover:text-red-500'
+                                                href='/robotech/default/auth-lock-screen'>
+                                                <span data-lucide="power"
+                                                    class="w-4 h-4 inline-block text-red-400 dark:text-red-400 me-2"></span>
+                                                Sign out</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
         <div>
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
-                    <div class="w-full max-w-full px-4 lg:w-60">
+                    {{-- <div class="w-full max-w-full px-4 lg:w-60">
                         <div class="relative py-4 group categories">
                             <a href="javascript:void(0)"
                                 class="inline-flex  relative items-center justify-between whitespace-nowrap rounded bg-brand-50/70 px-5 py-2 text-base font-medium text-brand-500 hover:bg-opacity-90">
@@ -422,7 +423,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="flex w-full items-center justify-between px-4">
                         <div class="w-full">
                             <button data-collapse-toggle="mobile-menu-2" type="button" id="toggle-menu"
@@ -437,19 +438,19 @@
                                 <ul class="blcok items-center lg:flex px-4 md:px-0">
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href='/robotech/default/customers-home'>
+                                            href={{ url('usersite') }}>
                                             Home
                                         </a>
                                     </li>
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href='/robotech/default/customers-products'>
+                                            href={{url('products')}}>
                                             Products
                                         </a>
                                     </li>
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href='/robotech/default/customers-wishlist'>
+                                            href="{{url('wishlist')}}">
                                             Wishlist
                                         </a>
                                     </li>
@@ -595,10 +596,10 @@
                     var year = new Date();
                     document.write(year.getFullYear());
                 </script>
-                Robotech
+                {{-- Robotech
                 <span class="float-right hidden text-slate-400 dark:text-slate-400 md:inline-block">Crafted with <i
                         class="ti ti-heart text-red-500"></i> by
-                    Mannatthemes</span>
+                    Mannatthemes</span> --}}
             </footer>
             <!-- end Footer -->
         </div>

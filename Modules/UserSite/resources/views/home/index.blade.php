@@ -406,7 +406,7 @@
                                     </div>
                                 </div> <!--end card--> --}}
                         </div><!--end col-->
-                        <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
+                        {{-- <div class="sm:col-span-12  md:col-span-4 lg:col-span-3 xl:col-span-3 ">
                             <div
                                 class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
                                 <div class="flex-auto  text-center">
@@ -552,7 +552,7 @@
                         </div><!--end col-->
                     </div><!--end inner-grid-->
                 </div><!--end container-->
-            </div><!--end section-->
+            </div><!--end section--> --}}
 
             <div class="pb-5 pt-0 md:py-5">
                 <div class="container">

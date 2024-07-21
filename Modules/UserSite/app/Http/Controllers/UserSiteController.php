@@ -86,4 +86,18 @@ class UserSiteController extends Controller
     {
         //
     }
+    public function search(Request $request)
+    {
+        $data['title'] = 'Products List';
+        $data['products'] = $this->productRepository->search($request->search);
+        return view('usersite::home.index', $data);
+    }
+    public function products()
+    {
+        return view('usersite::home.products');
+    }
+    public function wishlist()
+    {
+        return view('usersite::home.wishlist');
+    }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\UserSite\Http\Controllers\UserSiteController;
+use Modules\UserSite\Models\UserSite;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use Modules\UserSite\Http\Controllers\UserSiteController;
 Route::group([], function () {
     Route::resource('usersite', UserSiteController::class)->names('usersite');
 });
+
+Route::get('/products', [UserSiteController::class, 'products'])->name('home.products');
+Route::get('/wishlist', [UserSiteController::class, 'wishlist'])->name('home.wishlist');
