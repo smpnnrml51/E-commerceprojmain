@@ -3,6 +3,7 @@
 namespace Modules\Cart\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Modules\Cart\Services\CartService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -12,6 +13,13 @@ class CartController extends Controller
     /**
      * Display a listing of the resource.
      */
+    protected $cartService;
+
+    public function __construct(CartService $cartService)
+    {
+        $this->cartService = $cartService;
+    }
+
     public function index()
     {
         return view('cart::index');
@@ -33,13 +41,7 @@ class CartController extends Controller
         //
     }
 
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('cart::show');
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -63,5 +65,18 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function add(Request $request)
+    {
+        $product = $request->input('product');
+        $this->cartService->addToCart($product);
+        return redirect()->back()->with('success', 'Product added to cart');
+    }
+
+    public function show()
+    {
+        $cart = $this->cartService->getCart();
+        return view('cart', compact('cart'));
     }
 }
