@@ -60,4 +60,9 @@ class ProductRepository implements ProductInterface
     {
         return Product::pluck('name', 'products_id');
     }
+
+    public function getProductCountByCategoryId($categoryId)
+    {
+        return Product::where('category_id', $categoryId)->count();
+    }
 }

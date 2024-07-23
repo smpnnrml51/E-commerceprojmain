@@ -239,7 +239,7 @@
                                             <div class="flex-auto  text-center p-4">
                                                 <span
                                                     class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">hello world</span>
-                                                <a href="ecommerce-product-detail.html"
+                                                <a href="{{route('usersite.show',$product->products_id)}}"
                                                     class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">{{ $product->name }}
                                                 </a>
                                                 <div class="mb-4">

@@ -6,17 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Modules\Product\Models\Category;
+use Modules\Product\Repositories\ProductRepository;
 use Modules\Product\Repositories\CategoryRepository;
 
 class CategoryController extends Controller
 {
     private $categoryRepository;
+    private $productRepository;
+
     /**
      * Display a listing of the resource.
      */
     public function __construct(
-        CategoryRepository $categoryRepository) {
+        CategoryRepository $categoryRepository,
+        ProductRepository $productRepository) {
         $this->categoryRepository = $categoryRepository;
+        $this->productRepository = $productRepository;
     }
 
     public function index()
@@ -88,8 +93,18 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $CategoryModel = $this->categoryRepository->getCategoryById($id);
-        $CategoryModel->delete();
-        return response()->json(['status' => true, 'message' => 'Category Delete Succesfully']);
+        $category = $this->categoryRepository->getCategoryById($id);
+
+        $relatedProductsCount = $this->productRepository->getProductCountByCategoryId($id);
+
+        if ($relatedProductsCount > 0) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Category cannot be deleted because it has related products.'
+            ], 400);
+        }
+
+        $category->delete();
+        return response()->json(['status' => true, 'message' => 'Category deleted successfully']);
     }
 }
