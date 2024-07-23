@@ -166,7 +166,7 @@
                                     <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
                                     <span
                                         class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                        2
+                                        {{count(session('cart'))}}
                                     </span>
                                 </button>
 
@@ -175,26 +175,40 @@
                                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
                                         text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
                                     <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
-                                        <div class="-mx-1 flex items-center justify-between pb-4">
-                                            <div class="flex items-center px-1">
-                                                <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                                    <img src="assets/images/products/02.png" alt="product image"
-                                                        class="w-8 h-8">
-                                                </div>
-                                                <div>
-                                                    <a href="product-details.html"
-                                                        class="text-sm font-medium text-black hover:text-brand">
-                                                        Robotech Shoes
-                                                    </a>
-                                                    <p class="truncate text-xs font-medium text-body-color">
-                                                        New Colorfull Shoes
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="px-1">
-                                                <p class="text-base font-semibold text-black">$36.00</p>
-                                            </div>
-                                        </div>
+                                        @if(session('cart') && count(session('cart')) > 0)
+                                            @foreach(session('cart') as $item)
+                                                @if($item)
+                                                    <div class="-mx-1 flex items-center justify-between pb-4">
+                                                        <div class="flex items-center px-1">
+                                                            <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
+                                                                <img src="assets/images/products/02.png" alt="product image"
+                                                                    class="w-8 h-8">
+                                                            </div>
+                                                            <div>
+                                                                <a href="product-details.html"
+                                                                    class="text-sm font-medium text-black hover:text-brand">
+                                                                    hello world
+                                                                </a>
+                                                                <p class="truncate text-xs font-medium text-body-color">
+                                                                    New Colorfull Shoes
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="px-1">
+                                                            <p class="text-base font-semibold text-black">$36.00</p>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                <p class="truncate text-xs font-medium text-body-color">
+                                                    Cart is empty
+                                                </p>
+                                                @endif
+                                            @endforeach
+                                        @else
+                                            <p class="truncate text-xs font-medium text-body-color">
+                                                Cart is empty
+                                            </p>
+                                        @endif
                                         <div class="-mx-1 flex items-center justify-between py-4">
                                             <div class="flex items-center px-1">
                                                 <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
@@ -230,7 +244,7 @@
 
                                     <div>
                                         <a class='flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90'
-                                            href='href="{{url('checkout')}}"'>
+                                            href="{{url('checkout')}}">
                                             Place Order
                                         </a>
                                     </div>
@@ -452,12 +466,6 @@
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
                                             href="{{ url('wishlist') }}">
                                             Wishlist
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
-                                            href='/robotech/default/customers-stores'>
-                                            Stores
                                         </a>
                                     </li>
                                     <li>

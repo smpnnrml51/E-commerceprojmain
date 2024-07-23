@@ -14,7 +14,45 @@
     <div class="container my-4">
         <div class="grid grid-cols-12 gap-4">
             <!-- Replicated for Second Card -->
-            <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
+            @foreach($products as $product)
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
+                    <div
+                        class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40 rounded-md w-full relative">
+                        <div class="flex-auto text-center">
+                            <div class="flex-auto text-center bg-gray-100">
+                                <span
+                                    class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">New
+                                    Arrival</span>
+                                <a href='{{route('usersite.show',$product->products_id)}}'>
+                                    <img src="{{ asset('storage/' . explode('|', $product->filepond)[0]) }}" alt=""
+                                        class="h-44 inline-block my-4 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-500">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-auto  text-center p-4">
+                            <span
+                                class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{$product->Category->title}}</span>
+                            <a class='text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate'
+                                href='{{route('usersite.show',$product->products_id)}}'>{{$product->name}} </a>
+                            {{-- <div class="mb-4">
+                                <i class="icofont-star text-yellow-400 inline-block"></i>
+                                <i class="icofont-star text-yellow-400 inline-block"></i>
+                                <i class="icofont-star text-yellow-400 inline-block"></i>
+                                <i class="icofont-star text-yellow-400 inline-block"></i>
+                                <i class="icofont-star text-yellow-400 inline-block"></i>
+                                <span class="text-slate-800 font-semibold">4.8</span>
+                            </div> --}}
+                            <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
+                                    class="text-sm text-slate-500">$</sup>{{$product->price}} 
+                            </h4>
+                            <button type="button"
+                                class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
+                                onclick="location.href='{{route('usersite.show',$product->products_id)}}'">Buy Now</button> 
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
                 <div
                     class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40 rounded-md w-full relative">
                     <div class="flex-auto text-center">
@@ -193,79 +231,7 @@
                             onclick="location.href='customers-pro-details.html'">Buy Now</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
-                <div
-                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40 rounded-md w-full relative">
-                    <div class="flex-auto text-center">
-                        <div class="flex-auto text-center bg-gray-100">
-                            <span
-                                class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">New
-                                Arrival</span>
-                            <a href='/robotech/default/customers-pro-details2'>
-                                <img src="assets/images/products/02.png" alt=""
-                                    class="h-44 inline-block my-4 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-500">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex-auto  text-center p-4">
-                        <span
-                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                        <a class='text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate'
-                            href='/robotech/default/customers-pro-details'>White Table Camera </a>
-                        <div class="mb-4">
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <span class="text-slate-800 font-semibold">4.8</span>
-                        </div>
-                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                class="text-sm text-slate-500">$</sup>49 <del class="text-base text-slate-400">$99</del>
-                        </h4>
-                        <button type="button"
-                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                            onclick="location.href='customers-pro-details.html'">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
-                <div
-                    class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40 rounded-md w-full relative">
-                    <div class="flex-auto text-center">
-                        <div class="flex-auto text-center bg-gray-100">
-                            <span
-                                class="absolute right-2 top-2 focus:outline-none text-[12px] bg-green-600/10 text-green-700 dark:text-green-600 rounded font-medium py-0 px-2 mb-5 inline-block">New
-                                Arrival</span>
-                            <a href='/robotech/default/customers-pro-details2'>
-                                <img src="assets/images/products/02.png" alt=""
-                                    class="h-44 inline-block my-4 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-500">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="flex-auto  text-center p-4">
-                        <span
-                            class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">Electric</span>
-                        <a class='text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2 truncate'
-                            href='/robotech/default/customers-pro-details'>White Table Camera </a>
-                        <div class="mb-4">
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <i class="icofont-star text-yellow-400 inline-block"></i>
-                            <span class="text-slate-800 font-semibold">4.8</span>
-                        </div>
-                        <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
-                                class="text-sm text-slate-500">$</sup>49 <del class="text-base text-slate-400">$99</del>
-                        </h4>
-                        <button type="button"
-                            class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full"
-                            onclick="location.href='customers-pro-details.html'">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
             <!-- Repeat the above div block for each card, changing the href and img src as needed -->
             <!-- Add additional cards as needed by replicating the structure and updating the content accordingly -->
         </div>

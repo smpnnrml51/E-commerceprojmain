@@ -94,7 +94,8 @@ class UserSiteController extends Controller
     }
     public function products()
     {
-        return view('usersite::home.products');
+        $data['products'] = $this->productRepository->findAll();
+        return view('usersite::home.products', $data);
     }
     public function wishlist()
     {

@@ -33,14 +33,14 @@
                                         </div>
                                         <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
                                             <span
-                                                class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">Robotech</span>
+                                                class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{$product->Category->title}}</span>
                                             <div class="">
                                                 <h5 class="dark:text-slate-200 font-medium text-[30px] leading-9 mt-4">
                                                     {{ $product->name }}</h5>
-                                                <p tabindex="0"
+                                                {{-- <p tabindex="0"
                                                     class="focus:outline-none text-primary-500 dark:text-gray-400 text-base font-medium">
-                                                    Morden and good look model 2023.</p>
-                                                <ul class="mb-4">
+                                                    Morden and good look model 2023.</p> --}}
+                                                {{-- <ul class="mb-4">
                                                     <li class="inline-block">
                                                         <i class="icofont-star text-xl text-yellow-400 inline-block"></i>
                                                     </li>
@@ -61,13 +61,13 @@
                                                             class="text-gray-700 dark:text-gray-400 text-sm font-medium">4.5
                                                             (9885 reviews)</span>
                                                     </li>
-                                                </ul>
+                                                </ul> --}}
                                                 <h6
                                                     class="text-[28px] text-slate-700 dark:text-slate-300 font-semibold mb-4">
-                                                    $89.00
-                                                    <span
+                                                    {{$product->price}}
+                                                    {{-- <span
                                                         class="text-base text-slate-400 font-semibold"><del>$180.00</del></span>
-                                                    <span class="text-red-500 text-base font-semibold ml-2">50% Off</span>
+                                                    <span class="text-red-500 text-base font-semibold ml-2">50% Off</span> --}}
                                                 </h6>
                                                 <h6 class="text-sm font-medium text-slate-800 dark:text-slate-400">Detail :
                                                 </h6>
