@@ -105,4 +105,8 @@ class UserSiteController extends Controller
     // {
     //     return view('usersite::home.checkout');
     // }
+    public function profile()
+    {
+        return view('usersite::home.profile');
+    }
 }

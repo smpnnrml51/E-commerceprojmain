@@ -25,3 +25,4 @@ Route::get('/wishlist', [UserSiteController::class, 'wishlist'])->name('home.wis
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'show'])->name('cart.show');
 // Route::get('/checkout', [UserSiteController::class, 'checkout'])->name('home.checkout');
+Route::get('/profile', [UserSiteController::class, 'profile'])->name('home.profile');
