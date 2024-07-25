@@ -14,12 +14,37 @@ class CartService
     public function addToCart($product)
     {
         $cart = session('cart');
-        $cart[] = $product;
+        $productId = $product->id;
+        $found = false;
+
+        foreach($cart as $item){
+            if($item['id'] == $productId){
+                dd($item);
+                $item['quantity']++;
+                $found = true;
+                break;
+            }
+        }
+        
+        if(!$found){
+          $cart[] = [
+            'id' => $product->products_id,
+            'name' => $product->name,
+            'category' => $product->Category->title,
+            'description' => $product->desc,
+            'price' => $product->price,
+            'image' => $product->filepond,
+            'quantity' => 1
+            
+            ];  
+        }
+        
         session(['cart' => $cart]);
     }
 
+
     public function getCart()
     {
-        return session('cart');
+        return session('cart',[]);
     }
 }

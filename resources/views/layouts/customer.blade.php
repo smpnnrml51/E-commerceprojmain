@@ -166,7 +166,7 @@
                                     <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
                                     <span
                                         class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                        {{count(session('cart'))}}
+                                        {{count(session('cart', []))}}
                                     </span>
                                 </button>
 
@@ -175,27 +175,31 @@
                                         divide-y divide-gray-100 rounded border-slate-700 md:border-white
                                         text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
                                     <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
+                                        <?php $total = 0; ?>
                                         @if(session('cart') && count(session('cart')) > 0)
                                             @foreach(session('cart') as $item)
                                                 @if($item)
+                                                    {{-- @dd($item) --}}
+                                                    <?php $total += $item['price'] * $item['quantity']; ?>
+
                                                     <div class="-mx-1 flex items-center justify-between pb-4">
                                                         <div class="flex items-center px-1">
                                                             <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                                                <img src="assets/images/products/02.png" alt="product image"
+                                                                <img src="{{ asset('storage/' . explode('|', $item['image'])[0]) }}" alt="product image"
                                                                     class="w-8 h-8">
                                                             </div>
                                                             <div>
                                                                 <a href="product-details.html"
                                                                     class="text-sm font-medium text-black hover:text-brand">
-                                                                    hello world
+                                                                    {{ $item['category']}}
                                                                 </a>
                                                                 <p class="truncate text-xs font-medium text-body-color">
-                                                                    New Colorfull Shoes
+                                                                    {{ $item['name'] }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="px-1">
-                                                            <p class="text-base font-semibold text-black">$36.00</p>
+                                                            <p class="text-base font-semibold text-black">{{ $item['quantity'] }} x ${{ $item['price'] }}</p>
                                                         </div>
                                                     </div>
                                                 @else
@@ -209,7 +213,7 @@
                                                 Cart is empty
                                             </p>
                                         @endif
-                                        <div class="-mx-1 flex items-center justify-between py-4">
+                                        {{-- <div class="-mx-1 flex items-center justify-between py-4">
                                             <div class="flex items-center px-1">
                                                 <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
                                                     <img src="assets/images/products/01.png" alt="product image"
@@ -228,7 +232,7 @@
                                             <div class="px-1">
                                                 <p class="text-base font-semibold text-black">$36.00</p>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
 
                                     <div class="-mx-1 flex items-center justify-between  pb-6">
@@ -238,7 +242,7 @@
                                             </p>
                                         </div>
                                         <div class="px-1">
-                                            <p class="text-base font-semibold text-black">$88.15</p>
+                                            <p class="text-base font-semibold text-black">${{ number_format($total, 2) }}</p>
                                         </div>
                                     </div>
 

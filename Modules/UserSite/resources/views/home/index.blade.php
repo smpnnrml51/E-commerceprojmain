@@ -238,7 +238,7 @@
                                             </div>
                                             <div class="flex-auto  text-center p-4">
                                                 <span
-                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">hello world</span>
+                                                    class="focus:outline-none text-[12px] text-slate-500 border border-slate-200 rounded font-medium py-0 px-2 mb-5 inline-block">{{ $product->Category->title }}</span>
                                                 <a href="{{route('usersite.show',$product->products_id)}}"
                                                     class="text-xl font-semibold text-slate-500 dark:text-gray-400 leading-3 block mb-2">{{ $product->name }}
                                                 </a>
@@ -253,10 +253,13 @@
                                                 <h4 class="text-3xl font-medium dark:text-slate-300 mb-4"><sup
                                                         class="text-sm text-slate-500">$</sup>{{ $product->price }} 
                                                         {{-- <del  --}}
-                                                <button type="button"
-                                                    class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Buy
-                                                    Now</button>
-                                            </div>
+                                                <form action="{{ route('cart.add') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{ $product->products_id }}">
+                                                    <button type="submit"
+                                                        class="px-4 py-1 lg:px-4 bg-transparent  text-brand text-base  transition hover:bg-brand-500/10 hover:text-brand-500 border border-slate-200 border-dashed font-medium w-full">Add to Cart</button>
+                                                </form>
+                                                </div>
                                         </div>
                                     </div> <!--end card-->
                                 </div><!--end col-->

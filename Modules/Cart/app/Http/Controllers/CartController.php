@@ -5,6 +5,8 @@ namespace Modules\Cart\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Modules\Cart\Services\CartService;
 use Illuminate\Http\RedirectResponse;
+use Modules\Product\Repositories\ProductInterface;
+use Modules\Product\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -14,10 +16,15 @@ class CartController extends Controller
      * Display a listing of the resource.
      */
     protected $cartService;
+    private $productRepository;
 
-    public function __construct(CartService $cartService)
+
+    public function __construct(CartService $cartService,
+    ProductRepository $productRepository)
     {
         $this->cartService = $cartService;
+        $this->productRepository = $productRepository;
+        
     }
 
     public function index()
@@ -69,9 +76,15 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        $product = $request->input('product');
-        $this->cartService->addToCart($product);
-        return redirect()->back()->with('success', 'Product added to cart');
+        $productId = $request->input('product_id');
+        $product = $this->productRepository->getProductById($productId);
+        if($product){
+            $this->cartService->addToCart($product);
+            return redirect()->back()->with('success', 'Product added to cart');
+        }else{
+            return redirect()->back()->with('error', 'Product not found');
+        }
+
     }
 
     public function show()
