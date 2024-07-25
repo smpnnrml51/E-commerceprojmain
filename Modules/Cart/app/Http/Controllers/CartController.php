@@ -92,4 +92,9 @@ class CartController extends Controller
         $cart = $this->cartService->getCart();
         return view('cart', compact('cart'));
     }
+    public function checkout()
+    {
+        // $cart = $this->cartService->getCart();
+        return view('cart::checkout');
+    }
 }

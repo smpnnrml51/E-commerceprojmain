@@ -17,3 +17,4 @@ use Modules\Cart\Http\Controllers\CartController;
 Route::group([], function () {
     Route::resource('cart', CartController::class)->names('cart');
 });
+ Route::get('checkout', [CartController::class, 'checkout'])->name('checkout');

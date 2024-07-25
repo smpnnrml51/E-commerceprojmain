@@ -161,16 +161,7 @@
                                                             </td>
                                                         </tr>
                                                         <!-- 3 -->
-                                                        <tr class="">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Promo Code
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                -$10.00
-                                                            </td>
-                                                        </tr>
+
                                                         <!-- 4 -->
                                                         <tr
                                                             class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
@@ -253,58 +244,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="City"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">City<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="City"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">Surat</option>
-                                                    <option class="dark:text-slate-700">New York</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="State"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">State<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="State"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">Gujarat</option>
-                                                    <option class="dark:text-slate-700">California</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Country"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Country<small
-                                                        class="text-red-600 text-sm">*</small></label>
-                                                <select id="Country"
-                                                    class="w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-[6.5px] focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700">
-                                                    <option class="dark:text-slate-700">-- select --</option>
-                                                    <option class="dark:text-slate-700">India</option>
-                                                    <option class="dark:text-slate-700">USA</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="grid grid-cols-4 gap-4">
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                                            <div class="mb-2">
-                                                <label for="Zip_code"
-                                                    class="font-medium text-sm text-slate-600 dark:text-slate-400">Zip
-                                                    code<small class="text-red-600 text-sm">*</small></label>
-                                                <input
-                                                    class="form-input w-full rounded-md mt-1 border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent px-3 py-2 focus:outline-none focus:ring-0 placeholder:text-slate-400/70 placeholder:font-normal placeholder:text-sm hover:border-slate-400 focus:border-brand-500 dark:focus:border-brand-500  dark:hover:border-slate-700"
-                                                    placeholder="------" type="text">
-                                            </div>
-                                        </div>
+
                                         <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                             <div class="mb-2">
                                                 <label for="Email_Address"
@@ -315,7 +256,7 @@
                                                     placeholder="Enter Email" type="text">
                                             </div>
                                         </div>
-                                        <div class="col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1">
+                                        <div class="col-span-4 md:col-span-2 lg:col-span-2 xl:col-span-2">
                                             <div class="mb-2">
                                                 <label for="Mobile_No"
                                                     class="font-medium text-sm text-slate-600 dark:text-slate-400">Mobile
@@ -326,17 +267,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <label class="flex">
-                                        <input type="checkbox" class="accent-brand-500">
-                                        <span for="default-checkbox"
-                                            class="ms-1 text-sm font-medium text-slate-600 dark:text-gray-300">Confirm
-                                            Shipping Address</span>
-                                    </label>
+
                                     <div class="mt-3">
                                         <button
                                             class="inline-block focus:outline-none text-white hover:bg-brand-500 hover:text-white bg-brand-500 border border-gray-200 text-sm font-medium py-1 px-3 rounded">Save</button>
                                         <button
-                                            class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancle</button>
+                                            class="inline-block focus:outline-none text-red-500 hover:bg-red-500 hover:text-white bg-transparent border border-gray-200  text-sm font-medium py-1 px-3 rounded">Cancel</button>
                                     </div>
                                 </div><!--end card-body-->
                             </div> <!--end card-->
