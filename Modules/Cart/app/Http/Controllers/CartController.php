@@ -9,6 +9,10 @@ use Modules\Product\Repositories\ProductInterface;
 use Modules\Product\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Cart\Models\delivery_address;
+use Modules\Cart\Repositories\DeliveryRepository;
+use Modules\Cart\Repositories\DeliveryInterface;
+
 
 class CartController extends Controller
 {
@@ -17,14 +21,17 @@ class CartController extends Controller
      */
     protected $cartService;
     private $productRepository;
+    private $deliveryRepository;
 
 
-    public function __construct(CartService $cartService,
-    ProductRepository $productRepository)
-    {
+    public function __construct(
+        CartService $cartService,
+        ProductRepository $productRepository,
+        DeliveryRepository $deliveryRepository
+    ) {
         $this->cartService = $cartService;
         $this->productRepository = $productRepository;
-        
+        $this->deliveryRepository = $deliveryRepository;
     }
 
     public function index()
@@ -78,13 +85,12 @@ class CartController extends Controller
     {
         $productId = $request->input('product_id');
         $product = $this->productRepository->getProductById($productId);
-        if($product){
+        if ($product) {
             $this->cartService->addToCart($product);
             return redirect()->back()->with('success', 'Product added to cart');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Product not found');
         }
-
     }
 
     public function show()
