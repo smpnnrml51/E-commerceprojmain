@@ -14,7 +14,7 @@
     <div class="container my-4">
         <div class="grid grid-cols-12 gap-4">
             <!-- Replicated for Second Card -->
-            @foreach($products as $product)
+            @foreach($products as $product) 
                 <div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 xl:col-span-2">
                     <div
                         class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40 rounded-md w-full relative">

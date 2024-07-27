@@ -1,7 +1,8 @@
 <?php
 namespace Modules\Cart\Repositories;
 
-use Modules\Cart\Models\DeliveryAddress;
+use Modules\Cart\Models\DeliveryAddress; // Ensure this class exists and is correctly defined
+use Modules\Cart\Repositories\DeliveryInterface;
 
 class DeliveryRepository implements DeliveryInterface
 {

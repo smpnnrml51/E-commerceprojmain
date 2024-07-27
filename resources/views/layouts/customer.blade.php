@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Robotech - Admin & Dashboard Template</title>
+    <title>Computer Parts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta content="Tailwind Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{asset('images/logos/new.png')}}" />
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('libs/nice-select2/css/nice-select2.css') }}">
@@ -101,8 +101,8 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a class='block w-full py-5 lg:py-3' href={{ url('usersite') }}>
-                            <img src="assets/images/logo-sm.png" alt="logo" class="w-6 md:w-8 inline-block">
-                            <img src="assets/images/logo-dark.png" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-6 md:w-8 inline-block">
+                            <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-20 md:w-24 inline-block">
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">
@@ -260,7 +260,7 @@
                                         focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-10.png"
+                                    <img class="h-8 w-8 rounded-full" src="{{asset('images/logos/new.png')}}"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
@@ -502,8 +502,8 @@
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href='/robotech/default/customers-home'>
-                                <img src="assets/images/logo-sm.png" alt="" class="h-8 inline-block me-3">
-                                <img src="assets/images/logo.png" alt="" class="h-8 inline-block">
+                                <img src="{{asset('images/logos/new.png')}}" alt="" class="h-8 inline-block me-3">
+                                <img src="{{asset('images/logos/new.png')}}" alt="" class="h-8 inline-block">
                             </a>
                         </div>
                         <p class="text-slate-500 text-lg">It is a long established fact that a reader will be

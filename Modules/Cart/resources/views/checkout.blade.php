@@ -201,7 +201,7 @@
                                     <h4 class="font-medium">Delivery Address</h4>
                                 </div><!--end header-title-->
                                 <div class="flex-auto p-4">
-                                    <form action="{{ route('product.store') }}" method="POST"
+                                    <form action="{{ route('order.store') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="grid grid-cols-4 gap-4">
