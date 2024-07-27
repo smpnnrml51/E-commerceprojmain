@@ -87,6 +87,19 @@ class CartController extends Controller
 
     }
 
+    public function remove(Request $request)
+    {
+        $productId = $request->input('product_id');
+        $product = $this->productRepository->getProductById($productId);
+        if($product){
+            $this->cartService->removeFromCart($product);
+            return redirect()->back()->with('success', 'Product removed from cart');
+        }else{
+            return redirect()->back()->with('error', 'Product not found');
+        }
+        
+    }
+
     public function show()
     {
         $cart = $this->cartService->getCart();

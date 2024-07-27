@@ -22,6 +22,7 @@
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
+
     class="bg-[#EEF0FC] dark:bg-gray-900">
 
     <!-- leftbar-tab-menu -->
@@ -179,7 +180,6 @@
                                         @if(session('cart') && count(session('cart')) > 0)
                                             @foreach(session('cart') as $item)
                                                 @if($item)
-                                                    {{-- @dd($item) --}}
                                                     <?php $total += $item['price'] * $item['quantity']; ?>
 
                                                     <div class="-mx-1 flex items-center justify-between pb-4">
@@ -199,7 +199,12 @@
                                                             </div>
                                                         </div>
                                                         <div class="px-1">
-                                                            <p class="text-base font-semibold text-black">{{ $item['quantity'] }} x ${{ $item['price'] }}</p>
+                                                            <form action="{{ route('cart.remove') }}" method="POST" style="display: inline;">
+                                                                @csrf
+                                                                <input type="hidden" name="product_id" value="{{ $item['id'] }}">
+                                                                <button type="submit" class="text-red-500 font-bold">-</button>
+                                                            </form>
+                                                            <p class="text-base font-semibold text-black">{{ $item['quantity'] }} x ${{ $item['price'] }} </p>
                                                         </div>
                                                     </div>
                                                 @else

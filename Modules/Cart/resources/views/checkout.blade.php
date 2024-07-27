@@ -48,28 +48,35 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @php $totalAmount = 0; $totalQuantity = 0; @endphp
+                                                            @foreach(session('cart') as $item)
+                                                                @php
+                                                                    $totalAmount += $item['price'] * $item['quantity'];
+                                                                    $totalQuantity += $item['quantity'];
+                                                                @endphp
                                                         <!-- Product 1 -->
-                                                        <tr
-                                                            class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
-                                                                <img src="assets/images/products/01.png" alt=""
-                                                                    class="mr-2 h-8 inline-block">
-                                                                <h5
-                                                                    class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
-                                                                    White Table Camera</h5>
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                1
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                $99
-                                                            </td>
-                                                        </tr>
+                                                                <tr
+                                                                    class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
+                                                                    <td
+                                                                        class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
+                                                                        <img src="{{ asset('storage/' . explode('|', $item['image'])[0]) }}" alt=""
+                                                                            class="mr-2 h-8 inline-block">
+                                                                        <h5
+                                                                            class="text-sm font-semibold text-slate-700 dark:text-gray-400 inline-block">
+                                                                            {{ $item['name'] }}</h5>
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                        {{ $item['quantity'] }}
+                                                                    </td>
+                                                                    <td
+                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                        ${{ number_format($item['price'] * $item['quantity'], 2) }}
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
                                                         <!-- Product 2 -->
-                                                        <tr
+                                                        {{-- <tr
                                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                             <td
                                                                 class="p-3 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-slate-300">
@@ -121,7 +128,7 @@
                                                                 class="p-3 text-base font-semibold text-gray-900 whitespace-nowrap dark:text-slate-300">
                                                                 $207
                                                             </td>
-                                                        </tr>
+                                                        </tr> --}}
                                                     </tbody>
                                                 </table>
                                             </div>

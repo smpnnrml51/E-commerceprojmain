@@ -26,9 +26,6 @@
                                         </h1>
                                         <ol class="list-reset flex text-sm">
                                             <li>
-                                                <a href="#" class="text-gray-500 dark:text-slate-400">Robotech</a>
-                                            </li>
-                                            <li>
                                                 <span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
                                             </li>
                                             <li class="text-gray-500 dark:text-slate-400">
@@ -193,10 +190,10 @@
                                             class="px-2 py-2 lg:px-4 bg-brand text-white text-sm rounded hover:bg-brand-600 border border-brand-500">
                                             Add Product
                                         </button>
-                                        <button
+                                        {{-- <button
                                             class="px-2 py-2 lg:px-4 bg-transparent text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">
                                             Save Product
-                                        </button>
+                                        </button> --}}
                                     </div>
                                 </div>
                                 <!--end card-body-->
@@ -205,7 +202,7 @@
                         </div>
                 </form>
                 <!--end col-->
-                <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
+                {{-- <div class="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
                     <div class="w-full relative mb-4">
                         <div class="flex-auto p-0 md:p-4">
                             <div>
@@ -261,7 +258,7 @@
                         <!--end card-body-->
                     </div>
                     <!--end card-->
-                </div>
+                </div> --}}
                 <!--end col-->
             </div>
             <!--end grid-->
