@@ -101,8 +101,9 @@
                 <div class="relative -mx-4 flex items-center justify-center sm:justify-between">
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a class='block w-full py-5 lg:py-3' href={{ url('usersite') }}>
-                            <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-6 md:w-8 inline-block">
+                            {{-- <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-6 md:w-8 inline-block"> --}}
                             <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-20 md:w-24 inline-block">
+                            <span class="w-6 md:w-8 inline-block">VYOMITE</span>
                         </a>
                     </div>
                     <div class="w-full items-center justify-end px-4 sm:flex lg:justify-between">

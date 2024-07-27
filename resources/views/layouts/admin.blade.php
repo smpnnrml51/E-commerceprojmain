@@ -9,7 +9,7 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('images/logos/new.png') }}" />
 
     <!-- Css -->
     <!-- Main Css -->
@@ -31,15 +31,16 @@
             class=" text-center border-b bg-[#603dc3] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#603dc3] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3] group-data-[sidebar=brand]:border-slate-700/40">
             <a class='logo' href='/robotech/default/'>
                 <span>
-                    <img src="{{ asset('images/logo-sm.png') }}" alt="logo-small"
+                    <img src="{{ asset('images/logos/new.png') }}" alt="logo-small"
                         class="logo-sm h-8 align-middle inline-block">
                 </span>
                 <span>
-                    <img src="{{ asset('images/logo.png') }}" alt="logo-large"
-                        class="logo-lg h-[28px] logo-light hidden dark:inline-block ms-1 group-data-[sidebar=dark]:inline-block group-data-[sidebar=brand]:inline-block">
-                    <img src="{{ asset('images/logo.png') }}" alt="logo-large"
+                    {{-- <img src="{{ asset('images/logos/new.png') }}" alt="logo-large"
+                        class="logo-lg h-[28px] logo-light hidden dark:inline-block ms-1 group-data-[sidebar=dark]:inline-block group-data-[sidebar=brand]:inline-block"> --}}
+                    <img src="{{ asset('images/logos/new.png') }}" alt="logo-large"
                         class="logo-lg h-[28px] logo-dark inline-block dark:hidden ms-1 group-data-[sidebar=dark]:hidden group-data-[sidebar=brand]:hidden">
                 </span>
+                <span>VYOMITE</span>
             </a>
         </div>
         <div class="border-r pb-14 h-[100vh] dark:bg-[#603dc3] dark:border-slate-700/40 group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:border-slate-700/40"
@@ -1060,7 +1061,7 @@
                         class="dropdown-toggle flex items-center rounded-full text-sm
                     focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
                         id="user-profile" aria-expanded="false" data-fc-autoclose="both" data-fc-type="dropdown">
-                        <img class="h-8 w-8 rounded-full" src="assets/images/users/avatar-1.png" alt="user photo" />
+                        <img class="h-8 w-8 rounded-full" src="{{asset('/images/users/avatar-1.png')}}" alt="user photo" />
                         <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                             <span class="block font-medium text-slate-600 dark:text-gray-300">Maria Gibson</span>
                             <span class="-mt-0.5 block text-xs text-slate-500 dark:text-gray-400">Admin</span>
