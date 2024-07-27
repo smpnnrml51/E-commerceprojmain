@@ -33,7 +33,7 @@
                                         </div>
                                         <div class="sm:col-span-12  md:col-span-12 lg:col-span-6 xl:col-span-6 self-center">
                                             <span
-                                                class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{$product->Category->title}}</span>
+                                                class="bg-green-600/5 text-green-500 text-[14px] font-medium px-2.5 py-0.5 rounded h-5">{{ $product->Category->title }}</span>
                                             <div class="">
                                                 <h5 class="dark:text-slate-200 font-medium text-[30px] leading-9 mt-4">
                                                     {{ $product->name }}</h5>
@@ -64,7 +64,7 @@
                                                 </ul> --}}
                                                 <h6
                                                     class="text-[28px] text-slate-700 dark:text-slate-300 font-semibold mb-4">
-                                                    {{$product->price}}
+                                                    {{ $product->price }}
                                                     {{-- <span
                                                         class="text-base text-slate-400 font-semibold"><del>$180.00</del></span>
                                                     <span class="text-red-500 text-base font-semibold ml-2">50% Off</span> --}}
@@ -79,11 +79,11 @@
                                                     <a href="#" class="text-primary-500">more details</a>
                                                 </p>
                                                 <!-- <h6 class="text-sm font-medium text-slate-800 dark:text-slate-400 mt-2">Features :</h6>
-                                                            <ol class="list-none list-inside mt-1">
-                                                                <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> It is a long established fact that a reader will be distracted.</li>
-                                                                <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> Contrary to popular belief, Lorem Ipsum is not text.</li>
-                                                                <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> There are many variations of passages of Lorem Ipsum available.</li>
-                                                            </ol> -->
+                                                                <ol class="list-none list-inside mt-1">
+                                                                    <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> It is a long established fact that a reader will be distracted.</li>
+                                                                    <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> Contrary to popular belief, Lorem Ipsum is not text.</li>
+                                                                    <li class="mb-1 text-slate-700 dark:text-slate-400"><i class="las la-check-circle text-green-500 mr-1"></i> There are many variations of passages of Lorem Ipsum available.</li>
+                                                                </ol> -->
 
                                                 <input
                                                     class="form-input border border-slate-300/60 dark:border-slate-700 dark:text-slate-300 bg-transparent  rounded-md mt-1 border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-0 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-brand-500  dark:hover:border-slate-700"
@@ -92,9 +92,10 @@
                                                 <button type="button"
                                                     class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
                                                         class="ti ti-shopping-cart"></i> Add to cart</button>
-                                                <a href="{{route('order.show',$product->products_id)}}"><button type="button"
-                                                    class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
-                                                        class="ti ti-shopping-cart"></i>buy</button></a>
+                                                <a href="{{ route('order.show', $product->products_id) }}"><button
+                                                        type="button"
+                                                        class="inline-block focus:outline-none text-slate-600 hover:bg-brand-500 hover:text-white bg-transparent border border-gray-200 dark:bg-transparent dark:text-slate-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-brand-500  text-sm font-medium py-2 px-3 rounded"><i
+                                                            class="ti ti-shopping-cart"></i>buy</button></a>
                                             </div>
                                         </div>
                                     </div>
@@ -124,8 +125,8 @@
                                             <li class="me-2" role="presentation">
                                                 <button
                                                     class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                                                    id="reviews-tab" data-fc-target="#reviews" type="button"
-                                                    role="tab" aria-controls="reviews" aria-selected="false">Ratings
+                                                    id="reviews-tab" data-fc-target="#reviews" type="button" role="tab"
+                                                    aria-controls="reviews" aria-selected="false">Ratings
                                                     & reviews</button>
                                             </li>
                                         </ul>

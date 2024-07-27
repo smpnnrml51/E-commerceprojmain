@@ -238,7 +238,7 @@
                                     02/05/2023
                                 </h4>
                             </div>
-                            {{-- <div class="mb-5">
+                            <div class="mb-5">
                                     <p class="text-slate-600 text-base dark:text-slate-400">
                                         For this product
                                     </p>
@@ -253,7 +253,7 @@
                                     <h4 class="text-base font-semibold text-slate-900 dark:text-slate-300">
                                         SM, MD, LG, XL
                                     </h4>
-                                </div> --}}
+                                </div>
                         </div>
                         <!--end card-body-->
                     </div>
