@@ -20,6 +20,7 @@ Route::group([], function () {
     Route::resource('usersite', UserSiteController::class)->names('usersite');
 });
 
+Route::get('/', [UserSiteController::class, 'index'])->name('home.index');
 Route::get('/products', [UserSiteController::class, 'products'])->name('home.products');
 Route::get('/wishlist', [UserSiteController::class, 'wishlist'])->name('home.wishlist');
 Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');

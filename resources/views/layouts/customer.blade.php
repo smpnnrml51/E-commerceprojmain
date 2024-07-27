@@ -279,12 +279,12 @@
                                             <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                                                 dark:text-gray-200 dark:hover:bg-gray-900/20
                                                 dark:hover:text-white'
-                                                href='/robotech/default/customers-profile'>
+                                                href="{{url('/profile')}}">
                                                 <span data-lucide="user"
                                                     class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
                                                 Profile</a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                                                 dark:text-gray-200 dark:hover:bg-gray-900/20
                                                 dark:hover:text-white'
@@ -292,7 +292,7 @@
                                                 <span data-lucide="file-spreadsheet"
                                                     class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
                                                 Invoice</a>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <a class='flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
                                                 dark:text-red-400 dark:hover:bg-gray-900/20

@@ -129,69 +129,6 @@
                                     </div>
                                 </div>
                             </div> <!--end card-->
-                            <div class="bg-black dark:bg-slate-800/30 shadow  rounded-md relative w-full mt-4">
-                                <div class="flex-auto p-4">
-                                    <div class="grid grid-cols-1  rounded-md">
-                                        <div class="sm:-mx-6 lg:-mx-8">
-                                            <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
-                                                <table class="min-w-full">
-                                                    <tbody>
-                                                        <!-- 1 -->
-                                                        <tr
-                                                            class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Subtotal
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                $207.00
-                                                            </td>
-                                                        </tr>
-                                                        <!-- 2 -->
-                                                        <tr
-                                                            class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
-                                                                Shipping Charge
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                                $5.00
-                                                            </td>
-                                                        </tr>
-                                                        <!-- 3 -->
-
-                                                        <!-- 4 -->
-                                                        <tr
-                                                            class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
-                                                            <td
-                                                                class="p-3 text-base text-gray-200 whitespace-nowrap font-medium">
-                                                                Total
-                                                            </td>
-                                                            <td
-                                                                class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                                $202.00
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <div class="flex gap-4 mb-4">
-                                            <button
-                                                class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
-                                                shopping</button>
-                                            <button
-                                                class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Back
-                                                to cart</button>
-                                        </div>
-                                        <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It
-                                            is a long established fact that a reader will be distracted by the readable
-                                            content of a page when looking at its layout.</p>
-                                    </div>
-                                </div><!--end card-body-->
-                            </div>
                         </div><!--end col-->
                         <div class="sm:col-span-12  md:col-span-12 lg:col-span-8 xl:col-span-8 ">
                             <div

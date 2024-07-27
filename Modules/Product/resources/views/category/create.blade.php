@@ -26,7 +26,7 @@
                                         </h1>
                                         <ol class="list-reset flex text-sm">
                                             <li>
-                                                <a href="#" class="text-gray-500 dark:text-slate-400">Robotech</a>
+                                                <a href="#" class="text-gray-500 dark:text-slate-400">Vyomite</a>
                                             </li>
                                             <li>
                                                 <span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
@@ -91,11 +91,11 @@
                                             class="px-2 py-2 lg:px-4 bg-brand text-white text-sm rounded hover:bg-brand-600 border border-brand-500">
                                             Create Category
                                         </button>
-                                        <button
+                                        {{-- <button
                                             class="px-2 py-2 lg:px-4 bg-transparent text-brand text-sm rounded transition hover:bg-brand-500 hover:text-white border border-brand font-medium">
                                             Save Product
                                         </button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <!--end card-body-->
                             </div>

@@ -28,17 +28,17 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return view('order::index');
-    }
+    // public function index()
+    // {
+    //     return view('order::index');
+    // }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('order::create');
+        return view('order::show');
     }
 
     /**
@@ -80,5 +80,13 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+    // public function payment()
+    // {
+    //     return view('order::payment');
+    // }
+        public function orders()
+    {
+        return view('order::index');
     }
 }

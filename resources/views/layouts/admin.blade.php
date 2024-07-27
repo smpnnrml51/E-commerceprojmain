@@ -29,7 +29,7 @@
         class="min-h-full z-[99]  fixed inset-y-0 print:hidden bg-gradient-to-t from-[#6f3dc3] from-10% via-[#603dc3] via-40% to-[#5c3dc3] to-100% dark:bg-[#603dc3] main-sidebar duration-300 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3]">
         <div
             class=" text-center border-b bg-[#603dc3] border-r h-[64px] flex justify-center items-center brand-logo dark:bg-[#603dc3] dark:border-slate-700/40 group-data-[sidebar=dark]:bg-[#603dc3] group-data-[sidebar=dark]:border-slate-700/40 group-data-[sidebar=brand]:bg-brand group-[.dark]:group-data-[sidebar=brand]:bg-[#603dc3] group-data-[sidebar=brand]:border-slate-700/40">
-            <a class='logo' href='/robotech/default/'>
+            <a class='logo' href='{{url('admin')}}'>
                 <span>
                     <img src="{{ asset('images/logos/new.png') }}" alt="logo-small"
                         class="logo-sm h-8 align-middle inline-block">
@@ -77,6 +77,14 @@
                                     </li>
                                     <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
+                                            href="{{url('category')}}">
+                                            <i
+                                                class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
+                                            Category
+                                        </a>
+                                    </li>
+                                    <li class="nav-item relative block">
+                                        <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
                                             href="{{url('product')}}">
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
@@ -99,14 +107,14 @@
                                             Customers
                                         </a>
                                     </li>
-                                    <li class="nav-item relative block">
+                                    {{-- <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
                                             href='/robotech/default/admin-customers-details'>
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
                                             Customers Details
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
                                             href='/robotech/default/admin-orders'>
@@ -116,21 +124,21 @@
                                         </a>
                                     </li>
                                     <li class="nav-item relative block">
-                                        <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
+                                        {{-- <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
                                             href='/robotech/default/admin-order-details'>
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
                                             Order Details
-                                        </a>
+                                        </a> --}}
                                     </li>
-                                    <li class="nav-item relative block">
+                                    {{-- <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
                                             href='/robotech/default/admin-refund'>
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
                                             Refund
                                         </a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                             {{-- <a href="#"
