@@ -96,7 +96,7 @@
                                 </div>
                             </div><!--end col-->
                             <div class="col-span-12 sm:col-span-6 md:col-span-4 text-center">
-                                <div class="dark:text-slate-400">
+                                {{-- <div class="dark:text-slate-400">
                                     <strong>Order Details:</strong><br>
                                     <ul class="justify-center">
                                         <li class="text-slate-500">Product :<span
@@ -107,7 +107,7 @@
                                         <li class="text-slate-500">Weight :<span
                                                 class="text-slate-700 dark:text-slate-500 font-semibold"> 5kg</span></li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div><!--end col-->
                             <div class="col-span-12 sm:col-span-6 md:col-span-4 text-end">
                                 <div class="dark:text-slate-400">
@@ -132,7 +132,7 @@
                                         <tr>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Product & Title
+                                                Product
                                             </th>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -144,7 +144,11 @@
                                             </th>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Attributes
+                                                Rate
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                Quntaity
                                             </th>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -177,27 +181,18 @@
                                                 12 Jan 2023
                                             </td>
                                             <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                <div>color :
-                                                    <span class="ms-2">
-                                                        <i class="icofont-brand-mts text-red-500"></i>
-                                                        <i class="icofont-brand-mts text-gray-500"></i>
-                                                        <i class="icofont-brand-mts text-black"></i>
-                                                    </span>
-                                                </div>
-                                                <div>Size :
-                                                    <span class="mx-1">M</span>
-                                                    <span class="mx-1">L</span>
-                                                </div>
+                                                12 Jan 2023
+                                            </td>
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                12 Jan 2023
                                             </td>
                                             <td
                                                 class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
                                                 $79 <del class="text-slate-500 font-normal">$99</del>
                                             </td>
-
-
                                         </tr>
                                         <!--2-->
-                                        <tr
+                                        {{-- <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <div class="flex items-center">
@@ -239,9 +234,9 @@
                                             </td>
 
 
-                                        </tr>
+                                        </tr> --}}
                                         <!--3-->
-                                        <tr
+                                        {{-- <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <div class="flex items-center">
@@ -284,9 +279,9 @@
                                             </td>
 
 
-                                        </tr>
+                                        </tr> --}}
                                         <!--4-->
-                                        <tr
+                                        {{-- <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <div class="flex items-center">
@@ -326,9 +321,9 @@
                                                 class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
                                                 $99 <del class="text-slate-500 font-normal">$150</del>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                         <!--Total-->
-                                        <tr class="bg-white dark:bg-gray-900 ">
+                                        {{-- <tr class="bg-white dark:bg-gray-900 ">
 
                                             <td class="p-3 pb-0 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <span class="text-lg font-semibold">Total</span>
@@ -349,7 +344,7 @@
                                                 class="p-3 pb-0 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
                                                 <span class="text-2xl font-semibold">$616</span>
                                             </td>
-                                        </tr>
+                                        </tr> --}}
                                     </tbody>
                                 </table>
                             </div><!--end div-->
