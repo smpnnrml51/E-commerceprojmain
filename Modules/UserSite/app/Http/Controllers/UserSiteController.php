@@ -7,8 +7,11 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Product\Models\Category;
+use Modules\Order\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use Modules\Product\Repositories\CategoryRepository;
 use Modules\Product\Repositories\ProductRepository;
+use Modules\Order\Repositories\OrderRepository;
 use Modules\Product\Models\Product;
 
 
@@ -16,12 +19,15 @@ class UserSiteController extends Controller
 {
     private $productRepository;
     private $categoryRepository;
+    private $orderRepository;
+
     /**
      * Display a listing of the resource.
      */
     public function __construct(
         ProductRepository $productRepository,
-        CategoryRepository $categoryRepository
+        CategoryRepository $categoryRepository,
+        OrderRepository $orderRepository
     ) {
         $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
@@ -107,6 +113,8 @@ class UserSiteController extends Controller
     // }
     public function profile()
     {
-        return view('usersite::home.profile');
+        $user = Auth::user();
+        $orders = Order::where('customer_id', $user->id)->get();
+        return view('usersite::home.profile', compact('user', 'orders'));
     }
 }

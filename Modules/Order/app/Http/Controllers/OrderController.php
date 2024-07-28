@@ -68,8 +68,8 @@ class OrderController extends Controller
 
         $cart = session('cart', []);
         
-        // $userId = Auth::id();
-        $userId = 2;
+        $userId = Auth::id();
+        // $userId = 2;
 
 
         $uniqueCode = $this->generateUniqueTitle();

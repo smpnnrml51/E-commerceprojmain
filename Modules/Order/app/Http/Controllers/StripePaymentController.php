@@ -36,6 +36,8 @@ class StripePaymentController extends Controller
                 "description" => "Stripe Test Payment" 
         ]);
                 
-        return back()->with('success', 'Payment has been successful');
+        // return back()->with('success', 'Payment has been successful');
+        session()->forget('cart');
+        return redirect()->route('home.index')->with('success', 'Order sent and cart has been cleared');
     }
 }
