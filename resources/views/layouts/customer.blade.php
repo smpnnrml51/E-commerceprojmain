@@ -302,7 +302,7 @@
                                             <a class='flex items-center py-2 px-3 text-sm text-red-400 hover:bg-gray-50 hover:text-red-500
                                                 dark:text-red-400 dark:hover:bg-gray-900/20
                                                 dark:hover:text-red-500'
-                                                href='/robotech/default/auth-lock-screen'>
+                                                href="{{ route('home.logout') }}">
                                                 <span data-lucide="power"
                                                     class="w-4 h-4 inline-block text-red-400 dark:text-red-400 me-2"></span>
                                                 Sign out</a>

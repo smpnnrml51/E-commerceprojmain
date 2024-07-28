@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if($validator->passes()){
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-                return redirect()->route('home.dashboard');
+                return redirect()->route('home.index');
             }else{
                 return redirect()->route('home.login')->with('error','either mail or password in invalid');      
             }
