@@ -89,7 +89,7 @@
                                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                     <td
                                                                         class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="#" class="text-brand-500">{{$order->title}}</a>
+                                                                        <a href="{{url('orderTrack')}}" class="text-brand-500">{{$order->title}}</a>
                                                                     </td>
                                                                     {{-- <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">

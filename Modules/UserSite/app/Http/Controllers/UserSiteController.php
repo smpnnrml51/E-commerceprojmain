@@ -117,4 +117,5 @@ class UserSiteController extends Controller
         $orders = Order::where('customer_id', $user->id)->get();
         return view('usersite::home.profile', compact('user', 'orders'));
     }
+
 }

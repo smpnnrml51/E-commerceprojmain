@@ -24,3 +24,5 @@ Route::controller(StripePaymentController::class)->group(function(){
     Route::post('stripe', 'stripe')->name('stripe.post');
 });
 Route::get('orders', [OrderController::class, 'orders'])->name('index');
+Route::get('orderDetails', [orderController::class, 'orderDetails'])->name('order-details');
+Route::get('orderTrack', [OrderController::class, 'orderTrack'])->name('order-track');
