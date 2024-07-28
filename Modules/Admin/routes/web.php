@@ -17,3 +17,8 @@ use Modules\Admin\Http\Controllers\AdminController;
 Route::group([], function () {
     Route::resource('admin', AdminController::class)->names('admin');
 });
+
+
+Route::group(['middleware'=>'admin.auth'],function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+});

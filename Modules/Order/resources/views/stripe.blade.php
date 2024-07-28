@@ -21,32 +21,58 @@
 {{-- @endsection
 @section('content') --}}
     <div class="row">
-			<div class="col-md-6">
+			<div class="col-md-5">
+                <div class="card mt-3">
 				<div class="bg-black dark:bg-slate-800/30 shadow  rounded-md relative w-full mt-4">
                     <div class="flex-auto p-4">
                         <div class="grid grid-cols-1  rounded-md">
                             <div class="sm:-mx-6 lg:-mx-8">
                                 <div class="relative overflow-x-auto block w-full sm:px-6 lg:px-8">
                                     <table class="min-w-full">
+                                        @php $totalAmount = 0; $totalQuantity = 0; @endphp
                                         <tbody>
-                                            <!-- 1 -->
-                                            <tr
+											<th class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">Product</th>
+											<th class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">Quantity</th>
+											<th class="p-3 text-base font-medium text-gray-100 whitespace-nowrap ">Total</th>
+											@foreach(session('cart') as $item)
+                                            @php
+                                                $totalAmount += $item['price'] * $item['quantity'];
+                                                $totalQuantity += $item['quantity'];
+                                            @endphp
+											<tr
                                                 class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
+                                                <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
+                                                    {{ $item['name'] }}
+                                                </td>
+                                                <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                    {{ $item['quantity'] }} 
+                                                </td>
+                                                <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                    ${{ number_format($item['price'] * $item['quantity'], 2) }}
+                                                </td>
+                                            </tr>
+											@endforeach
+                                            <tr
+                                                class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Subtotal
                                                 </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $207.00
+                                                    {{ $totalQuantity }} 
+                                                </td>
+                                                <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
+                                                    ${{ number_format($totalAmount, 2) }} 
                                                 </td>
                                             </tr>
                                             <!-- 2 -->
                                             <tr
-                                                class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
+                                                class="border-t-2 border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Shipping Charge
                                                 </td>
+                                                <td> </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $5.00
+                                                    $10.00
                                                 </td>
                                             </tr>
                                             <!-- 3 -->
@@ -57,28 +83,30 @@
                                                 <td class="p-3 text-base text-gray-200 whitespace-nowrap font-medium">
                                                     Total
                                                 </td>
+                                                <td> </td>
                                                 <td class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                    $202.00
+                                                    ${{ number_format($totalAmount + 10, 2) }} 
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div class="flex gap-4 mb-4">
-                                <button
-                                    class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
-                                    shopping</button>
-                                <button
-                                    class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Back
-                                    to cart</button>
-                            </div>
-                            <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It
-                                is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout.</p>
+                            <form action="{{ route('order.destroy', ['id' => $order->id]) }}" method="POST">
+                            @csrf
+                                    <div class="flex gap-4 mb-4">
+                                        <button
+                                            class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue
+                                            shopping</button>
+                                        {{-- <button
+                                            class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Back
+                                            to cart</button> --}}
+                                    </div>
+                                </form>
                         </div>
                     </div><!--end card-body-->
                 </div>
+				</div>
             </div>
             <div class="col-md-6">
                 <div class="card mt-5">
@@ -94,13 +122,13 @@
                             <strong>Name:</strong>
                             <input type="input" class="form-control" name="name" placeholder="Enter Name">
                             <input type='hidden' name='stripeToken' id='stripe-token-id'>
-                            <input type='hidden' name='priceToPay' id='priceToPay' value='{{ $product->price }}'>
+                            <input type='hidden' name='priceToPay' id='priceToPay' value='{{ $totalAmount + 10 }} '>
 
                             <br>
                             <div id="card-element" class="form-control"></div>
                             <button id='pay-btn' class="btn btn-success mt-3" type="button"
                                 style="margin-top: 20px; width: 100%;padding: 7px;" onclick="createToken()">PAY
-                                {{ $product->price }}
+                                ${{ number_format($totalAmount + 10, 2) }} 
                             </button>
                             <form>
                     </div>
