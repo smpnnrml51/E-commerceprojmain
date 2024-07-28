@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class LoginController extends Controller
 {
@@ -37,7 +38,25 @@ class LoginController extends Controller
         }
     }
 
-    public function register(){
+    public function register(Request $request){
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+            'g-recaptcha-response' => 'required|recaptcha'
+        ];
+        // Validator::validate($request, $rules,[
+        //     'name.required' => 'Name is required',
+        //     'email.required' => 'Email is required',
+        //     'email.email' => 'Email is invalid',
+        //     'email.unique' => 'Email is already registered',
+        //     'password.required' => 'Password is required',
+        //     'password.confirmed' => 'Password confirmation does not match',
+        //     'password_confirmation.required' => 'Password confirmation is required',
+        //     'g-recaptcha-response.required' => 'Recaptcha is required',
+        //     'g-recaptcha-response.recaptcha' => 'Recaptcha is invalid'
+        // ]);
         return view('register');
     }
 

@@ -109,7 +109,7 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $id)
     {
         //
     }
@@ -138,5 +138,16 @@ class OrderController extends Controller
         } while (Order::where('title', $uniqueCode)->exists());
 
         return $uniqueCode;
+    }
+    public function orderDetails()
+    {
+        // $order = $this->orderRepository->getOrderById($id);
+        return view('order::order-details');
+    }
+    public function orderTrack()
+    {
+        // $order = Order::find($id);
+        // $products = Product::all();
+        return view('order::order-track');
     }
 }

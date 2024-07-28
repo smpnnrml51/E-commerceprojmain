@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{{ asset('images/logos/new.png') }}" />
 
     <!-- Css -->
+    <link rel="stylesheet" href="{{asset('libs/leaflet/leaflet.css')}}">
     <link rel="stylesheet" href="{{ asset('libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
@@ -479,12 +480,12 @@
                                             Products
                                         </a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
                                             href="{{ url('wishlist') }}">
                                             Wishlist
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a class='flex justify-between py-2 text-base font-medium text-dark hover:text-brand lg:mx-5 lg:inline-flex lg:py-6 2xl:mx-6'
                                             href="{{ url('checkout') }}">
