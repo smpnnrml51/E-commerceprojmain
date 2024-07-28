@@ -26,9 +26,6 @@
                                         </h1>
                                         <ol class="list-reset flex text-sm">
                                             <li>
-                                                <a href="#" class="text-gray-500 dark:text-slate-400">Robotech</a>
-                                            </li>
-                                            <li>
                                                 <span class="text-gray-500 dark:text-slate-400 mx-2">/</span>
                                             </li>
                                             <li class="text-gray-500 dark:text-slate-400">

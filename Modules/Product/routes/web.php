@@ -15,10 +15,7 @@ use Modules\Product\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::group([], function () {
-    Route::resource('product', ProductController::class)->names('product');
-});
-Route::group([], function () {
-    Route::resource('category', CategoryController::class)->names('category');
+Route::group(['middleware'=>'admin.auth'],function(){
+        Route::resource('product', ProductController::class)->names('product');
+        Route::resource('category', CategoryController::class)->names('category');
 });

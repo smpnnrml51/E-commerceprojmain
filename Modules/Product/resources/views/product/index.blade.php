@@ -11,8 +11,6 @@
                                     <div class="items-center ">
                                         <h1 class="font-medium text-3xl block dark:text-slate-100">Products</h1>
                                         <ol class="list-reset flex text-sm">
-                                            <li><a href="#" class="text-gray-500 dark:text-slate-400">Robotech</a>
-                                            </li>
                                             <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
                                             <li class="text-gray-500 dark:text-slate-400">Admin</li>
                                             <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
@@ -79,7 +77,7 @@
                                         <a href="{{ route('product.create') }}">
                                             <button
                                                 class="inline-block focus:outline-none bg-brand-500 mt-1 text-white hover:bg-brand-600 hover:text-white text-md font-medium py-2 px-4 rounded">
-                                                Add product
+                                                    Add product
                                             </button>
                                         </a>
                                     </div>
@@ -113,7 +111,7 @@
                                                                 </th>
                                                                 <th scope="col"
                                                                     class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                                    Stock status
+                                                                    Quantity
                                                                 </th>
                                                                 <th scope="col"
                                                                     class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
@@ -166,7 +164,7 @@
                                                                         <div class="self-center">
                                                                             <h5
                                                                                 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                {{ $product->stock }}</h5>
+                                                                                {{ $product->qty }}</h5>
                                                                         </div>
                                                                     </td>
                                                                     <td
