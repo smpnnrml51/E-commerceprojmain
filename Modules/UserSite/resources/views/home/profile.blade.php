@@ -89,7 +89,7 @@
                                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                     <td
                                                                         class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="{{url('orderTrack')}}" class="text-brand-500">{{$order->title}}</a>
+                                                                        <a href="{{route('order-track', $order->id)}}" class="text-brand-500">{{$order->title}}</a>
                                                                     </td>
                                                                     {{-- <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
@@ -115,10 +115,20 @@
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         {{ $order->created_at->format('d M Y') }}
                                                                     </td>
-                                                                    <td
-                                                                        class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        <span
-                                                                            class="bg-yellow-600/5 text-yellow-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">{{ $order->status }}</span>
+                                                                    <td class="p-3 text-sm whitespace-nowrap dark:text-gray-400">
+                                                                        <span class="text-[11px] font-medium px-2.5 py-0.5 rounded h-5
+                                                                            @if($order->status === 'pending')
+                                                                                bg-yellow-600/5 text-yellow-600
+                                                                            @elseif($order->status === 'on_delivery')
+                                                                                bg-blue-600/5 text-blue-600
+                                                                            @elseif($order->status === 'delivered')
+                                                                                bg-green-600/5 text-green-600
+                                                                            @else
+                                                                                bg-gray-600/5 text-gray-600
+                                                                            @endif
+                                                                        ">
+                                                                            {{ $order->status }}
+                                                                        </span>
                                                                     </td>
                                                                     <td
                                                                         class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">

@@ -34,6 +34,6 @@ Route::group(['middleware'=>'admin.auth'],function(){
  });
 
  Route::group(['middleware'=>'auth'],function(){
-    Route::get('orderTrack', [OrderController::class, 'orderTrack'])->name('order-track');
+    Route::get('orderTrack/{id}', [OrderController::class, 'orderTrack'])->name('order-track');
 
  });

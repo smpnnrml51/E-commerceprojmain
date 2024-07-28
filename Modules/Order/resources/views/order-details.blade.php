@@ -10,6 +10,21 @@
                             <div class="flex flex-wrap justify-between">
                                 <div class="items-center ">
                                     <h1 class="font-medium text-3xl block dark:text-slate-100">Order : {{ $order->title }}</h1>
+                                    <div class="row flex items-center">
+                                        <h4 class="mr-4">Status:</h4>
+                                        <div class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            <form id="order-status-form-{{ $order->id }}" action="{{ route('order.updateStatus', $order->id) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <select name="status" id="order-status-{{ $order->id }}" class="status-dropdown bg-green-600/5 text-[11px] font-medium px-2.5 py-0.5 rounded h-5" onchange="this.form.submit()">
+                                                    <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }} class="text-yellow-600">Pending</option>
+                                                    <option value="on_delivery" {{ $order->status == 'on_delivery' ? 'selected' : '' }} class="text-blue-600">On Delivery</option>
+                                                    <option value="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }} class="text-green-600">Delivered</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    
                                     <ol class="list-reset flex text-sm">
                                         <li><a href="#" class="text-gray-500 dark:text-slate-400">Vyomite</a></li>
                                         <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
@@ -363,7 +378,7 @@
                                         <tbody>
                                             <!-- 1 -->
                                             @php
-                                                $netTotal = $totalAmount + 10;
+                                                $netTotal = $totalAmount + 10
                                             @endphp
                                             <tr
                                                 class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">

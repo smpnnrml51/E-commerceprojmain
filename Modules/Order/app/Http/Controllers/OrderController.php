@@ -152,10 +152,11 @@ class OrderController extends Controller
         $order = $this->orderRepository->getOrderById($id);
         return view('order::order-details', compact('order'));
     }
-    public function orderTrack()
+    public function orderTrack($id)
     {
         // $order = Order::find($id);
         // $products = Product::all();
-        return view('order::order-track');
+        $order = $this->orderRepository->getOrderById($id);
+        return view('order::order-track', compact('order'));
     }
 }

@@ -2,7 +2,7 @@
 @section('content')
     <div class="flex flex-wrap justify-between">
         <div class="items-center ">
-            <h1 class="font-medium text-3xl block dark:text-slate-100">Orders : #363625</h1>
+            <h1 class="font-medium text-3xl block dark:text-slate-100">Order : {{ $order->title }}</h1>
         </div>
         <div class="flex items-center">
             <div
@@ -20,9 +20,9 @@
                             <img src="assets/images/users/avatar-2.png" alt=""
                                 class="me-2 h-24 rounded-full inline-block">
                             <div class="self-center">
-                                <h5 class="text-2xl font-semibold text-slate-700 dark:text-gray-400">Merri Diamond</h5>
-                                <p class="block  font-medium text-slate-500">Customer ID : <span
-                                        class="text-primary-500">5698475</span></p>
+                                <h5 class="text-2xl font-semibold text-slate-700 dark:text-gray-400">{{ $order->customer->name }}</h5>
+                                {{-- <p class="block  font-medium text-slate-500">Customer ID : <span
+                                        class="text-primary-500">5698475</span></p> --}}
                             </div>
                         </div>
                         <div class="my-10">
@@ -31,65 +31,45 @@
                                     <li class="relative mb-6 sm:mb-0">
                                         <div class="flex items-center">
                                             <div
-                                                class="z-10 flex items-center justify-center w-6 h-6 bg-brand-100 rounded-full ring-0 ring-white dark:bg-brand-900 sm:ring-8 dark:ring-slate-800 shrink-0">
-                                                <i data-lucide="package-open" class="w-6 h-6 stroke-brand-500"></i>
+                                                class="z-10 flex @if($order->status == 'pending') animate-bounce bg-brand-500 ring-brand-500 @else bg-primary-100 ring-white @endif  items-center justify-center w-6 h-6 rounded-full ring-0 dark:bg-brand-900 sm:ring-8 dark:ring-slate-800 shrink-0">
+                                                <i data-lucide="package-open" class="w-6 h-6 @if($order->status == 'pending') stroke-white @else stroke-slate-500 @endif"></i>
                                             </div>
                                             <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700">
                                             </div>
                                         </div>
                                         <div class="mt-3 sm:pr-8">
-                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Order is
-                                                processing</h3>
-                                            <time
+                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Processing Order</h3>
+                                            {{-- <time
                                                 class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">26
-                                                January, 2023 <span>03:10 PM</span></time>
+                                                January, 2023 <span>03:10 PM</span></time> --}}
                                             <p class="text-base font-normal text-gray-500 dark:text-gray-400">Your
-                                                package is ready for the seller to prepare.</p>
+                                                ordered package is being processed.</p>
                                         </div>
                                     </li>
                                     <li class="relative mb-6 sm:mb-0">
                                         <div class="flex items-center">
                                             <div
-                                                class="z-10 flex animate-bounce items-center justify-center w-6 h-6 bg-brand-500 rounded-full ring-0 ring-brand-500 dark:bg-primary-900 sm:ring-8 dark:ring-slate-800 shrink-0">
-                                                <i data-lucide="truck" class="w-6 h-6 stroke-white"></i>
+                                                class="z-10 flex  @if($order->status == 'on_delivery') animate-bounce bg-brand-500 ring-brand-500 @else bg-primary-100 ring-white @endif items-center justify-center w-6 h-6 rounded-full ring-0 dark:bg-primary-900 sm:ring-8 dark:ring-slate-800 shrink-0">
+                                                <i data-lucide="truck" class="w-6 h-6 @if($order->status == 'on_delivery') stroke-white @else stroke-slate-500 @endif"></i>
                                             </div>
                                             <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700">
                                             </div>
                                         </div>
                                         <div class="mt-3 sm:pr-8">
-                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ready to
-                                                Ship</h3>
-                                            <time
+                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">On Delivery</h3>
+                                            {{-- <time
                                                 class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">28
-                                                January, 2023 <span>01:10 PM</span></time>
+                                                January, 2023 <span>01:10 PM</span></time> --}}
                                             <p class="text-base font-normal text-gray-500 dark:text-gray-400">Your
-                                                package is now ready to be shipped.</p>
+                                                package is now being shipped.</p>
                                         </div>
                                     </li>
-                                    {{-- <li class="relative mb-6 sm:mb-0">
-                                        <div class="flex items-center">
-                                            <div
-                                                class="z-10 flex items-center justify-center w-6 h-6 bg-primary-100 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-slate-800 shrink-0">
-                                                <i data-lucide="clock-10" class="w-6 h-6 stroke-slate-500"></i>
-                                            </div>
-                                            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700">
-                                            </div>
-                                        </div>
-                                        <div class="mt-3 sm:pr-8">
-                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Shipped
-                                            </h3>
-                                            <time
-                                                class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">29
-                                                January, 2023 <span>Estimated time</span></time>
-                                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Pending
-                                            </p>
-                                        </div>
-                                    </li> --}}
+
                                     <li class="relative mb-6 sm:mb-0">
                                         <div class="flex items-center">
                                             <div
-                                                class="z-10 flex items-center justify-center w-6 h-6 bg-primary-100 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-slate-800 shrink-0">
-                                                <i data-lucide="target" class="w-6 h-6 stroke-slate-500"></i>
+                                                class="z-10 flex  @if($order->status == 'delivered') animate-bounce bg-brand-500 ring-brand-500 @else bg-primary-100 ring-white @endif items-center justify-center w-6 h-6 rounded-full ring-0 dark:bg-primary-900 sm:ring-8 dark:ring-slate-800 shrink-0"">
+                                                <i data-lucide="target" class="w-6 h-6 @if($order->status == 'delivered') stroke-white @else stroke-slate-500 @endif"></i>
                                             </div>
                                             <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700">
                                             </div>
@@ -97,10 +77,10 @@
                                         <div class="mt-3 sm:pr-8">
                                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Delivered
                                             </h3>
-                                            <time
+                                            {{-- <time
                                                 class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">30
-                                                January, 2023 <span>Estimated time</span></time>
-                                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Pending
+                                                January, 2023 <span>Estimated time</span></time> --}}
+                                            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Your package has been delivered.
                                             </p>
                                         </div>
                                     </li>
@@ -111,13 +91,35 @@
                             class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-4 ">
                             <div class="col-span-12 sm:col-span-6 md:col-span-4">
                                 <div class="dark:text-slate-400">
-                                    <br>
                                     <address class="text-sm">
                                         <strong>Billed To :</strong><br>
-                                        Joe Smith<br>
-                                        795 Folsom Ave<br>
-                                        San Francisco, CA 94107<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                        {{ $order->fname." ".$order->lname }}<br>
+                                        {{ $order->address }}<br>
+                                        {{ $order->email }}<br>
+                                        <abbr title="Phone">Phone:</abbr> {{ $order->phone }}
+                                    </address>
+                                </div>
+                            </div><!--end col-->
+                            <div class="col-span-12 sm:col-span-6 md:col-span-4 text-center">
+                                {{-- <div class="dark:text-slate-400">
+                                    <strong>Order Details:</strong><br>
+                                    <ul class="justify-center">
+                                        <li class="text-slate-500">Product :<span
+                                                class="text-slate-700 dark:text-slate-500 font-semibold"> Winter
+                                                jacket</span></li>
+                                        <li class="text-slate-500">Quantity :<span
+                                                class="text-slate-700 dark:text-slate-500 font-semibold"> 2</span></li>
+                                        <li class="text-slate-500">Weight :<span
+                                                class="text-slate-700 dark:text-slate-500 font-semibold"> 5kg</span></li>
+                                    </ul>
+                                </div> --}}
+                            </div><!--end col-->
+                            <div class="col-span-12 sm:col-span-6 md:col-span-4 text-end">
+                                <div class="dark:text-slate-400">
+                                    <address class="text-sm">
+                                        <strong>Shipped To:</strong><br>
+                                        {{ $order->fname." ".$order->lname }}<br>
+                                        {{ $order->delivery_address }}<br>
                                     </address>
                                 </div>
                             </div><!--end col-->
@@ -188,61 +190,73 @@
                                             </th>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Categories
+                                                Category
                                             </th>
-                                            <th scope="col"
+                                            {{-- <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                 Date
-                                            </th>
+                                            </th> --}}
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                 Rate
                                             </th>
                                             <th scope="col"
-                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Quntaity
+                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase text-right">
+                                                Quantity
                                             </th>
                                             <th scope="col"
-                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase text-right">
                                                 Total
                                             </th>
                                         </tr>
                                     </thead>
+                                    @php
+                                        $totalAmount = 0;
+                                        $netTotal = 0;
+                                    @endphp
                                     <tbody>
 
+                                        <!-- 1 -->
+                                        @foreach(json_decode($order->products, true) as $product)
+                                        {{-- @dd($product) --}}
                                         <!-- 1 -->
                                         <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <div class="flex items-center">
-                                                    <img src="assets/images/products/pro-4.png" alt=""
+                                                    <img src="{{ asset('storage/' . explode('|', $product['image'])[0]) }}" alt=""
                                                         class="me-2 h-8 inline-block">
                                                     <div class="self-center">
                                                         <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                            Mannat 530 Bluetooth Wireless </h5>
-                                                        <span class="block  font-medium text-slate-500">Size-M (Model
-                                                            2023)</span>
+                                                            {{ $product['name'] }}</h5>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            {{-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                 <a href="#" class="text-brand-500 underline">Footwear</a>,
                                                 <a href="#" class="text-brand-500 underline">Lifestayle</a>
-                                            </td>
+                                            </td> --}}
                                             <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                12 Jan 2023
+                                                {{ $product['category'] }}
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            {{-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                 12 Jan 2023
+                                            </td> --}}
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                {{ $product['price'] }}
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                12 Jan 2023
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                                                {{ $product['quantity'] }}
                                             </td>
                                             <td
-                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                $79 <del class="text-slate-500 font-normal">$99</del>
+                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400 text-right">
+                                                ${{ $product['price'] * $product['quantity'] }}
                                             </td>
                                         </tr>
+                                        @php
+                                            $totalAmount += $product['price'] * $product['quantity'] 
+                                        @endphp
+                                        @endforeach
                                         <!--2-->
                                         {{-- <tr
                                         class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
@@ -413,13 +427,16 @@
                                     <table class="min-w-full">
                                         <tbody>
                                             <!-- 1 -->
+                                            @php
+                                                $netTotal = $totalAmount + 10;
+                                            @endphp
                                             <tr
                                                 class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Subtotal
                                                 </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $616.00
+                                                    ${{ $totalAmount }}
                                                 </td>
                                             </tr>
                                             <!-- 2 -->
@@ -429,10 +446,10 @@
                                                     Shipping Charge
                                                 </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $20.00
+                                                    $10.00
                                                 </td>
                                             </tr>
-                                            <!-- 3 -->
+                                            {{-- <!-- 3 -->
                                             <tr class="">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Promo Code
@@ -440,7 +457,7 @@
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                     -$10.00
                                                 </td>
-                                            </tr>
+                                            </tr> --}}
                                             <!-- 4 -->
                                             <tr
                                                 class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
@@ -448,16 +465,13 @@
                                                     Total
                                                 </td>
                                                 <td class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                    $626.00
+                                                    ${{ $netTotal }}
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It is a long
-                                established fact that a reader will be distracted by the readable content of a page when
-                                looking at its layout.</p>
                         </div>
                     </div>
                 </div><!--end card-->
