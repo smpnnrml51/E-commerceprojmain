@@ -117,7 +117,7 @@
                                     </li> --}}
                                     <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
-                                            href='/robotech/default/admin-orders'>
+                                            href='{{url('orders')}}'>
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400"></i>
                                             Orders
