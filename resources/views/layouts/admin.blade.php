@@ -69,7 +69,7 @@
                                 <ul class="nav flex-col flex flex-wrap ps-0 mb-0 ms-2">
                                     <li class="nav-item relative block">
                                         <a class='nav-link  hover:text-primary-500  rounded-md dark:hover:text-primary-500 relative   flex items-center decoration-0 px-3 py-3 group-data-[sidebar=brand]:hover:text-slate-200'
-                                            href='/robotech/default/'>
+                                            href='{{url('/admin')}}'>
                                             <i
                                                 class="icofont-dotted-right me-2 text-slate-600 text-[8px] group-data-[sidebar=brand]:text-slate-400 "></i>
                                             Dashboard
