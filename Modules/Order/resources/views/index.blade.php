@@ -1,5 +1,23 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    .status-dropdown {
+        font-size: 11px;
+        font-weight: medium;
+        padding: 0.5em;
+        border-radius: 0.25em;
+        background-color: #f0f0f0;
+    }
+    .status-dropdown.pending {
+        color: yellow;
+    }
+    .status-dropdown.on_delivery {
+        color: blue;
+    }
+    .status-dropdown.delivered {
+        color: green;
+    }
+</style>
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div class="page-wrapper relative ltr:ms-auto rtl:me-auto rtl:ms-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300">
             <div class="xl:w-full">
@@ -135,6 +153,10 @@
                                                                 </th>
                                                                 <th scope="col"
                                                                     class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                                    Customer
+                                                                </th>
+                                                                <th scope="col"
+                                                                    class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                     Total
                                                                 </th>
                                                                 <th scope="col"
@@ -154,7 +176,9 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach($orders as $order)
                                                             <!-- 1 -->
+                                                            {{-- @dd($order->products) --}}
                                                             <tr
                                                                 class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                 <td class="w-4 p-4">
@@ -170,43 +194,52 @@
                                                                 <td
                                                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                     <a class='text-brand-500 underline'
-                                                                        href='{{url('orderDetails')}}'>#523666</a>
+                                                                        href='{{route('order-details', $order->id)}}'>{{ $order->title }}</a>
                                                                 </td>
                                                                 <td
                                                                     class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                                     <div class="flex items-center">
-                                                                        <img src="assets/images/users/avatar-2.png"
+                                                                        <img src="{{asset('images/logos/userimgae.png')}}"
                                                                             alt="" class="me-2 h-8 inline-block">
                                                                         <div class="self-center">
                                                                             <h5
                                                                                 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                                                Merri Diamond</h5>
+                                                                                {{ $order->fname . " " . $order->lname }}</h5>
                                                                             <span
-                                                                                class="block  font-medium text-slate-500">New
-                                                                                york, USA</span>
+                                                                                class="block  font-medium text-slate-500">{{$order->address}}</span>
                                                                         </div>
                                                                     </div>
                                                                 </td>
+                                                                @php
+                                                                    $totalPrice = 0;
+                                                                    $netTotal = 0;
+                                                                    foreach(json_decode($order->products, true) as $product){
+                                                                      $totalPrice += $product['price'] * $product['quantity'];  
+                                                                    }
+                                                                    $netTotal = $totalPrice + 10;
+                                                                @endphp
                                                                 <td
                                                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    $540.00
-                                                                </td>
-                                                                <td clas
-                                                                    s="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    20 Jun 2023
+                                                                    ${{ $order->customer_id }}
                                                                 </td>
                                                                 <td
                                                                     class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                    {{-- <span class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">Success</span> --}}
-                                                                    <select
-                                                                        class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">
-                                                                        <option value="success" class="text-green-600">
-                                                                            Success</option>
-                                                                        <option value="pending" class="text-yellow-600">
-                                                                            Pending</option>
-                                                                        <option value="cancel" class="text-red-600">Cancel
-                                                                        </option>
-                                                                    </select>
+                                                                    ${{ $totalPrice }}
+                                                                </td>
+                                                                <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                    
+                                                                    {{ $order->created_at->format('d M Y') }}
+                                                                </td>
+                                                                <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                                    <form id="order-status-form-{{ $order->id }}" action="{{ route('order.updateStatus', $order->id) }}" method="POST">
+                                                                        @csrf
+                                                                        @method('PUT')
+                                                                        <select name="status" id="order-status-{{ $order->id }}" class="status-dropdown bg-green-600/5 text-[11px] font-medium px-2.5 py-0.5 rounded h-5" onchange="this.form.submit()">
+                                                                            <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }} class="text-yellow-600">Pending</option>
+                                                                            <option value="on_delivery" {{ $order->status == 'on_delivery' ? 'selected' : '' }} class="text-blue-600">On Delivery</option>
+                                                                            <option value="delivered" {{ $order->status == 'delivered' ? 'selected' : '' }} class="text-green-600">Delivered</option>
+                                                                        </select>
+                                                                    </form>
                                                                 </td>
                                                                 {{-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                 <a href="#"><i class="icofont-ui-edit text-lg text-gray-500 dark:text-gray-400"></i></a>
@@ -447,6 +480,7 @@
                                                                 <a href="#"><i class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
                                                             </td>
                                                         </tr> --}}
+                                                        @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div><!--end div-->
@@ -1044,3 +1078,55 @@
         </div><!--end page-wrapper-->
     </div><!--end /div-->
 @endsection
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function updateOrderStatus(orderId) {
+            var form = $('#order-status-form-' + orderId);
+            var status = $('#order-status-' + orderId).val();
+            var token = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'PUT',
+                data: {
+                    _token: token,
+                    status: status
+                },
+                success: function(response) {
+                    console.log('Status updated successfully');
+                    // Optionally, you can add code here to show a success message to the user
+                },
+                error: function(xhr) {
+                    console.log('An error occurred while updating the status');
+                    // Optionally, you can add code here to show an error message to the user
+                }
+            });
+
+            // Prevent the form from submitting the traditional way
+            return false;
+        }
+        $(document).ready(function() {
+            $('.status-dropdown').each(function() {
+                updateDropdownColor($(this));
+            });
+
+            function updateDropdownColor(dropdown) {
+                var status = dropdown.val();
+                dropdown.removeClass('pending on_delivery delivered');
+
+                if (status == 'pending') {
+                    dropdown.addClass('pending');
+                } else if (status == 'on_delivery') {
+                    dropdown.addClass('on_delivery');
+                } else if (status == 'delivered') {
+                    dropdown.addClass('delivered');
+                }
+            }
+
+            // Update color on change
+            $('select.status-dropdown').change(function() {
+                updateDropdownColor($(this));
+            });
+        });
+    </script>

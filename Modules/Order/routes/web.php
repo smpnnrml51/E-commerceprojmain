@@ -23,6 +23,17 @@ Route::controller(StripePaymentController::class)->group(function(){
     Route::get('stripe', 'index');
     Route::post('stripe', 'stripe')->name('stripe.post');
 });
-Route::get('orders', [OrderController::class, 'orders'])->name('index');
-Route::get('orderDetails', [orderController::class, 'orderDetails'])->name('order-details');
-Route::get('orderTrack', [OrderController::class, 'orderTrack'])->name('order-track');
+
+
+
+Route::group(['middleware'=>'admin.auth'],function(){
+    Route::get('orderDetails/{id}', [orderController::class, 'orderDetails'])->name('order-details');
+    Route::get('orders', [OrderController::class, 'orders'])->name('order.index');
+    Route::put('/orders/{order}', [OrderController::class, 'updateStatus'])->name('order.updateStatus');
+
+ });
+
+ Route::group(['middleware'=>'auth'],function(){
+    Route::get('orderTrack', [OrderController::class, 'orderTrack'])->name('order-track');
+
+ });

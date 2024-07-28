@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
 <div class="ltr:flex flex-1 rtl:flex-row-reverse">
     <div class="page-wrapper relative ltr:ms-auto rtl:me-auto rtl:ms-0 w-[calc(100%-260px)] px-4 pt-[64px] duration-300">
         <div class="xl:w-full">        
@@ -10,7 +9,7 @@
                         <div class="">
                             <div class="flex flex-wrap justify-between">
                                 <div class="items-center ">
-                                    <h1 class="font-medium text-3xl block dark:text-slate-100">Orders : #363625</h1>
+                                    <h1 class="font-medium text-3xl block dark:text-slate-100">Order : {{ $order->title }}</h1>
                                     <ol class="list-reset flex text-sm">
                                         <li><a href="#" class="text-gray-500 dark:text-slate-400">Vyomite</a></li>
                                         <li><span class="text-gray-500 dark:text-slate-400 mx-2">/</span></li>
@@ -39,44 +38,38 @@
                             <img src="assets/images/users/avatar-2.png" alt=""
                                 class="me-2 h-24 rounded-full inline-block">
                             <div class="self-center">
-                                <h5 class="text-2xl font-semibold text-slate-700 dark:text-gray-400">Merri Diamond</h5>
-                                <p class="block  font-medium text-slate-500">Customer ID : <span
-                                        class="text-primary-500">5698475</span></p>
+                                <h5 class="text-2xl font-semibold text-slate-700 dark:text-gray-400">{{ $order->customer->name }}</h5>
+                                {{-- <p class="block  font-medium text-slate-500">Customer ID : <span
+                                        class="text-primary-500">5698475</span></p> --}}
                             </div>
                         </div>
                         <div class="my-10">
-                            <div
-                                class="after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:bg-gray-500/10">
+                            <div class="after:mt-4 after:block after:h-1 after:w-full after:rounded-lg after:bg-gray-500/10">
                                 <ol class="grid grid-cols-3 text-sm font-medium text-gray-500">
-                                    <li class="relative flex justify-start text-brand-600">
-                                        <span
-                                            class="absolute -bottom-[1.75rem] start-0 rounded-full  bg-brand-600 text-white">
+                                    <!-- Pending Step -->
+                                    <li class="relative flex justify-start {{ $order->status === 'pending' || $order->status === 'on_delivery' || $order->status === 'delivered' ? 'text-brand-600' : 'text-gray-500' }}">
+                                        <span class="absolute -bottom-[1.75rem] start-0 rounded-full {{ $order->status === 'pending' || $order->status === 'on_delivery' || $order->status === 'delivered' ? 'bg-brand-600' : 'bg-gray-600' }} text-white">
                                             <i class="icofont-check w-5 h-5 leading-5 block text-center"></i>
                                         </span>
-
-                                        <span class="hidden sm:block"> Ordered </span>
-
+                                        <span class="hidden sm:block">Pending</span>
                                         <i data-lucide="gift" class="sm:hidden"></i>
                                     </li>
-
-                                    <li class="relative flex justify-center text-brand-600">
-                                        <span
-                                            class="absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 rounded-full bg-brand-600 text-white">
+                        
+                                    <!-- Delivery Step -->
+                                    <li class="relative flex justify-center {{ $order->status === 'on_delivery' || $order->status === 'delivered' ? 'text-brand-600' : 'text-gray-500' }}">
+                                        <span class="absolute -bottom-[1.75rem] left-1/2 -translate-x-1/2 rounded-full {{ $order->status === 'on_delivery' || $order->status === 'delivered' ? 'bg-brand-600' : 'bg-gray-600' }} text-white">
                                             <i class="icofont-check w-5 h-5 leading-5 block text-center"></i>
                                         </span>
-
-                                        <span class="hidden sm:block"> Delivery </span>
-
+                                        <span class="hidden sm:block">On Delivery</span>
                                         <i data-lucide="truck" class="sm:hidden"></i>
                                     </li>
-
-                                    <li class="relative flex justify-end">
-                                        <span class="absolute -bottom-[1.75rem] end-0 rounded-full bg-gray-600 text-white">
+                        
+                                    <!-- Delivered Step -->
+                                    <li class="relative flex justify-end {{ $order->status === 'delivered' ? 'text-brand-600' : 'text-gray-500' }}">
+                                        <span class="absolute -bottom-[1.75rem] end-0 rounded-full {{ $order->status === 'delivered' ? 'bg-brand-600' : 'bg-gray-600' }} text-white">
                                             <i class="icofont-check w-5 h-5 leading-5 block text-center"></i>
                                         </span>
-
-                                        <span class="hidden sm:block"> Delivered </span>
-
+                                        <span class="hidden sm:block">Delivered</span>
                                         <i data-lucide="map-pin" class="sm:hidden"></i>
                                     </li>
                                 </ol>
@@ -88,10 +81,10 @@
                                 <div class="dark:text-slate-400">
                                     <address class="text-sm">
                                         <strong>Billed To :</strong><br>
-                                        Joe Smith<br>
-                                        795 Folsom Ave<br>
-                                        San Francisco, CA 94107<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                        {{ $order->fname." ".$order->lname }}<br>
+                                        {{ $order->address }}<br>
+                                        {{ $order->email }}<br>
+                                        <abbr title="Phone">Phone:</abbr> {{ $order->phone }}
                                     </address>
                                 </div>
                             </div><!--end col-->
@@ -113,10 +106,8 @@
                                 <div class="dark:text-slate-400">
                                     <address class="text-sm">
                                         <strong>Shipped To:</strong><br>
-                                        Joe Smith<br>
-                                        795 Folsom Ave<br>
-                                        San Francisco, CA 94107<br>
-                                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                                        {{ $order->fname." ".$order->lname }}<br>
+                                        {{ $order->delivery_address }}<br>
                                     </address>
                                 </div>
                             </div><!--end col-->
@@ -136,61 +127,71 @@
                                             </th>
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Categories
+                                                Category
                                             </th>
-                                            <th scope="col"
+                                            {{-- <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                 Date
-                                            </th>
+                                            </th> --}}
                                             <th scope="col"
                                                 class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                 Rate
                                             </th>
                                             <th scope="col"
-                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
-                                                Quntaity
+                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase text-right">
+                                                Quantity
                                             </th>
                                             <th scope="col"
-                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
+                                                class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase text-right">
                                                 Total
                                             </th>
                                         </tr>
                                     </thead>
+                                    @php
+                                        $totalAmount = 0;
+                                        $netTotal = 0;
+                                    @endphp
                                     <tbody>
-
+                                        @foreach(json_decode($order->products, true) as $product)
+                                        {{-- @dd($product) --}}
                                         <!-- 1 -->
                                         <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                             <td class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
                                                 <div class="flex items-center">
-                                                    <img src="assets/images/products/pro-4.png" alt=""
+                                                    <img src="{{ asset('storage/' . explode('|', $product['image'])[0]) }}" alt=""
                                                         class="me-2 h-8 inline-block">
                                                     <div class="self-center">
                                                         <h5 class="text-sm font-semibold text-slate-700 dark:text-gray-400">
-                                                            Mannat 530 Bluetooth Wireless </h5>
-                                                        <span class="block  font-medium text-slate-500">Size-M (Model
-                                                            2023)</span>
+                                                            {{ $product['name'] }}</h5>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            {{-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                 <a href="#" class="text-brand-500 underline">Footwear</a>,
                                                 <a href="#" class="text-brand-500 underline">Lifestayle</a>
-                                            </td>
+                                            </td> --}}
                                             <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                12 Jan 2023
+                                                {{ $product['category'] }}
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                            {{-- <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                 12 Jan 2023
+                                            </td> --}}
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
+                                                {{ $product['price'] }}
                                             </td>
-                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                12 Jan 2023
+                                            <td class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400 text-right">
+                                                {{ $product['quantity'] }}
                                             </td>
                                             <td
-                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                $79 <del class="text-slate-500 font-normal">$99</del>
+                                                class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400 text-right">
+                                                ${{ $product['price'] * $product['quantity'] }}
                                             </td>
                                         </tr>
+                                        @php
+                                            $totalAmount += $product['price'] * $product['quantity'] 
+                                        @endphp
+                                        @endforeach
                                         <!--2-->
                                         {{-- <tr
                                             class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
@@ -361,13 +362,16 @@
                                     <table class="min-w-full">
                                         <tbody>
                                             <!-- 1 -->
+                                            @php
+                                                $netTotal = $totalAmount + 10;
+                                            @endphp
                                             <tr
                                                 class="border-b border-dashed border-slate-500/60 dark:border-slate-700/40">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Subtotal
                                                 </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $616.00
+                                                    ${{ $totalAmount }}
                                                 </td>
                                             </tr>
                                             <!-- 2 -->
@@ -377,10 +381,10 @@
                                                     Shipping Charge
                                                 </td>
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
-                                                    $20.00
+                                                    $10.00
                                                 </td>
                                             </tr>
-                                            <!-- 3 -->
+                                            {{-- <!-- 3 -->
                                             <tr class="">
                                                 <td class="p-3 text-sm text-gray-300 whitespace-nowrap font-medium">
                                                     Promo Code
@@ -388,7 +392,7 @@
                                                 <td class="p-3 text-sm font-medium text-gray-400 whitespace-nowrap">
                                                     -$10.00
                                                 </td>
-                                            </tr>
+                                            </tr> --}}
                                             <!-- 4 -->
                                             <tr
                                                 class="border-t-2 border-solid border-slate-500/60 dark:border-slate-700/40">
@@ -396,16 +400,16 @@
                                                     Total
                                                 </td>
                                                 <td class="p-3 text-base font-medium text-gray-100 whitespace-nowrap">
-                                                    $626.00
+                                                    ${{ $netTotal }}
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It is a long
+                            {{-- <p class="text-[11px] text-slate-400"> <span class="text-slate-200">Note :</span> It is a long
                                 established fact that a reader will be distracted by the readable content of a page when
-                                looking at its layout.</p>
+                                looking at its layout.</p> --}}
                         </div>
                     </div>
                 </div><!--end card-->

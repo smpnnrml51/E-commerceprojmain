@@ -98,6 +98,13 @@ class OrderController extends Controller
         return view('order::stripe', ['order' => $order]);
     }
 
+    public function updateStatus(Request $request, $id)
+    {
+        $inputData = $request->except(['_method', '_token']);
+        $this->orderRepository->update($id, $inputData);
+        return redirect()->route('order.index');
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -129,7 +136,8 @@ class OrderController extends Controller
     // }
         public function orders()
     {
-        return view('order::index');
+        $orders = $this->orderRepository->findAll();
+        return view('order::index', compact('orders'));
     }
     protected function generateUniqueTitle()
     {
@@ -139,10 +147,10 @@ class OrderController extends Controller
 
         return $uniqueCode;
     }
-    public function orderDetails()
+    public function orderDetails($id)
     {
-        // $order = $this->orderRepository->getOrderById($id);
-        return view('order::order-details');
+        $order = $this->orderRepository->getOrderById($id);
+        return view('order::order-details', compact('order'));
     }
     public function orderTrack()
     {
