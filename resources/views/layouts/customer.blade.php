@@ -9,7 +9,7 @@
     <meta content="" name="Mannatthemes" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('images/logos/new.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('images/logos/new.png') }}" />
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('libs/nice-select2/css/nice-select2.css') }}">
@@ -22,7 +22,6 @@
 </head>
 
 <body data-layout-mode="light" data-sidebar-size="default" data-theme-layout="vertical"
-
     class="bg-[#EEF0FC] dark:bg-gray-900">
 
     <!-- leftbar-tab-menu -->
@@ -103,7 +102,8 @@
                     <div class="w-64 max-w-full px-4 sm:w-60 lg:w-48">
                         <a class='block w-full py-5 lg:py-3' href={{ url('usersite') }}>
                             {{-- <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-6 md:w-8 inline-block"> --}}
-                            <img src="{{asset('images/logos/new.png')}}" alt="logo" class="w-20 md:w-24 inline-block">
+                            <img src="{{ asset('images/logos/new.png') }}" alt="logo"
+                                class="w-20 md:w-24 inline-block">
                             <span class="w-6 md:w-8 inline-block">VYOMITE</span>
                         </a>
                     </div>
@@ -168,7 +168,7 @@
                                     <span data-lucide="shopping-cart" class=" w-5 h-5"></span>
                                     <span
                                         class="absolute -top-1 -right-1 h-4 w-4 leading-4 rounded-full bg-brand text-[10px] font-semibold text-white">
-                                        {{count(session('cart', []))}}
+                                        {{ count(session('cart', [])) }}
                                     </span>
                                 </button>
 
@@ -178,40 +178,46 @@
                                         text-base shadow dark:divide-gray-600 bg-white dark:bg-slate-800 w-72 p-5">
                                     <div class="mb-5 border-b dark:border-slate-700/40 pb-3">
                                         <?php $total = 0; ?>
-                                        @if(session('cart') && count(session('cart')) > 0)
-                                            @foreach(session('cart') as $item)
-                                                @if($item)
+                                        @if (session('cart') && count(session('cart')) > 0)
+                                            @foreach (session('cart') as $item)
+                                                @if ($item)
                                                     <?php $total += $item['price'] * $item['quantity']; ?>
 
                                                     <div class="-mx-1 flex items-center justify-between pb-4">
                                                         <div class="flex items-center px-1">
-                                                            <div class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
-                                                                <img src="{{ asset('storage/' . explode('|', $item['image'])[0]) }}" alt="product image"
-                                                                    class="w-8 h-8">
+                                                            <div
+                                                                class="me-3 h-10 w-full max-w-[40px] overflow-hidden rounded">
+                                                                <img src="{{ asset('storage/' . explode('|', $item['image'])[0]) }}"
+                                                                    alt="product image" class="w-8 h-8">
                                                             </div>
                                                             <div>
                                                                 <a href="product-details.html"
                                                                     class="text-sm font-medium text-black hover:text-brand">
-                                                                    {{ $item['category']}}
+                                                                    {{ $item['category'] }}
                                                                 </a>
-                                                                <p class="truncate text-xs font-medium text-body-color">
+                                                                <p
+                                                                    class="truncate text-xs font-medium text-body-color">
                                                                     {{ $item['name'] }}
                                                                 </p>
                                                             </div>
                                                         </div>
                                                         <div class="px-1">
-                                                            <form action="{{ route('cart.remove') }}" method="POST" style="display: inline;">
+                                                            <form action="{{ route('cart.remove') }}" method="POST"
+                                                                style="display: inline;">
                                                                 @csrf
-                                                                <input type="hidden" name="product_id" value="{{ $item['id'] }}">
-                                                                <button type="submit" class="text-red-500 font-bold">-</button>
+                                                                <input type="hidden" name="product_id"
+                                                                    value="{{ $item['id'] }}">
+                                                                <button type="submit"
+                                                                    class="text-red-500 font-bold">-</button>
                                                             </form>
-                                                            <p class="text-base font-semibold text-black">{{ $item['quantity'] }} x ${{ $item['price'] }} </p>
+                                                            <p class="text-base font-semibold text-black">
+                                                                {{ $item['quantity'] }} x ${{ $item['price'] }} </p>
                                                         </div>
                                                     </div>
                                                 @else
-                                                <p class="truncate text-xs font-medium text-body-color">
-                                                    Cart is empty
-                                                </p>
+                                                    <p class="truncate text-xs font-medium text-body-color">
+                                                        Cart is empty
+                                                    </p>
                                                 @endif
                                             @endforeach
                                         @else
@@ -248,13 +254,14 @@
                                             </p>
                                         </div>
                                         <div class="px-1">
-                                            <p class="text-base font-semibold text-black">${{ number_format($total, 2) }}</p>
+                                            <p class="text-base font-semibold text-black">
+                                                ${{ number_format($total, 2) }}</p>
                                         </div>
                                     </div>
 
                                     <div>
                                         <a class='flex w-full items-center justify-center rounded-md bg-brand py-[10px] px-10 text-center text-base font-normal text-white hover:bg-opacity-90'
-                                            href="{{url('checkout')}}">
+                                            href="{{ url('checkout') }}">
                                             Place Order
                                         </a>
                                     </div>
@@ -266,7 +273,7 @@
                                         focus:bg-none focus:ring-0 dark:focus:ring-0 md:me-0"
                                     id="user-profile" aria-expanded="false" data-fc-autoclose="both"
                                     data-fc-type="dropdown">
-                                    <img class="h-8 w-8 rounded-full" src="{{asset('images/logos/new.png')}}"
+                                    <img class="h-8 w-8 rounded-full" src="{{ asset('images/logos/new.png') }}"
                                         alt="user photo" />
                                     <span class="ltr:ms-2 rtl:ms-0 rtl:me-2 hidden text-left xl:block">
                                         <span class="block font-medium text-slate-600 dark:text-gray-300">Maria
@@ -284,7 +291,7 @@
                                             <a class='flex items-center py-2 px-3 text-sm text-gray-700 hover:bg-gray-50
                                                 dark:text-gray-200 dark:hover:bg-gray-900/20
                                                 dark:hover:text-white'
-                                                href="{{url('/profile')}}">
+                                                href="{{ url('/profile') }}">
                                                 <span data-lucide="user"
                                                     class="w-4 h-4 inline-block text-slate-800 dark:text-slate-400 me-2"></span>
                                                 Profile</a>
@@ -499,134 +506,75 @@
     </header>
     @yield('content')
 
-    <!-- footer -->
-    <div class="relative bottom-0 -left-0 -right-0 block print:hidden border-t p-4 bg-black dark:border-slate-700/40">
-        <div class="container">
+
+    <div class="relative bottom-0 left-0 right-0 block print:hidden border-t p-4 bg-black dark:border-slate-700/40">
+        <div class="container mx-auto text-center">
             <!-- Footer Start -->
-            <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pt-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-10">
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
                         <div class="mb-5">
                             <a href='/robotech/default/customers-home'>
-                                <img src="{{asset('images/logos/new.png')}}" alt="" class="h-8 inline-block me-3">
-                                <img src="{{asset('images/logos/new.png')}}" alt="" class="h-8 inline-block">
+                                <img src="{{ asset('images/logos/new.png') }}" alt="" class="h-12 inline-block me-6">
+                                {{-- <img src="{{ asset('images/logos/new.png') }}" alt="" class="h-8 inline-block"> --}}
                             </a>
                         </div>
-                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will be
-                            distracted by the readable content of a page when looking at its layout. </p>
+                        <p class="text-slate-500 text-lg">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div><!--end card-body-->
                 </div> <!--end card-->
-                <div class="w-full relative mb-4">
+                <div class="w-full flex justify-center relative mb-4">
                     <div class="flex-auto p-4">
                         <h5 class="text-xl font-semibold text-slate-300 mb-6">Customers</h5>
                         <ul class="list-none footer-links">
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
+                                <a href="{{ url('/') }}" class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Home</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Product
-                                    details</a>
+                                <a href="{{ url('/product') }}" class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Products</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
+                                <a href="{{ url('/cart') }}" class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Cart</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
+                                <a href="{{ url('/checkout') }}" class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Checkout</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Invoice</a>
+                                <a href="{{ url('/wishlist') }}" class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Wishlist</a>
                             </li>
                         </ul>
                     </div><!--end card-body-->
                 </div> <!--end card-->
                 <div class="w-full relative mb-4">
                     <div class="flex-auto p-4">
-                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Admin</h5>
-                        <ul class="list-none footer-links">
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Dashboard</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Add
-                                    product</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Orders</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Customers</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Order
-                                    details</a>
-                            </li>
-                            <li class="mb-2">
-                                <a href="#"
-                                    class="border-b border-solid border-transparent text-slate-400 hover:border-white hover:text-white">Refund</a>
-                            </li>
-                        </ul>
-                    </div><!--end card-body-->
-                </div> <!--end card-->
-                <div class="w-full relative mb-4">
-                    <div class="flex-auto p-4">
-                        <h5 class="text-xl font-semibold text-slate-300 mb-6 sm:text-center xl:text-left">Contact Us
-                        </h5>
+                        <h5 class="text-xl font-semibold text-slate-300 mb-6">Contact Us</h5>
                         <div class="mb-5">
-                            <p class="text-slate-400 font-semibold">1884 George Avenue<br>
-                                Mobile, AL 36603
-                            </p>
+                            <p class="text-slate-400 font-semibold">Kathmandu, Nepal<br>Hardigaun, Kathmandu<br></p>
                         </div>
-                        <div class="flex sm:justify-center xl:justify-start">
-                            <a href=""
-                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
+                        <div class="flex justify-center space-x-2">
+                            <a href="" class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-600 hover:border-blue-600">
                                 <i class="icofont-facebook"></i>
                             </a>
-                            <a href=""
-                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+                            <a href="" class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-blue-400 hover:border-blue-400">
                                 <i class="icofont-twitter"></i>
                             </a>
-                            <a href=""
-                                class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 ml-2 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
+                            <a href="" class="w-8 h-8 leading-7 border-2 border-gray-500 rounded-full text-center duration-300 text-gray-400 hover:text-white hover:bg-red-600 hover:border-red-600">
                                 <i class="icofont-google-plus"></i>
                             </a>
                         </div>
                     </div><!--end card-body-->
                 </div> <!--end card-->
             </div>
-            <footer
-                class="footer bg-transparent  text-center  font-medium text-slate-400 dark:text-slate-400 md:text-left ">
+            <footer class="footer bg-transparent text-center font-medium text-slate-400 dark:text-slate-400">
                 &copy;
                 <script>
                     var year = new Date();
                     document.write(year.getFullYear());
                 </script>
                 {{-- Robotech
-                <span class="float-right hidden text-slate-400 dark:text-slate-400 md:inline-block">Crafted with <i
-                        class="ti ti-heart text-red-500"></i> by
-                    Mannatthemes</span> --}}
+                <span class="float-right hidden text-slate-400 dark:text-slate-400 md:inline-block">Crafted with <i class="ti ti-heart text-red-500"></i> by Mannatthemes</span> --}}
             </footer>
-            <!-- end Footer -->
-        </div>
+        </div><!--end div-->
     </div>
-    </div><!--end main-->
-    </div><!--end page-wrapper-->
-    </div><!--end div-->
-
-
     <!-- JAVASCRIPTS -->
     <!-- <div class="menu-overlay"></div> -->
     <script src="{{ asset('libs/lucide/umd/lucide.min.js') }}"></script>
