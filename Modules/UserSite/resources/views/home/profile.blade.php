@@ -11,7 +11,7 @@
     <link href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/tailwind.min.css') }}">
 @endsection
-@dd($user)
+{{-- @dd($user) --}}
 @section('content')
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div class="page-wrapper relative  duration-300 pt-0 w-full">
