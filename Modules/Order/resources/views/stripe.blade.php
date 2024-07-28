@@ -20,6 +20,7 @@
     </style> --}}
 {{-- @endsection
 @section('content') --}}
+{{-- @dd($order) --}}
     <div class="row">
 			<div class="col-md-5">
                 <div class="card mt-3">
@@ -92,8 +93,9 @@
                                     </table>
                                 </div>
                             </div>
-                            <form action="{{ route('order.destroy', ['id' => $order->id]) }}" method="POST">
+                            <form action="{{ route('order.destroy', $order->id) }}" method="POST">
                             @csrf
+                            @method('DELETE')
                                     <div class="flex gap-4 mb-4">
                                         <button
                                             class="px-3 py-2 lg:px-4 bg-brand-500 collapse:bg-green-100 text-white text-sm font-semibold rounded hover:bg-brand-600 hover:text-white w-1/2 mt-4 lg:mb-0 inline-block">Continue

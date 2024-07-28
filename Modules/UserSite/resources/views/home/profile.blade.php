@@ -11,6 +11,7 @@
     <link href="{{ asset('libs/flatpickr/flatpickr.min.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/tailwind.min.css') }}">
 @endsection
+{{-- @dd($user) --}}
 @section('content')
     <div class="ltr:flex flex-1 rtl:flex-row-reverse">
         <div class="page-wrapper relative  duration-300 pt-0 w-full">
@@ -44,14 +45,14 @@
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Order ID
                                                                     </th>
-                                                                    <th scope="col"
+                                                                    {{-- <th scope="col"
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Product & Title
-                                                                    </th>
-                                                                    <th scope="col"
+                                                                    </th> --}}
+                                                                    {{-- <th scope="col"
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Delivery Method
-                                                                    </th>
+                                                                    </th> --}}
                                                                     <th scope="col"
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Date
@@ -64,21 +65,33 @@
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Payment
                                                                     </th>
-                                                                    <th scope="col"
+                                                                    {{-- <th scope="col"
                                                                         class="p-3 text-xs font-medium tracking-wider text-left text-gray-700 dark:text-gray-400 uppercase">
                                                                         Action
-                                                                    </th>
+                                                                    </th> --}}
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @php
+                                                                    $netTotal = 0;
+                                                                    $count = 0;
+                                                                @endphp
                                                                 <!-- 1 -->
+                                                                @foreach($orders as $key=>$order)
+                                                                @php
+                                                                    $products = json_decode($order->products, true);
+                                                                    $totalPaid = 0;
+                                                                    foreach ($products as $product) {
+                                                                        $totalPaid += $product['price'] * $product['quantity'];
+                                                                    }
+                                                                @endphp
                                                                 <tr
                                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                     <td
                                                                         class="p-3 text-sm font-medium whitespace-nowrap dark:text-white">
-                                                                        <a href="#" class="text-brand-500">#556633</a>
+                                                                        <a href="{{url('orderTrack')}}" class="text-brand-500">{{$order->title}}</a>
                                                                     </td>
-                                                                    <td
+                                                                    {{-- <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         <div class="flex items-center">
                                                                             <img src="assets/images/products/02.png"
@@ -93,33 +106,38 @@
                                                                                     (Model 2023)</span>
                                                                             </div>
                                                                         </div>
-                                                                    </td>
-                                                                    <td
+                                                                    </td> --}}
+                                                                    {{-- <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         Cash on delivery
-                                                                    </td>
+                                                                    </td> --}}
                                                                     <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                                                        05 June 2023
+                                                                        {{ $order->created_at->format('d M Y') }}
                                                                     </td>
                                                                     <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         <span
-                                                                            class="bg-green-600/5 text-green-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">Shipped</span>
+                                                                            class="bg-yellow-600/5 text-yellow-600 text-[11px] font-medium px-2.5 py-0.5 rounded h-5">{{ $order->status }}</span>
                                                                     </td>
                                                                     <td
                                                                         class="p-3 font-semibold text-lg text-gray-800 whitespace-nowrap dark:text-gray-400">
-                                                                        $99
+                                                                        ${{ $totalPaid + 10}}
                                                                     </td>
-                                                                    <td
+                                                                    {{-- <td
                                                                         class="p-3 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                                                         <a href="#"><i
                                                                                 class="icofont-shopping-cart text-lg text-gray-500 dark:text-gray-400"></i></a>
                                                                         <a href="#"><i
                                                                                 class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
-                                                                    </td>
+                                                                    </td> --}}
                                                                 </tr>
-                                                                <!-- 2 -->
+                                                                @php
+                                                                    $netTotal += ($totalPaid+10);
+                                                                    $count += 1;
+                                                                @endphp
+                                                                @endforeach
+                                                                {{-- <!-- 2 -->
                                                                 <tr
                                                                     class="bg-white border-b border-dashed dark:bg-gray-900 dark:border-gray-700/40">
                                                                     <td
@@ -214,7 +232,7 @@
                                                                         <a href="#"><i
                                                                                 class="icofont-ui-delete text-lg text-red-500 dark:text-red-400"></i></a>
                                                                     </td>
-                                                                </tr>
+                                                                </tr> --}}
                                                             </tbody>
                                                         </table>
                                                     </div><!--end div-->
@@ -248,7 +266,7 @@
                                     <div class="flex flex-wrap justify-center">
                                         <div class="w-full px-4 flex justify-center">
                                             <div class="relative">
-                                                <img alt="..." src="assets/images/users/avatar-11.jpg"
+                                                <img alt="..." src="{{asset('images/logos/userimgae.png')}}"
                                                     class="rounded-full">
 
                                             </div>
@@ -257,22 +275,22 @@
                                             <h3 class="text-xl font-semibold">
                                                 Jenna Stones
                                             </h3>
-                                            <div class="text-sm mb-2  text-slate-400">
+                                            {{-- <div class="text-sm mb-2  text-slate-400">
                                                 <i class="icofont-google-map me-2 text-lg "></i>
                                                 Los Angeles, California
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <div class="w-full px-4 text-center">
                                             <div class="flex justify-center">
                                                 <div class=" p-3 text-center">
                                                     <span class="text-xl font-semibold block text-slate-800">
-                                                        $782
+                                                        ${{ $netTotal }}
                                                     </span>
                                                     <span class="text-sm ">Total Spent</span>
                                                 </div>
                                                 <div class="p-3 text-center">
                                                     <span class="text-xl font-semibold block text-slate-800">
-                                                        57
+                                                        {{ $count }}
                                                     </span>
                                                     <span class="text-sm ">Total Orders</span>
                                                 </div>
@@ -284,12 +302,12 @@
                                     <div class="text-center ">
                                         <div class="mb-2 text-slate-600">
                                             <i class="icofont-email me-2 text-lg text-primary-500"></i>
-                                            example@example.com
+                                            {{ $user->email }}
                                         </div>
-                                        <div class="mb-2 text-slate-600">
+                                        {{-- <div class="mb-2 text-slate-600">
                                             <i class="icofont-phone me-2 text-lg text-primary-500"></i>
-                                            +1 234-567-890
-                                        </div>
+                                            {{ $user->phone }}
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div> <!--end card-->

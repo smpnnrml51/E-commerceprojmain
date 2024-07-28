@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="{{ asset('images/logos/new.png') }}" />
 
     <!-- Css -->
+    <link rel="stylesheet" href="{{asset('libs/leaflet/leaflet.css')}}">
     <link rel="stylesheet" href="{{ asset('libs/nice-select2/css/nice-select2.css') }}">
     <link rel="stylesheet" href="{{ asset('libs/swiper/swiper-bundle.min.css') }}">
     <!-- Main Css -->
@@ -37,13 +38,13 @@
                                     About Us
                                 </a>
                             </li>
-                            <li class="mx-1">
+                            {{-- <li class="mx-1">
                                 <a class='inline-block  px-2 text-sm font-medium text-gray-400 border border-slate-500/40 rounded-full text-body-color hover:text-white'
                                     href='/robotech/default/customers-wishlist'>
                                     Wishlist <span
                                         class="bg-green-600/5 text-green-600 text-[11px] font-medium px-1 py-0.5 rounded-full h-5">3</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="mx-1">
                                 <a class='inline-block  px-2 text-sm font-medium text-gray-400 border border-slate-500/40 rounded-full text-body-color hover:text-white'
                                     href='/robotech/default/customers-order-track'>
