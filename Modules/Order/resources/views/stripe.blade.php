@@ -128,7 +128,7 @@
 
                             <br>
                             <div id="card-element" class="form-control"></div>
-                            <button id='pay-btn' class="btn btn-success mt-3" type="button"
+                            <button id='pay-btn' class="btn btn-primary mt-3" type="button"
                                 style="margin-top: 20px; width: 100%;padding: 7px;" onclick="createToken()">PAY
                                 ${{ number_format($totalAmount + 10, 2) }} 
                             </button>
