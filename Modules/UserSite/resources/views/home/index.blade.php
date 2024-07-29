@@ -83,12 +83,12 @@
                                                 class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-8 xl:col-span-8 self-center">
                                                 <div class="flex-auto p-4 pb-0">
                                                     <h4 class="text-4xl text-slate-800 font-semibold mb-0 font-spartan">
-                                                        Shoes Collection!</h4>
+                                                        PC Build</h4>
                                                     <p class="text-slate-600 text-2xl mb-3 font-spartan">Launch Offer 15%
                                                         Off!</p>
                                                     <button type="button"
-                                                        class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium mb-2">View
-                                                        Collection</button>
+                                                        class="px-4 py-2 lg:px-4 bg-brand-500  text-white text-base  transition hover:bg-brand-500 hover:text-white border border-brand border-dashed font-medium mb-2">PC
+                                                        Build</button>
                                                 </div><!--end card-body-->
                                             </div><!--end col-->
                                             <div
@@ -115,7 +115,7 @@
                                                 class="col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-8 xl:col-span-8 self-center">
                                                 <div class="flex-auto p-4 pb-0">
                                                     <h4 class="text-4xl text-slate-800 font-semibold mb-0 font-spartan">
-                                                        T-shirt Collection!</h4>
+                                                        Accessories Collection!</h4>
                                                     <p class="text-slate-600 text-2xl mb-3 font-spartan">Launch Offer 30%
                                                         Off!</p>
                                                     <button type="button"
@@ -564,7 +564,7 @@
                             <div
                                 class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
                                 <div class="flex-auto">
-                                    <div class="swiper defaultSwiper">
+                                    {{-- <div class="swiper defaultSwiper">
                                         <div class="swiper-wrapper ">
                                             <div class="swiper-slide overflow-hidden">
                                                 <div
@@ -600,7 +600,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
