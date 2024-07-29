@@ -564,7 +564,7 @@
                             <div
                                 class="bg-white dark:bg-gray-900 border border-slate-200 dark:border-slate-700/40  rounded-md w-full relative">
                                 <div class="flex-auto">
-                                    <div class="swiper defaultSwiper">
+                                    {{-- <div class="swiper defaultSwiper">
                                         <div class="swiper-wrapper ">
                                             <div class="swiper-slide overflow-hidden">
                                                 <div
@@ -600,7 +600,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div><!--end card-body-->
                             </div><!--end card-->
                         </div><!--end col-->
